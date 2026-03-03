@@ -56,7 +56,7 @@ export default function HomePage() {
           dashboard={{
             title: "Real-Time School Intelligence",
             logoIcon: GraduationCap,
-            imageSrc: "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",
+            imageSrc: "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg?_wi=1",
             searchPlaceholder: "Search students, classes, schedules...",
             buttons: [
               { text: "Dashboard", href: "#" },
@@ -123,7 +123,7 @@ export default function HomePage() {
           description="With over a decade of experience transforming educational institutions, we understand the unique challenges schools face. Our platform combines institutional wisdom with cutting-edge technology to deliver measurable results."
           tag="Our Story"
           buttons={[{ text: "Learn More", href: "/about" }]}
-          imageSrc="http://img.b2bpic.net/free-photo/schoolgirl-with-notebook-her-hands-sunset-background-school-goes-school_169016-59085.jpg"
+          imageSrc="http://img.b2bpic.net/free-photo/schoolgirl-with-notebook-her-hands-sunset-background-school-goes-school_169016-59085.jpg?_wi=1"
           imageAlt="Modern school building educational campus students learning school environment"
           useInvertedBackground={false}
         />
@@ -141,7 +141,7 @@ export default function HomePage() {
               description:
                 "Centralized profiles, progressive tracking, and personalized learning pathways. Monitor academic performance, behavioral development, and holistic growth with real-time insights.",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",
+                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg?_wi=2",
             },
             {
               id: 2,
@@ -186,7 +186,7 @@ export default function HomePage() {
               title: "Active Schools",
               description: "Institutions trusting Scholaris globally",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/high-angle-globe-with-academic-cap-laptop_23-2148756555.jpg",
+                "http://img.b2bpic.net/free-photo/high-angle-globe-with-academic-cap-laptop_23-2148756555.jpg?_wi=1",
             },
             {
               id: "2",
@@ -194,7 +194,7 @@ export default function HomePage() {
               title: "Student Profiles",
               description: "Managed and monitored daily",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/diversity-students-graduation-success-celebration-concept_53876-26400.jpg",
+                "http://img.b2bpic.net/free-photo/diversity-students-graduation-success-celebration-concept_53876-26400.jpg?_wi=1",
             },
             {
               id: "3",
@@ -202,7 +202,7 @@ export default function HomePage() {
               title: "Administrative Time Saved",
               description: "Average reduction in paperwork",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/time-minute-alarm-duration-hour-schedule-concept_53876-132557.jpg",
+                "http://img.b2bpic.net/free-photo/time-minute-alarm-duration-hour-schedule-concept_53876-132557.jpg?_wi=1",
             },
             {
               id: "4",
@@ -226,25 +226,25 @@ export default function HomePage() {
               id: "1",
               name: "Dr. Elizabeth Morrison",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/portrait-confident-senior-businessman-office_1262-2396.jpg",
+                "http://img.b2bpic.net/free-photo/portrait-confident-senior-businessman-office_1262-2396.jpg?_wi=1",
             },
             {
               id: "2",
               name: "James Chen",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/multi-ethnic-group-three-businesspeople-meeting-modern-o_1139-971.jpg",
+                "http://img.b2bpic.net/free-photo/multi-ethnic-group-three-businesspeople-meeting-modern-o_1139-971.jpg?_wi=1",
             },
             {
               id: "3",
               name: "Sarah Williams",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/medium-shot-smiley-woman-library_23-2149204753.jpg",
+                "http://img.b2bpic.net/free-photo/medium-shot-smiley-woman-library_23-2149204753.jpg?_wi=1",
             },
             {
               id: "4",
               name: "Michael Rodriguez",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/cheerful-female-professional-with-tablet-meeting-table-with-satisfied-customers_74855-8866.jpg",
+                "http://img.b2bpic.net/free-photo/cheerful-female-professional-with-tablet-meeting-table-with-satisfied-customers_74855-8866.jpg?_wi=1",
             },
             {
               id: "5",
@@ -276,7 +276,7 @@ export default function HomePage() {
           tagAnimation="slide-up"
           background={{ variant: "radial-gradient" }}
           useInvertedBackground={false}
-          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg"
+          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg?_wi=1"
           imageAlt="Professional consultation"
           mediaAnimation="slide-up"
           mediaPosition="right"
