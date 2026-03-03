@@ -1,0 +1,13 @@
+{
+  "name": "Input",
+  "propsSchema": {
+    "value": "string",
+    "onChange": "(value: string) => void",
+    "type?": "string (default: 'text')",
+    "placeholder?": "string",
+    "required?": "boolean (default: false)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "className?": "string"
+  }
+}

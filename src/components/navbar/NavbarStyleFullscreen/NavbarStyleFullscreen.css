@@ -1,0 +1,58 @@
+/* Tile clip-path animation */
+.navbar-fullscreen__tile {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transition: clip-path 1s cubic-bezier(.9, 0, .1, 1);
+}
+
+[data-navigation-status="active"] .navbar-fullscreen__tile {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Link initial state and animation */
+.navbar-fullscreen__link {
+  transform: translateY(100%) rotate(5deg);
+  transition: transform 0.75s cubic-bezier(.7, 0, .3, 1);
+}
+
+/* Link staggered delays (closing) */
+.navbar-fullscreen__li:nth-child(1) .navbar-fullscreen__link { transition-delay: 0.2s; }
+.navbar-fullscreen__li:nth-child(2) .navbar-fullscreen__link { transition-delay: 0.15s; }
+.navbar-fullscreen__li:nth-child(3) .navbar-fullscreen__link { transition-delay: 0.1s; }
+.navbar-fullscreen__li:nth-child(4) .navbar-fullscreen__link { transition-delay: 0.05s; }
+.navbar-fullscreen__li:nth-child(5) .navbar-fullscreen__link { transition-delay: 0s; }
+
+/* Link animation (Navigation Open) */
+[data-navigation-status="active"] .navbar-fullscreen__link {
+  transform: translateY(0%) rotate(0.001deg);
+}
+
+/* Link staggered delays (opening) */
+[data-navigation-status="active"] .navbar-fullscreen__li:nth-child(1) .navbar-fullscreen__link { transition-delay: 0.3s; }
+[data-navigation-status="active"] .navbar-fullscreen__li:nth-child(2) .navbar-fullscreen__link { transition-delay: 0.35s; }
+[data-navigation-status="active"] .navbar-fullscreen__li:nth-child(3) .navbar-fullscreen__link { transition-delay: 0.4s; }
+[data-navigation-status="active"] .navbar-fullscreen__li:nth-child(4) .navbar-fullscreen__link { transition-delay: 0.45s; }
+[data-navigation-status="active"] .navbar-fullscreen__li:nth-child(5) .navbar-fullscreen__link { transition-delay: 0.5s; }
+
+/* Link text duplicate effect */
+.navbar-fullscreen__link-text {
+  text-shadow: 0 1.1em 0;
+  transition: transform 0.5s cubic-bezier(.7, 0, .3, 1);
+  transform: translateY(0%) rotate(0.001deg);
+}
+
+.navbar-fullscreen__link:hover .navbar-fullscreen__link-text {
+  transform: translateY(-100%) rotate(0.001deg);
+}
+
+/* Hover dim effect on siblings */
+.navbar-fullscreen__li {
+  transition: opacity 0.5s cubic-bezier(.7, 0, .3, 1);
+}
+
+.navbar-fullscreen__ul:has(.navbar-fullscreen__li:hover) .navbar-fullscreen__li {
+  opacity: 0.15;
+}
+
+.navbar-fullscreen__ul:has(.navbar-fullscreen__li:hover) .navbar-fullscreen__li:hover {
+  opacity: 1;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "ButtonHoverMagnetic",
+  "description": "CTA button that subtly follows the cursor with a magnetic hover effect.",
+  "details": "Use when you want a playful, high-affordance interaction. On hover, the button shifts toward the cursor and recenters on leave. Keep labels short; no multiline.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Button",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "textClassName?": "string",
+    "strengthFactor?": "number (default: 20)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonHoverMagnetic text=\"Button\" href=\"contact\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "GridBackround",
+  "description": "Grid pattern background with line-based grid and optional 3D perspective effect.",
+  "details": "Use for technical or structured layouts. Features adjustable grid size (small: 16 cells, medium: 10 cells, large: 5 cells per 100vw). Optional perspectiveThreeD adds skew transform and radial mask for depth. Uses background-accent color at 10% opacity.",
+  "constraints": {},
+  "propsSchema": {
+    "size?": "'small' | 'medium' | 'large' (default: 'medium')",
+    "perspectiveThreeD?": "boolean (default: false)",
+    "className?": "string"
+  },
+  "usageExample": "<GridBackround size=\"medium\" perspectiveThreeD={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

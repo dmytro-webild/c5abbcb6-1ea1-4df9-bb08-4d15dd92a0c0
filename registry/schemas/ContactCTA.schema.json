@@ -1,0 +1,25 @@
+{
+  "name": "ContactCTA",
+  "propsSchema": {
+    "tag": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "title": "string",
+    "description": "string",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

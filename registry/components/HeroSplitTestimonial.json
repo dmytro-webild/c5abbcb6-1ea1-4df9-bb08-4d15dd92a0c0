@@ -1,0 +1,139 @@
+{
+  "name": "HeroSplitTestimonial",
+  "description": "Split-layout hero section with configurable background, text content on one side, and image/video with rotating testimonial card overlay on the other.",
+  "details": "Use for hero sections that combine product visuals with social proof. Features split layout with media on one side (left/right configurable) and a testimonial card overlay positioned at the bottom-right of the media. Testimonials rotate automatically every 5 seconds with smooth fade animation. Each testimonial displays star rating, quote text, and author info with avatar. Supports optional logo marquee at the bottom. Responsive design with centered layout on mobile.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Build Better Products",
+        "minChars": 2,
+        "maxChars": 36
+      },
+      "description": {
+        "required": true,
+        "example": "Create exceptional user experiences with our design system",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "New Release",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "testimonialRules": {
+      "testimonials": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{ name: 'Sarah Johnson', handle: 'CEO, TechCorp', testimonial: 'Amazing product!', rating: 5, imageSrc: '/avatar.jpg' }]",
+        "note": "Array of testimonial objects. Each requires name, handle, testimonial text, and rating (1-5). imageSrc is optional."
+      },
+      "testimonialRotationInterval": {
+        "required": false,
+        "default": 5000,
+        "note": "Rotation interval in milliseconds"
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imagePosition": {
+        "required": false,
+        "options": [
+          "left",
+          "right"
+        ],
+        "default": "right"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://example.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ]
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "testimonials": "Array<{ name: string, handle: string, testimonial: string, rating: number, imageSrc?: string, imageAlt?: string }>",
+    "testimonialRotationInterval?": "number (default: 5000)",
+    "useInvertedBackground?": "boolean (default: false)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatars?": "Avatar[]",
+    "avatarText?": "string",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "imagePosition?": "'left' | 'right' (default: 'right')",
+    "fixedMediaHeight?": "boolean (default: true)",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "testimonialCardClassName?": "string",
+    "testimonialContentClassName?": "string",
+    "testimonialTextClassName?": "string",
+    "testimonialRatingClassName?": "string",
+    "testimonialAuthorClassName?": "string",
+    "testimonialAuthorImageClassName?": "string",
+    "testimonialAuthorNameClassName?": "string",
+    "testimonialAuthorHandleClassName?": "string",
+    "marqueeItems?": "Array<{ type: 'image', src: string, alt?: string } | { type: 'text', text: string } | { type: 'text-icon', text: string, icon: LucideIcon }>",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true)",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <HeroSplitTestimonial \n    background={{ variant: 'glowing-orb' }}\n    title=\"Build Better Products\" \n    description=\"Create exceptional user experiences with our design system\" \n    tag=\"New Release\"\n    imagePosition=\"right\" \n    imageSrc=\"/hero.jpg\"\n    imageAlt=\"Product showcase\"\n    testimonials={[{ name: 'Sarah Johnson', handle: 'CEO, TechCorp', testimonial: 'This transformed our workflow!', rating: 5, imageSrc: '/avatar.jpg' }]}\n    buttons={[{ text: 'Start Building', href: 'https://example.com' }, { text: 'View Demo', href: 'demo' }]} \n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages with social proof",
+    "Use for product showcases with testimonials",
+    "Use when customer reviews add credibility",
+    "Requires testimonials[]",
+    "Requires buttons?[]",
+    "Requires avatars?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

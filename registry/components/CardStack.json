@@ -1,0 +1,77 @@
+{
+  "name": "CardStack",
+  "description": "Adaptive layout component that displays children in a grid, timeline, or carousel based on item count and variant.",
+  "details": "Use for displaying collections of cards. Automatically switches between grid (1-4 items) and carousel (5+ items). Special timeline variant creates a zigzag layout for 3-6 items; automatically switches to carousel for 7+ items. Carousel offers auto-scroll or button controls (recommended: keep default buttons). Optional header supports centered or split textbox layout (split: tag + title + description left, buttons right; split-actions: tag + title left, buttons only right; split-description: tag + title left, description only right).",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover our products",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "New",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    }
+  },
+  "propsSchema": {
+    "children": "React.ReactNode",
+    "mode?": "'auto' | 'buttons' (default: 'buttons')",
+    "gridVariant?": "'uniform-all-items-equal' | 'bento-grid' | 'bento-grid-inverted' | 'two-columns-alternating-heights' | 'asymmetric-60-wide-40-narrow' | 'three-columns-all-equal-width' | 'four-items-2x2-equal-grid' | 'one-large-right-three-stacked-left' | 'items-top-row-full-width-bottom' | 'full-width-top-items-bottom-row' | 'one-large-left-three-stacked-right' | 'two-items-per-row' | 'timeline' (default: 'uniform-all-items-equal')",
+    "uniformGridCustomHeightClasses?": "string",
+    "gridRowsClassName?": "string",
+    "itemHeightClassesOverride?": "Array<string>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d' (required - controls GSAP scroll animations with stagger effect)",
+    "supports3DAnimation?": "boolean (default: false)",
+    "carouselThreshold?": "number (default: 5)",
+    "bottomContent?": "React.ReactNode",
+    "title?": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description?": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground?": "boolean",
+    "ariaLabel?": "string (default: 'Card stack')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "carouselItemClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<CardStack title=\"Features\" buttons={[{ text: 'View All', href: 'features' }]} animationType=\"slide-up\" textboxLayout=\"default\">{/* Card components */}</CardStack>",
+  "do": [
+    "Use for general use",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "NavbarStyleApple",
+  "description": "Minimal Apple-style navigation bar with brand/logo on the left and inline navigation links aligned right.",
+  "details": "Use for clean, product-focused websites where the navbar should be subtle and not distract from main content. Keeps typography and spacing minimal with a focus on elegance and clarity. Supports both internal anchor links (scrolls to section) and external URLs (opens in new tab).",
+  "constraints": {
+    "minLinks": 3,
+    "maxLinks": 7,
+    "preferredCount": 5,
+    "brandRules": {
+      "required": false,
+      "minChars": 2,
+      "maxChars": 20,
+      "example": "Webild",
+      "fallbackBehavior": "Shows brandName text"
+    },
+    "linkRules": {
+      "name": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "About"
+      },
+      "id": {
+        "required": true,
+        "format": "section-id | url",
+        "examples": [
+          "about",
+          "services",
+          "https://github.com",
+          "www.example.com"
+        ],
+        "behavior": "Internal IDs scroll to section, URLs open in new tab"
+      }
+    }
+  },
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "brandName?": "string (default: 'Webild')"
+  },
+  "usageExample": "<NavbarStyleApple />",
+  "do": [
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires navItems[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

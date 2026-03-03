@@ -1,0 +1,133 @@
+{
+  "name": "HeroSplitKpi",
+  "description": "Split-layout hero with configurable background, media image/video, and three KPI metric boxes positioned around it.",
+  "details": "Use for hero sections showcasing key performance metrics alongside visual content. Features required background variant (choose from animated grids, gradient effects, glowing orb, or 'plain' for no background), split layout with configurable image position (left/right). Displays media content (image or video) scaled to 75% within a card wrapper, with three KPI boxes positioned around it (top-left, right, bottom-left). Each KPI box shows a large value and label with glass styling and backdrop blur. Responsive design centers content on mobile with square aspect ratio. Optional tag with icon and CTA buttons. Background variants include preset options for zero-config usage.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "The Future of Supply Chain",
+        "minChars": 2,
+        "maxChars": 36
+      },
+      "description": {
+        "required": true,
+        "example": "Ship globally within 3 days post-production with smart fulfillment",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Trusted by 150+ Brands",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "kpiRules": {
+      "kpis": {
+        "required": true,
+        "note": "Array of exactly 3 KPI items. Each item has 'value' (the metric) and 'label' (description)",
+        "structure": {
+          "value": "string - The metric value (e.g., '99.8%', '10x', '4-10 Days')",
+          "label": "string - Description of the metric (e.g., 'Order Accuracy')"
+        },
+        "example": "[{ value: '4-10 Days', label: 'Worldwide Delivery' }, { value: '99.8%', label: 'Order Accuracy' }, { value: '10x', label: 'Faster Lead Times' }]"
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Image displayed in scaled card wrapper"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Video takes precedence over image if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Product showcase",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "imagePosition": {
+        "required": false,
+        "options": [
+          "left",
+          "right"
+        ],
+        "default": "right"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Additional click handler (optional)"
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "kpis": "[KpiItem, KpiItem, KpiItem] - Array of exactly 3 KPI items with value and label",
+    "enableKpiAnimation": "boolean - Enable/disable mouse-following animation on KPI boxes",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatars?": "Avatar[] - Array of avatar objects with src and alt properties",
+    "avatarText?": "string - Text displayed next to the avatar group",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "imagePosition?": "'left' | 'right' (default: 'right')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "kpiClassName?": "string",
+    "kpiValueClassName?": "string",
+    "kpiLabelClassName?": "string",
+    "marqueeItems?": "Array<{ type: 'image', src: string, alt?: string } | { type: 'text', text: string } | { type: 'text-icon', text: string, icon: LucideIcon }> - Optional marquee at bottom of hero",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true) - Card styling for text/text-icon items, images never have cards",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<HeroSplitKpi background={{ variant: 'glowing-orb' }} title=\"The Future of Supply Chain\" description=\"Ship globally within 3 days with smart fulfillment\" enableKpiAnimation={true} kpis={[{ value: '4-10 Days', label: 'Worldwide Delivery' }, { value: '99.8%', label: 'Order Accuracy' }, { value: '10x', label: 'Faster Lead Times' }]} imageSrc=\"/hero-image.jpg\" imageAlt=\"Supply chain\" buttons={[{ text: 'Get Started', href: 'https://example.com' }]} />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires kpis[]",
+    "Requires buttons?[]",
+    "Requires avatars?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

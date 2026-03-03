@@ -1,0 +1,27 @@
+{
+  "name": "HeroLogoBillboard",
+  "propsSchema": {
+    "logoText": "string",
+    "description": "string",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "frameStyle?": "'card' | 'browser' (default: 'card')",
+    "logoLineHeight?": "number (default: 1.1)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoContainerClassName?": "string",
+    "logoClassName?": "string",
+    "descriptionClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "browserBarClassName?": "string",
+    "addressBarClassName?": "string"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "ContactForm",
+  "description": "Complete contact form component with tag, animated title and description, email signup form, and terms text.",
+  "details": "Use for email signup sections with full context and branding. Features Tag component, TextAnimation for title and description using ThemeProvider defaults, EmailSignupForm for input, and terms/conditions text below. Supports centered layout for hero-style presentation. Returns email string on submit.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Join our newsletter",
+        "minChars": 4,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Get the latest updates and exclusive content delivered to your inbox",
+        "minChars": 10,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": true,
+        "example": "Newsletter",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "inputPlaceholder": {
+        "required": false,
+        "default": "Enter your email",
+        "example": "Your email address",
+        "minChars": 5,
+        "maxChars": 50
+      },
+      "buttonText": {
+        "required": false,
+        "default": "Sign Up",
+        "example": "Subscribe",
+        "minChars": 2,
+        "maxChars": 15
+      },
+      "termsText": {
+        "required": false,
+        "default": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions.",
+        "example": "We respect your privacy. Unsubscribe anytime.",
+        "minChars": 10,
+        "maxChars": 200
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string (required)",
+    "description": "string (required)",
+    "tag": "string (required)",
+    "tagIcon?": "LucideIcon",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "termsText?": "string (default: 'By clicking Sign Up you're confirming that you agree with our Terms and Conditions.')",
+    "onSubmit?": "(email: string) => void",
+    "centered?": "boolean (default: false)",
+    "className?": "string",
+    "tagClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "termsClassName?": "string"
+  },
+  "usageExample": "<ContactForm title=\"Join our newsletter\" description=\"Get updates\" tag=\"Newsletter\" onSubmit={(email) => console.log(email)} />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for contact pages",
+    "Use for lead generation"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

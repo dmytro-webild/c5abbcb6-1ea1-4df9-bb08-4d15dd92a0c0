@@ -1,0 +1,110 @@
+{
+  "name": "FeatureCardThree",
+  "description": "Adaptive feature section with hover-reveal cards displaying numbered features with images.",
+  "details": "Use for interactive feature showcases with hover effects. Each card displays a numbered ID badge that flips to an info icon on hover, image background, title, and description that reveals with a slide-up background animation. Automatically switches between grid (1-4 items) and carousel (5+ items). Carousel offers auto-scroll or button controls (recommended: keep default buttons for better UX). Optional header with title, description, tag, and buttons. Header supports centered or split textbox layout (split: tag + title + description left, buttons right; split-actions: tag + title left, buttons only right; split-description: tag + title left, description only right).",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Features",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Discover what makes us different",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "id": {
+        "required": true,
+        "example": "01",
+        "minChars": 1,
+        "maxChars": 3,
+        "note": "Displayed in the flip badge"
+      },
+      "title": {
+        "required": true,
+        "example": "Advanced Analytics",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Get detailed insights into your business performance",
+        "minChars": 10,
+        "maxChars": 250
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": true,
+        "example": "/feature.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Feature background",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, description: string, imageSrc: string, imageAlt?: string }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "gridVariant": "'uniform-all-items-equal' | 'bento-grid' | 'bento-grid-inverted' | 'two-columns-alternating-heights' | 'asymmetric-60-wide-40-narrow' | 'three-columns-all-equal-width' | 'four-items-2x2-equal-grid' | 'one-large-right-three-stacked-left' | 'items-top-row-full-width-bottom' | 'full-width-top-items-bottom-row' | 'one-large-left-three-stacked-right' | 'timeline' (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "uniformGridCustomHeightClasses?": "string",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "itemContentClassName?": "string"
+  },
+  "usageExample": "<FeatureCardThree features={[{ id: '01', title: 'Analytics', description: 'Track performance with detailed insights', imageSrc: '/feature.jpg' }]} title=\"Our Features\" description=\"Discover what makes us different\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires features[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

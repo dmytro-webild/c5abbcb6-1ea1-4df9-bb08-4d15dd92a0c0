@@ -1,0 +1,28 @@
+{
+  "name": "MediaAbout",
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string",
+    "videoAriaLabel?": "string",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  }
+}

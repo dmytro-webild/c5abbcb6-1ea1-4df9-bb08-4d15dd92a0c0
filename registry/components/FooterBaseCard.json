@@ -1,0 +1,65 @@
+{
+  "name": "FooterBaseCard",
+  "description": "Card-wrapped footer with logo, navigation columns, copyright, and privacy policy link.",
+  "details": "Use for footers that need comprehensive navigation within a card container. Layout: Section wrapper (py-20) → Card container (w-content-width, rounded-theme-capped, p-10) → Top section (logo + FooterColumns in flex-row) → Border divider (border-t, border-foreground/20) → Bottom section (copyright + privacy button). Logo supports either image (logoSrc with Next.js Image) or text heading (logoText, text-4xl). Navigation organized via FooterColumns component accepting array of column objects with title and items. Bottom section displays copyright text (text-foreground/50, text-sm) on left and privacy policy button (ButtonTextUnderline) on right in flex row. Card wrapper provides unified, elevated appearance compared to FooterBase. Text colors use foreground variants since content is within card element. Best for comprehensive footer navigation with modern card styling. Uses semantic footer tag with contentinfo role.",
+  "constraints": {
+    "textRules": {
+      "copyrightText": {
+        "required": false,
+        "example": "© 2025 | Webild",
+        "minChars": 5,
+        "maxChars": 100,
+        "note": "Copyright text displayed at bottom left"
+      },
+      "logoText": {
+        "required": false,
+        "example": "Webild",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Text used for h2 heading"
+      }
+    },
+    "columnsRules": {
+      "required": true,
+      "structure": {
+        "title": "string - Column heading (required)",
+        "items": "Array<{ label: string, href: string }> - Navigation links (required)"
+      },
+      "minColumns": 1,
+      "maxColumns": 5,
+      "note": "Array of footer column objects. Each column must have title and items array."
+    },
+    "logoRules": {
+      "note": "Uses logoText as h2 heading."
+    }
+  },
+  "propsSchema": {
+    "logoText?": "string (default: 'Webild')",
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns (required)",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "logoTextClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  },
+  "usageExample": "<FooterBaseCard columns={[{ title: 'Product', items: [{ label: 'Features', href: '/features' }, { label: 'Pricing', href: '/pricing' }] }, { title: 'Company', items: [{ label: 'About', href: '/about' }, { label: 'Blog', href: '/blog' }] }]} logoText=\"Webild\" copyrightText=\"© 2025 | Webild\" onPrivacyClick={() => console.log('Privacy clicked')} />",
+  "do": [
+    "Use for general use",
+    "Requires columns[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

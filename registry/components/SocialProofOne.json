@@ -1,0 +1,97 @@
+{
+  "name": "SocialProofOne",
+  "description": "Social proof section with scrolling marquee displaying company names (default) or logos with optional card styling.",
+  "details": "Use for displaying partner/client names or logos in an infinite scrolling marquee. Features a header section with optional tag, title, description, and buttons. Supports both text-based names and logo images. Names/logos are auto-repeated 3x for seamless loop. Card styling can be toggled via showCard prop. Speed of marquee is configurable. Ideal for building trust through social proof on landing pages.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Trusted by Industry Leaders",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Join thousands of companies using our platform",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Partners",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Additional click handler (optional)"
+      },
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant."
+    },
+    "nameRules": {
+      "required": true,
+      "minItems": 4,
+      "structure": "string[] - Array of company/partner names",
+      "note": "Names are displayed as text in an infinite scrolling marquee. Auto-repeated 3x for seamless loop."
+    },
+    "logoRules": {
+      "required": false,
+      "minItems": 4,
+      "structure": "string[] - Array of logo image paths",
+      "note": "If provided, logos are displayed instead of names. Auto-repeated 3x for seamless loop."
+    }
+  },
+  "propsSchema": {
+    "names": "string[] (required) - Array of company/partner names to display as text",
+    "logos?": "string[] - Array of logo image paths. If provided, displays images instead of text names",
+    "title": "string",
+    "titleSegments?": "TitleSegment[]",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "ButtonConfig[]",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "TextboxLayout",
+    "useInvertedBackground": "boolean",
+    "speed?": "number (default: 40)",
+    "showCard?": "boolean (default: true) - Whether to show card styling around items",
+    "ariaLabel?": "string (default: 'Social proof section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "contentClassName?": "string",
+    "logoItemClassName?": "string",
+    "logoCardClassName?": "string",
+    "logoImageClassName?": "string",
+    "logoTextClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"icon-arrow\" borderRadius=\"rounded\"><SocialProofOne title=\"Trusted by Industry Leaders\" description=\"Join thousands of companies using our platform.\" tag=\"Partners\" textboxLayout=\"default\" useInvertedBackground={false} names={['Acme Corp', 'TechFlow', 'Innovate Inc', 'CloudSync']} speed={40} showCard={true} /></ThemeProvider>",
+  "do": [
+    "Use for displaying partner/client names or logos",
+    "Include at least 4 items for good visual effect",
+    "Use SVG logos for best quality when using images",
+    "Use names for a simpler, text-based approach"
+  ],
+  "dont": [
+    "Do not use with fewer than 4 items",
+    "Do not mix very long and very short names"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

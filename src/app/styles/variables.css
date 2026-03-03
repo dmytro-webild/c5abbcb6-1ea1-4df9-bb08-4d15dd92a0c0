@@ -1,0 +1,217 @@
+:root {
+  /* Base units */
+  /* --vw is set by ThemeProvider */
+
+  /* --background: #f5f4ef;;
+  --card: #dad6cd;;
+  --foreground: #2a2928;;
+  --primary-cta: #2a2928;;
+  --secondary-cta: #ecebea;;
+  --accent: #ffffff;;
+  --background-accent: #c6b180;; */
+
+  --background: #f5f4ef;;
+  --card: #dad6cd;;
+  --foreground: #2a2928;;
+  --primary-cta: #2a2928;;
+  --primary-cta-text: #f5f4ef;;
+  --secondary-cta: #ecebea;;
+  --secondary-cta-text: #2a2928;;
+  --accent: #ffffff;;
+  --background-accent: #c6b180;;
+
+  /* text sizing - set by ThemeProvider */
+  /* --text-2xs: clamp(0.465rem, 0.62vw, 0.62rem);
+  --text-xs: clamp(0.54rem, 0.72vw, 0.72rem);
+  --text-sm: clamp(0.615rem, 0.82vw, 0.82rem);
+  --text-base: clamp(0.69rem, 0.92vw, 0.92rem);
+  --text-lg: clamp(0.75rem, 1vw, 1rem);
+  --text-xl: clamp(0.825rem, 1.1vw, 1.1rem);
+  --text-2xl: clamp(0.975rem, 1.3vw, 1.3rem);
+  --text-3xl: clamp(1.2rem, 1.6vw, 1.6rem);
+  --text-4xl: clamp(1.5rem, 2vw, 2rem);
+  --text-5xl: clamp(2.025rem, 2.75vw, 2.75rem);
+  --text-6xl: clamp(2.475rem, 3.3vw, 3.3rem);
+  --text-7xl: clamp(3rem, 4vw, 4rem);
+  --text-8xl: clamp(3.5rem, 4.5vw, 4.5rem);
+  --text-9xl: clamp(5.25rem, 7vw, 7rem); */
+
+  /* Base spacing units */
+  --vw-0_25: calc(var(--vw) * 0.25);
+  --vw-0_5: calc(var(--vw) * 0.5);
+  --vw-0_625: calc(var(--vw) * 0.625);
+  --vw-0_75: calc(var(--vw) * 0.75);
+  --vw-1: calc(var(--vw) * 1);
+  --vw-1_25: calc(var(--vw) * 1.25);
+  --vw-1_5: calc(var(--vw) * 1.5);
+  --vw-1_75: calc(var(--vw) * 1.75);
+  --vw-2: calc(var(--vw) * 2);
+  --vw-2_25: calc(var(--vw) * 2.25);
+  --vw-2_5: calc(var(--vw) * 2.5);
+  --vw-2_75: calc(var(--vw) * 2.75);
+  --vw-3: calc(var(--vw) * 3);
+
+  /* width */
+  --width-5: clamp(4rem, 5vw, 6rem);
+  --width-7_5: clamp(5.625rem, 7.5vw, 7.5rem);
+  --width-10: clamp(7.5rem, 10vw, 10rem);
+  --width-12_5: clamp(9.375rem, 12.5vw, 12.5rem);
+  --width-15: clamp(11.25rem, 15vw, 15rem);
+  --width-17: clamp(12.75rem, 17vw, 17rem);
+  --width-17_5: clamp(13.125rem, 17.5vw, 17.5rem);
+  --width-20: clamp(15rem, 20vw, 20rem);
+  --width-21: clamp(15.75rem, 21vw, 21rem);
+  --width-22_5: clamp(16.875rem, 22.5vw, 22.5rem);
+  --width-25: clamp(18.75rem, 25vw, 25rem);
+  --width-26: clamp(19.5rem, 26vw, 26rem);
+  --width-27_5: clamp(20.625rem, 27.5vw, 27.5rem);
+  --width-30: clamp(22.5rem, 30vw, 30rem);
+  --width-32_5: clamp(24.375rem, 32.5vw, 32.5rem);
+  --width-35: clamp(26.25rem, 35vw, 35rem);
+  --width-37_5: clamp(28.125rem, 37.5vw, 37.5rem);
+  --width-40: clamp(30rem, 40vw, 40rem);
+  --width-42_5: clamp(31.875rem, 42.5vw, 42.5rem);
+  --width-45: clamp(33.75rem, 45vw, 45rem);
+  --width-47_5: clamp(35.625rem, 47.5vw, 47.5rem);
+  --width-50: clamp(37.5rem, 50vw, 50rem);
+  --width-52_5: clamp(39.375rem, 52.5vw, 52.5rem);
+  --width-55: clamp(41.25rem, 55vw, 55rem);
+  --width-57_5: clamp(43.125rem, 57.5vw, 57.5rem);
+  --width-60: clamp(45rem, 60vw, 60rem);
+  --width-62_5: clamp(46.875rem, 62.5vw, 62.5rem);
+  --width-65: clamp(48.75rem, 65vw, 65rem);
+  --width-67_5: clamp(50.625rem, 67.5vw, 67.5rem);
+  --width-70: clamp(52.5rem, 70vw, 70rem);
+  --width-72_5: clamp(54.375rem, 72.5vw, 72.5rem);
+  --width-75: clamp(56.25rem, 75vw, 75rem);
+  --width-77_5: clamp(58.125rem, 77.5vw, 77.5rem);
+  --width-80: clamp(60rem, 80vw, 80rem);
+  --width-82_5: clamp(61.875rem, 82.5vw, 82.5rem);
+  --width-85: clamp(63.75rem, 85vw, 85rem);
+  --width-87_5: clamp(65.625rem, 87.5vw, 87.5rem);
+  --width-90: clamp(67.5rem, 90vw, 90rem);
+  --width-92_5: clamp(69.375rem, 92.5vw, 92.5rem);
+  --width-95: clamp(71.25rem, 95vw, 95rem);
+  --width-97_5: clamp(73.125rem, 97.5vw, 97.5rem);
+  --width-100: clamp(75rem, 100vw, 100rem);
+  /* --width-content-width and --width-content-width-expanded are set by ThemeProvider */
+  --width-carousel-padding: calc((100vw - var(--width-content-width)) / 2 + 1px - var(--vw-1_5));
+  --width-carousel-padding-controls: calc((100vw - var(--width-content-width)) / 2 + 1px);
+  --width-carousel-padding-expanded: calc((var(--width-content-width-expanded) - var(--width-content-width)) / 2 + 1px - var(--vw-1_5));
+  --width-carousel-padding-controls-expanded: calc((var(--width-content-width-expanded) - var(--width-content-width)) / 2 + 1px);
+  --width-carousel-item-3: calc(var(--width-content-width) / 3 - var(--vw-1_5) / 3 * 2);
+  --width-carousel-item-4: calc(var(--width-content-width) / 4 - var(--vw-1_5) / 4 * 3);
+  --width-x-padding-mask-fade: clamp(1.5rem, 4vw, 4rem);
+
+  --height-4: 1rem;
+  --height-5: 1.25rem;
+  --height-6: 1.5rem;
+  --height-7: 1.75rem;
+  --height-8: 2rem;
+  --height-9: 2.25rem;
+  --height-10: 2.5rem;
+  --height-11: 2.75rem;
+  --height-12: 3rem;
+  --height-30: 7.5rem;
+  --height-90: 22.5rem;
+  --height-100: 25rem;
+  --height-110: 27.5rem;
+  --height-120: 30rem;
+  --height-130: 32.5rem;
+  --height-140: 35rem;
+  --height-150: 37.5rem;
+
+  /* hero page padding */
+  --padding-hero-page-padding-half: calc((var(--height-10) + var(--vw-1_5) + var(--vw-1_5) + var(--height-10)) / 2);
+  --padding-hero-page-padding: calc(var(--height-10) + var(--vw-1_5) + var(--vw-1_5) + var(--height-10));
+  --padding-hero-page-padding-1_5: calc(1.5 * (var(--height-10) + var(--vw-1_5) + var(--vw-1_5) + var(--height-10)));
+  --padding-hero-page-padding-double: calc(2 * (var(--height-10) + var(--vw-1_5) + var(--vw-1_5) + var(--height-10)));
+}
+
+@media (max-width: 767px) {
+  :root {
+    /* --vw and text sizing are set by ThemeProvider */
+    /* --vw: 3vw;
+
+    --text-2xs: 2.5vw;
+    --text-xs: 2.75vw;
+    --text-sm: 3vw;
+    --text-base: 3.25vw;
+    --text-lg: 3.5vw;
+    --text-xl: 4.25vw;
+    --text-2xl: 5vw;
+    --text-3xl: 6vw;
+    --text-4xl: 7vw;
+    --text-5xl: 7.5vw;
+    --text-6xl: 8.5vw;
+    --text-7xl: 10vw;
+    --text-8xl: 12vw;
+    --text-9xl: 14vw; */
+
+    --width-5: 5vw;
+    --width-7_5: 7.5vw;
+    --width-10: 10vw;
+    --width-12_5: 12.5vw;
+    --width-15: 15vw;
+    --width-17_5: 17.5vw;
+    --width-20: 20vw;
+    --width-22_5: 22.5vw;
+    --width-25: 25vw;
+    --width-27_5: 27.5vw;
+    --width-30: 30vw;
+    --width-32_5: 32.5vw;
+    --width-35: 35vw;
+    --width-37_5: 37.5vw;
+    --width-40: 40vw;
+    --width-42_5: 42.5vw;
+    --width-45: 45vw;
+    --width-47_5: 47.5vw;
+    --width-50: 50vw;
+    --width-52_5: 52.5vw;
+    --width-55: 55vw;
+    --width-57_5: 57.5vw;
+    --width-60: 60vw;
+    --width-62_5: 62.5vw;
+    --width-65: 65vw;
+    --width-67_5: 67.5vw;
+    --width-70: 70vw;
+    --width-72_5: 72.5vw;
+    --width-75: 75vw;
+    --width-77_5: 77.5vw;
+    --width-80: 80vw;
+    --width-82_5: 82.5vw;
+    --width-85: 85vw;
+    --width-87_5: 87.5vw;
+    --width-90: 90vw;
+    --width-92_5: 92.5vw;
+    --width-95: 95vw;
+    --width-97_5: 97.5vw;
+    --width-100: 100vw;
+    /* --width-content-width and --width-content-width-expanded are set by ThemeProvider */
+    --width-carousel-padding: calc((100vw - var(--width-content-width)) / 2 + 1px - var(--vw-1_5));
+    --width-carousel-padding-controls: calc((100vw - var(--width-content-width)) / 2 + 1px);
+    --width-carousel-padding-expanded: calc((var(--width-content-width-expanded) - var(--width-content-width)) / 2 + 1px - var(--vw-1_5));
+    --width-carousel-padding-controls-expanded: calc((var(--width-content-width-expanded) - var(--width-content-width)) / 2 + 1px);
+    --width-carousel-item-3: var(--width-content-width);
+    --width-carousel-item-4: var(--width-content-width);
+    --width-x-padding-mask-fade: 10vw;
+
+    --height-4: 3.5vw;
+    --height-5: 4.5vw;
+    --height-6: 5.5vw;
+    --height-7: 6.5vw;
+    --height-8: 7.5vw;
+    --height-9: 8.5vw;
+    --height-10: 9vw;
+    --height-11: 10vw;
+    --height-12: 11vw;
+    --height-30: 25vw;
+    --height-90: 81vw;
+    --height-100: 90vw;
+    --height-110: 99vw;
+    --height-120: 108vw;
+    --height-130: 117vw;
+    --height-140: 126vw;
+    --height-150: 135vw;
+  }
+}

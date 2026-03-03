@@ -1,0 +1,21 @@
+{
+  "name": "FooterBaseReveal",
+  "propsSchema": {
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns",
+    "copyrightText?": "string",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string",
+    "className?": "string",
+    "wrapperClassName?": "string",
+    "containerClassName?": "string",
+    "footerClassName?": "string",
+    "footerContainerClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  }
+}

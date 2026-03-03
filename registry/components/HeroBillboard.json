@@ -1,0 +1,141 @@
+{
+  "name": "HeroBillboard",
+  "description": "Full-width hero section with centered text content, configurable background, optional tag, buttons, avatar group, single image/video below in a card frame, and optional logo marquee.",
+  "details": "Use for simple, impactful landing page hero sections. Features centered title and description with TextBox animations, required background variant (choose from animated grids, gradient effects, or 'plain' for no background), optional tag with icon, up to 2 CTA buttons, optional avatar group with text displayed above the tag, a single image or video media content below the text in a card wrapper with padding, and an optional logo marquee below the media. Background variants include preset options for zero-config usage.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Welcome to Our Platform",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "description": {
+        "required": true,
+        "example": "Create beautiful, responsive web experiences",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "New Release",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Hero background",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://example.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    },
+    "avatarRules": {
+      "avatars": {
+        "required": false,
+        "example": "[{ src: '/avatar1.jpg', alt: 'User 1' }, { src: '/avatar2.jpg', alt: 'User 2' }]",
+        "note": "Array of Avatar objects with src and alt. Displayed above the tag in a centered group."
+      },
+      "avatarText": {
+        "required": false,
+        "example": "Trusted by 10,000+ users",
+        "note": "Text displayed next to the avatar group"
+      }
+    },
+    "marqueeRules": {
+      "marqueeItems": {
+        "required": false,
+        "example": "[{ type: 'image', src: '/logo1.svg', alt: 'Partner 1' }, { type: 'text', text: 'Partner Name' }]",
+        "note": "Array of MarqueeItem objects. Rendered below the media content (not absolute positioned)."
+      },
+      "marqueeSpeed": {
+        "required": false,
+        "default": 30,
+        "note": "Speed of the marquee animation"
+      },
+      "showMarqueeCard": {
+        "required": false,
+        "default": true,
+        "note": "Whether to show the card wrapper around marquee items"
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatars?": "Array<{src: string, alt: string}>",
+    "avatarText?": "string",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "marqueeItems?": "Array<MarqueeItem>",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\">\n  <HeroBillboard \n    background={{ variant: 'sparkles-gradient' }}\n    title=\"Welcome to Our Platform\" \n    description=\"Create beautiful, responsive web experiences\" \n    tag=\"New Release\" \n    tagIcon={Sparkles}\n    avatars={[\n      { src: '/avatar1.jpg', alt: 'User 1' },\n      { src: '/avatar2.jpg', alt: 'User 2' },\n      { src: '/avatar3.jpg', alt: 'User 3' },\n    ]}\n    avatarText=\"Trusted by 10,000+ users\"\n    imageSrc=\"/hero.jpg\" \n    imageAlt=\"Hero banner\"\n    buttons={[{ text: 'Get Started', href: 'https://example.com' }, { text: 'Learn More', href: 'about' }]}\n    marqueeItems={[\n      { type: 'image', src: '/logo1.svg', alt: 'Partner 1' },\n      { type: 'image', src: '/logo2.svg', alt: 'Partner 2' },\n    ]}\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use multiple items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

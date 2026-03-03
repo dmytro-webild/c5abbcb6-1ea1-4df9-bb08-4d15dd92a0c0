@@ -1,0 +1,17 @@
+{
+  "name": "TextAnimation",
+  "propsSchema": {
+    "type?": "'entrance-slide' | 'reveal-blur' | 'background-highlight'",
+    "text": "string",
+    "as?": "'div' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' (default: 'div')",
+    "children?": "React.ReactNode",
+    "variant?": "'trigger' | 'words-trigger'",
+    "className?": "string",
+    "duration?": "number",
+    "stagger?": "number",
+    "start?": "string",
+    "end?": "string",
+    "ariaLabel?": "string",
+    "gradientColors?": "{ from: string, to: string }"
+  }
+}

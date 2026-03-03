@@ -1,0 +1,107 @@
+{
+  "name": "FeatureHoverPattern",
+  "description": "CardStack feature section with interactive hover pattern effect revealing behind centered icons.",
+  "details": "Use for feature showcases with visual engagement through hover interactions. Uses CardStack with uniform-all-items-equal grid (hardcoded). Each card displays a centered icon in a container with hover-triggered pattern reveal using GSAP ScrollTrigger. Pattern appears on mouse movement (desktop) or scroll viewport visibility (mobile). Desktop: Mouse movement reveals radial gradient pattern with random character overlay. Mobile: Pattern activates when card enters viewport (20% threshold for pattern, 40% for icon). Each card has icon in center with card styling, title and description below. Icon containers have backdrop-blur-sm with border. Pattern uses Framer Motion with useMotionValue for smooth tracking. Supports custom gradient colors via gradientClassName. All cards have min-h-80 2xl:min-h-90 default height. Best for 2-6 features to showcase key product benefits with interactive visual appeal.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Powerful Features",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Hover over each card to reveal the interactive pattern",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "icon": {
+        "required": true,
+        "example": "Zap",
+        "note": "LucideIcon component displayed in center of card with hover pattern"
+      },
+      "title": {
+        "required": true,
+        "example": "Lightning Fast",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "description": {
+        "required": true,
+        "example": "Optimized for performance with minimal overhead and blazing fast load times",
+        "minChars": 10,
+        "maxChars": 200
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 6,
+      "recommendedItems": "2-6",
+      "note": "Works best with 2-6 features for optimal grid layout"
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ icon: LucideIcon, title: string, description: string, button?: ButtonConfig }> (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean (required)",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons' - for 5+ items)",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-80 2xl:min-h-90')",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "iconContainerClassName?": "string",
+    "iconClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "gradientClassName?": "string - Custom gradient for hover pattern (default: 'bg-gradient-to-r from-accent to-background-accent')",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureHoverPattern features={[{ icon: Zap, title: 'Lightning Fast', description: 'Optimized for performance with minimal overhead' }, { icon: Shield, title: 'Secure by Default', description: 'Built with security best practices' }]} title=\"Powerful Features\" description=\"Hover over each card to reveal the interactive pattern\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases with visual engagement",
+    "Best for 2-6 features",
+    "Each feature requires an icon",
+    "Supports custom gradient colors via gradientClassName"
+  ],
+  "dont": [
+    "Do not use without icons for each feature",
+    "Do not use for simple text-only feature lists"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

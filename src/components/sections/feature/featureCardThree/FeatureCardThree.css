@@ -1,0 +1,32 @@
+.feature-card-three-title {
+    font-size: var(--text-2xl);
+}
+
+.feature-card-three-description {
+    font-size: var(--text-sm);
+}
+
+/* Mobile touch support - duplicate hover states for is-active class */
+.feature-card-three-item.is-active .feature-card-three-item-box > div {
+    transform: rotateY(180deg);
+}
+
+.feature-card-three-item.is-active .feature-card-three-content-wrapper {
+    transform: translateY(var(--hover-translate-y));
+}
+
+.feature-card-three-item.is-active .feature-card-three-title {
+    color: var(--color-foreground);
+}
+
+.feature-card-three-item.is-active .feature-card-three-description-wrapper {
+    opacity: 1;
+}
+
+.feature-card-three-item.is-active .feature-card-three-reveal-bg {
+    --tw-translate-y: 0px !important;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+    left: calc(var(--vw-1_5) * 0.75);
+    bottom: calc(var(--vw-1_5) * 0.75);
+    right: calc(var(--vw-1_5) * 0.75);
+}

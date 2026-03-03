@@ -1,0 +1,37 @@
+{
+  "name": "ButtonTextStagger",
+  "description": "CTA button with character stagger animation on hover.",
+  "details": "Use for primary or secondary CTAs where subtle text motion adds emphasis. On hover, the label's characters animate in sequence (stagger). Includes background styling.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Get Started",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "bgClassName?": "string",
+    "textClassName?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')",
+    "scrollToSection?": "boolean"
+  },
+  "usageExample": "<ButtonTextStagger text=\"Get Started\" href=\"https://example.com\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "DownwardRaysBackground",
+  "propsSchema": {
+    "animated": "boolean - Required. When true, rays animate with pulsing opacity. When false, rays display static opacity.",
+    "showGrid": "boolean - Required. When true, displays a grid overlay fading from top center. When false, no grid is shown.",
+    "className?": "string",
+    "containerClassName?": "string"
+  }
+}

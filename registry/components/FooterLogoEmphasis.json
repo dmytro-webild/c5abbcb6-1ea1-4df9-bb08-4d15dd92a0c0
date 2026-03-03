@@ -1,0 +1,69 @@
+{
+  "name": "FooterLogoEmphasis",
+  "description": "Footer with prominent centered logo emphasis and grid-based navigation layout with chevron icons.",
+  "details": "Use when logo branding is primary focus in footer. Features large centered logo at top (image or SVG text), followed by responsive grid of navigation links (1-5 columns max) with ChevronRight icons. Grid columns automatically adjust based on number of column arrays provided. No column titles - just clean link lists. Uses primary-button background with rounded-t-theme-capped styling.",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": false,
+        "default": "Webild",
+        "example": "Company Name",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "itemLabel": {
+        "required": true,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "structureRules": {
+      "columns": {
+        "required": true,
+        "minColumns": 1,
+        "maxColumns": 5,
+        "note": "Grid automatically adjusts from 1-5 columns based on array length"
+      },
+      "items": {
+        "required": true,
+        "minItems": 1,
+        "structure": {
+          "label": "string - Link text (required)",
+          "href": "string - Link destination (optional). External URLs open in new tab, internal values scroll to sections",
+          "onClick": "() => void - Additional click handler (optional)"
+        }
+      },
+      "logo": {
+        "note": "Uses logoText for SVG text logo"
+      }
+    }
+  },
+  "propsSchema": {
+    "columns": "Array<{ items: Array<{ label: string, href?: string, onClick?: () => void }> }> - Footer navigation columns (required, max 5)",
+    "logoText": "string (required)",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "itemClassName?": "string",
+    "iconClassName?": "string",
+    "buttonClassName?": "string"
+  },
+  "usageExample": "<FooterLogoEmphasis columns={[{ items: [{ label: 'Features', href: 'features' }] }, { items: [{ label: 'About', href: 'about' }] }]} logoText=\"Company\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires columns[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

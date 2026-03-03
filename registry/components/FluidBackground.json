@@ -1,0 +1,20 @@
+{
+  "name": "FluidBackground",
+  "description": "Generative fluid patterns using CPPN shader with theme color integration.",
+  "details": "Use for modern, dynamic backgrounds with organic fluid patterns. Features real-time WebGL shader animation using CPPN (Compositional Pattern Producing Networks) that creates continuously morphing, fluid-like patterns. Automatically adapts to theme colors by reading CSS variables (--background, --color-primary-cta, --color-accent, --color-secondary-cta) and blending them with generated patterns. Uses React Three Fiber for 3D rendering with dynamic viewport sizing. Performance optimized with React.memo and responsive to window resizing. Best for contemporary, premium designs where subtle motion adds visual interest without distraction.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string"
+  },
+  "usageExample": "<FluidBackground />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "NavbarStyleFullscreen",
+  "description": "Fullscreen overlay navigation with animated menu reveal and staggered link animations.",
+  "details": "Use for immersive, design-focused websites where the navigation takes over the entire screen. Features a hamburger button that transforms into an X, clip-path reveal animation for the menu panel, staggered link entrance animations, and a hover effect that dims sibling links. Supports Lenis smooth scrolling.",
+  "constraints": {
+    "minLinks": 3,
+    "maxLinks": 5,
+    "preferredCount": 5,
+    "brandRules": {
+      "required": false,
+      "minChars": 2,
+      "maxChars": 20,
+      "example": "Webild",
+      "fallbackBehavior": "Shows brandName text"
+    },
+    "linkRules": {
+      "name": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "About"
+      },
+      "id": {
+        "required": true,
+        "format": "section-id | url",
+        "examples": [
+          "about",
+          "services",
+          "https://github.com",
+          "www.example.com"
+        ],
+        "behavior": "Internal IDs scroll to section, URLs open in new tab"
+      }
+    },
+    "bottomTextRules": {
+      "bottomLeftText": {
+        "required": false,
+        "minChars": 2,
+        "maxChars": 30,
+        "example": "Global Community"
+      },
+      "bottomRightText": {
+        "required": false,
+        "minChars": 2,
+        "maxChars": 30,
+        "example": "hello@example.com"
+      }
+    }
+  },
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "brandName?": "string (default: 'Webild')",
+    "bottomLeftText?": "string (default: 'Global Community')",
+    "bottomRightText?": "string (default: 'hello@example.com')",
+    "topBarClassName?": "string (default: '')"
+  },
+  "usageExample": "<NavbarStyleFullscreen navItems={[{name: 'Home', id: 'home'}, {name: 'About', id: 'about'}, {name: 'Services', id: 'services'}, {name: 'Blog', id: 'blog'}, {name: 'Contact', id: 'contact'}]} bottomLeftText=\"Global Community\" bottomRightText=\"hello@example.com\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires navItems[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

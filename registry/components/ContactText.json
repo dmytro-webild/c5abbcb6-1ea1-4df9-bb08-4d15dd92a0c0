@@ -1,0 +1,56 @@
+{
+  "name": "ContactText",
+  "description": "Centered contact section with animated text and action buttons in a card container.",
+  "details": "Use for simple, focused contact call-to-actions with emphasis on messaging. Layout: Section wrapper with optional inverted background → Card container (w-content-width, card class, rounded-theme-capped, py-20 px-10) → Centered content area (w-3/4 on md+) with TextAnimation heading and buttons. Text uses GSAP scroll-triggered animation (words-trigger variant) with configurable animation type (entrance-slide, reveal-blur, or background-highlight). Supports up to 2 buttons with px-8 spacing in flex layout. Card background adapts to theme.cardStyle. Text color determined by shouldUseInvertedText utility based on useInvertedBackground and cardStyle. Best for clean contact sections, inquiry prompts, or call-to-action blocks with animated messaging.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Ready to start your next project? Let's create something amazing together.",
+        "minChars": 10,
+        "maxChars": 125
+      },
+      "animationType": {
+        "required": false,
+        "default": "entrance-slide",
+        "options": [
+          "entrance-slide",
+          "reveal-blur",
+          "background-highlight"
+        ],
+        "note": "GSAP scroll-triggered animation type for text"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "note": "Supports up to 2 buttons with px-8 spacing. Buttons use theme.defaultButtonVariant."
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "animationType?": "'entrance-slide' | 'reveal-blur' | 'background-highlight' (default: 'entrance-slide')",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' } (required)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string - Outer wrapper styling",
+    "contentClassName?": "string - Card content wrapper styling",
+    "textClassName?": "string - TextAnimation heading styling",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<ContactText text=\"Ready to start your next project? Let's create something amazing together.\" animationType=\"entrance-slide\" buttons={[{ text: 'Get in Touch', href: '/contact' }, { text: 'View Portfolio', href: '/portfolio' }]} background={{ variant: 'plain' }} useInvertedBackground={false} />",
+  "do": [
+    "Use for contact pages",
+    "Use for lead generation",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

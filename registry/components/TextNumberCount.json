@@ -1,0 +1,40 @@
+{
+  "name": "TextNumberCount",
+  "description": "Animated number counter that increments smoothly from a start to an end value.",
+  "details": "Use for statistics, or metrics where a counting animation adds emphasis. Numbers animate on mount or when scrolled into view. Supports decimals, currency, and optional suffix/prefix.",
+  "constraints": {
+    "numberRules": {
+      "value": {
+        "required": true,
+        "example": 99.99
+      },
+      "startFrom": {
+        "required": false,
+        "example": 0
+      }
+    }
+  },
+  "propsSchema": {
+    "value": "number",
+    "startFrom?": "number",
+    "duration?": "number",
+    "format?": "Intl.NumberFormatOptions",
+    "locales?": "string",
+    "prefix?": "string",
+    "suffix?": "string",
+    "animateOnScroll?": "boolean",
+    "threshold?": "number",
+    "className?": "string"
+  },
+  "usageExample": "<TextNumberCount />",
+  "do": [
+    "Use for statistics displays",
+    "Use for achievement showcases"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

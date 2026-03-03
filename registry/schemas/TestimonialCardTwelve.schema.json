@@ -1,0 +1,19 @@
+{
+  "name": "TestimonialCardTwelve",
+  "propsSchema": {
+    "testimonials": "Array<{ id: string, name: string, imageSrc: string, imageAlt?: string }>",
+    "cardTitle": "string",
+    "cardTag": "string",
+    "cardTagIcon?": "LucideIcon",
+    "cardAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Testimonials section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "avatarClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardTagClassName?": "string"
+  }
+}

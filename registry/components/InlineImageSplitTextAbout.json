@@ -1,0 +1,70 @@
+{
+  "name": "InlineImageSplitTextAbout",
+  "description": "About section with dynamic heading composed of alternating text and inline image segments.",
+  "details": "Use for impactful about statements with visual branding elements. Heading is composed of an array of segments that can be text or images in any order. Images are styled with primary-button styling and alternate rotation (-rotate-12, rotate-12) for dynamic visual effect. Images are square (1.1em height) with aspect-square ratio, aligned middle with horizontal margins. Up to 2 optional CTA buttons with primary/secondary styling. Button variant controlled by ThemeProvider.",
+  "constraints": {
+    "textRules": {
+      "heading[].content": {
+        "required": "text segments require content",
+        "example": "Building the future with",
+        "minChars": 1,
+        "maxChars": 100,
+        "note": "Each text segment in the heading array"
+      }
+    },
+    "imageRules": {
+      "heading[].src": {
+        "required": "image segments require src",
+        "example": "/brand/logo.png or https://example.com/image.png",
+        "note": "Supports local paths and external URLs. External URLs are rendered with unoptimized flag."
+      },
+      "heading[].alt": {
+        "required": false,
+        "example": "Company logo",
+        "note": "Optional alt text for images. Omit or use empty string for decorative images (aria-hidden=true when empty)."
+      }
+    },
+    "headingRules": {
+      "minSegments": 1,
+      "note": "heading array can contain any number of text and image segments in any order. Images automatically alternate rotation direction (1st: -rotate-12, 2nd: rotate-12, etc.)."
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. Border radius controlled by ThemeProvider's borderRadius."
+    }
+  },
+  "propsSchema": {
+    "heading": "Array<{ type: 'text'; content: string } | { type: 'image'; src: string; alt?: string }>",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "headingClassName?": "string",
+    "imageWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\n<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <InlineImageSplitTextAbout heading={[{ type: 'text', content: 'Building the future with' }, { type: 'image', src: '/brand/logo.png', alt: 'Company logo' }, { type: 'text', content: 'innovative solutions' }]} useInvertedBackground={false} buttons={[{ text: 'Get Started', href: '/signup' }, { text: 'Learn More', href: '/about' }]} />\n</ThemeProvider>",
+  "do": [
+    "Use for about pages",
+    "Use for company information",
+    "Requires heading[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

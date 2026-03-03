@@ -1,0 +1,21 @@
+{
+  "name": "AuroraBackground",
+  "description": "Aurora borealis-style background with multiple rotated gradient bars and blur effect.",
+  "details": "Use for premium, visually striking hero sections or landing pages. Features 5 rotated gradient bars with backdrop-blur-3xl overlay creating an aurora effect. Uses background-accent color at varying opacities (5-10%). Fixed positioning with z-0.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string"
+  },
+  "usageExample": "<AuroraBackground />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

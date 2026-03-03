@@ -1,0 +1,130 @@
+{
+  "name": "HeroSplitDoubleCarousel",
+  "description": "Split-layout hero section with text content on one side and two vertical marquee columns on the other, with items scrolling in opposite directions.",
+  "details": "Use for landing pages, portfolios, and creative showcases. Features split layout with TextBox on one side and dual vertical carousels on the other. Left carousel scrolls up, right carousel scrolls down, creating a visually engaging infinite scroll effect. Each carousel item displays an image or video in a card container. Supports optional logo marquee at the bottom.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Build Modern Web Experiences",
+        "minChars": 2,
+        "maxChars": 36
+      },
+      "description": {
+        "required": true,
+        "example": "Create stunning, responsive websites with our comprehensive component library",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "New Release",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "carouselRules": {
+      "leftCarouselItems": {
+        "required": true,
+        "minItems": 4,
+        "structure": {
+          "imageSrc": "string - Path to image",
+          "videoSrc": "string - Path to video (optional)",
+          "imageAlt": "string - Alt text for image",
+          "videoAriaLabel": "string - Aria label for video"
+        },
+        "note": "Items are duplicated 4x for seamless infinite scroll"
+      },
+      "rightCarouselItems": {
+        "required": true,
+        "minItems": 4,
+        "structure": {
+          "imageSrc": "string - Path to image",
+          "videoSrc": "string - Path to video (optional)",
+          "imageAlt": "string - Alt text for image",
+          "videoAriaLabel": "string - Aria label for video"
+        },
+        "note": "Items are duplicated 4x for seamless infinite scroll"
+      },
+      "carouselPosition": {
+        "required": false,
+        "options": [
+          "left",
+          "right"
+        ],
+        "default": "right"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://example.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "leftCarouselItems": "Array<{ imageSrc?: string; videoSrc?: string; imageAlt?: string; videoAriaLabel?: string }>",
+    "rightCarouselItems": "Array<{ imageSrc?: string; videoSrc?: string; imageAlt?: string; videoAriaLabel?: string }>",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatars?": "Avatar[] - Array of avatar objects with src and alt properties",
+    "avatarText?": "string - Text displayed next to the avatar group",
+    "carouselPosition?": "'left' | 'right' (default: 'right')",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "marqueeItems?": "MarqueeItem[] - Optional logo marquee items for bottom of section",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true)",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "carouselWrapperClassName?": "string",
+    "carouselColumnClassName?": "string",
+    "carouselItemClassName?": "string",
+    "carouselImageClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<HeroSplitDoubleCarousel background={{ variant: 'glowing-orb' }} tag=\"New Release\" tagIcon={Sparkles} title=\"Build Modern Web Experiences\" description=\"Create stunning, responsive websites with our comprehensive component library\" carouselPosition=\"right\" leftCarouselItems={[{ imageSrc: '/placeholder1.jpg', imageAlt: 'Gallery 1' }, { imageSrc: '/placeholder2.jpg', imageAlt: 'Gallery 2' }, { imageSrc: '/placeholder3.jpg', imageAlt: 'Gallery 3' }, { imageSrc: '/placeholder4.jpg', imageAlt: 'Gallery 4' }]} rightCarouselItems={[{ imageSrc: '/placeholder5.jpg', imageAlt: 'Gallery 5' }, { imageSrc: '/placeholder6.jpg', imageAlt: 'Gallery 6' }, { imageSrc: '/placeholder7.jpg', imageAlt: 'Gallery 7' }, { imageSrc: '/placeholder8.jpg', imageAlt: 'Gallery 8' }]} buttons={[{ text: 'Get Started', href: 'https://example.com' }, { text: 'Learn More', href: 'about' }]} />",
+  "do": [
+    "Use for landing pages with visual portfolios",
+    "Use for image galleries and creative showcases",
+    "Use when you want continuous visual motion",
+    "Requires leftCarouselItems[]",
+    "Requires rightCarouselItems[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use with fewer than 4 items per column",
+    "Do not use when static media is preferred"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "TextAnimation",
+  "description": "Unified scroll-triggered text animation component with three distinct animation types and two trigger variants.",
+  "details": "A versatile text animation component that offers three animation types, each with two trigger variants (trigger, words-trigger).",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "This animation responds to scroll. Watch as the text comes to life."
+      }
+    }
+  },
+  "propsSchema": {
+    "type?": "'entrance-slide' | 'reveal-blur' | 'background-highlight'",
+    "title": "string",
+    "children?": "React.ReactNode",
+    "variant?": "'trigger' | 'words-trigger'",
+    "className?": "string",
+    "duration?": "number",
+    "stagger?": "number",
+    "start?": "string",
+    "end?": "string",
+    "ariaLabel?": "string",
+    "gradientColors?": "{ from: string, to: string }"
+  },
+  "usageExample": "<TextAnimation />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

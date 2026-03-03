@@ -1,0 +1,19 @@
+{
+  "name": "PlainBackground",
+  "description": "Simple solid background using theme background color.",
+  "details": "Use for clean, minimal layouts with no visual distractions. Provides a fixed background div with bg-background theme color.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string"
+  },
+  "usageExample": "<PlainBackground />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

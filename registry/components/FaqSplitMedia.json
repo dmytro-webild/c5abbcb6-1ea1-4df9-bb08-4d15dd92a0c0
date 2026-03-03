@@ -1,0 +1,123 @@
+{
+  "name": "FaqSplitMedia",
+  "description": "FAQ section with split layout featuring media (image/video) on one side and accordion list on the other.",
+  "details": "Use for displaying FAQs with visual context. Layout: Optional TextBox Header → Grid with Media (2/5 width) + Accordions (3/5 width). Media can be positioned left or right via mediaPosition prop. Uses CSS Grid with auto-rows-fr to ensure media and FAQ content match height exactly. Media container has fixed height on mobile (h-80) and auto height on desktop to match FAQ content. Supports both images and videos. Only one accordion item can be open at a time. Supports two animation types: 'smooth' (height transition) and 'instant' (immediate show/hide). Each FAQ requires unique id, title (question), and content (answer with HTML support). Best for FAQ pages where visual elements enhance understanding.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Frequently Asked Questions",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Find answers to common questions about our products and services",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Help",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "faqRules": {
+      "faqs": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{\"id\": \"1\", \"title\": \"What is your return policy?\", \"content\": \"We offer a 30-day money-back guarantee.\"}]",
+        "note": "Array of FAQ items. Each item requires unique id, title (question), and content (answer with HTML support)."
+      },
+      "animationType": {
+        "required": false,
+        "default": "smooth",
+        "options": [
+          "smooth",
+          "instant"
+        ],
+        "note": "Animation type for accordion open/close. 'smooth' uses height transition, 'instant' shows/hides immediately."
+      },
+      "mediaPosition": {
+        "required": false,
+        "default": "left",
+        "options": [
+          "left",
+          "right"
+        ],
+        "note": "Position of media relative to FAQ list."
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "note": "Path to image file. Either imageSrc or videoSrc should be provided."
+      },
+      "videoSrc": {
+        "required": false,
+        "note": "Path to video file. Either imageSrc or videoSrc should be provided."
+      }
+    }
+  },
+  "propsSchema": {
+    "faqs": "Array<{ id: string, title: string, content: string }> - FAQ items",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'FAQ section video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "mediaPosition?": "'left' | 'right' (default: 'left')",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "faqsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal' (required)",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "animationType?": "'smooth' | 'instant' (default: 'smooth')",
+    "showCard?": "boolean (default: true)",
+    "ariaLabel?": "string (default: 'FAQ section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "contentClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "faqsContainerClassName?": "string",
+    "accordionClassName?": "string",
+    "accordionTitleClassName?": "string",
+    "accordionIconContainerClassName?": "string",
+    "accordionIconClassName?": "string",
+    "accordionContentClassName?": "string",
+    "separatorClassName?": "string"
+  },
+  "usageExample": "<FaqSplitMedia faqs={[{id: '1', title: 'What is your return policy?', content: 'We offer a 30-day money-back guarantee on all our products.'}, {id: '2', title: 'How long does shipping take?', content: 'Standard shipping typically takes 5-7 business days.'}]} imageSrc=\"/images/faq-hero.jpg\" imageAlt=\"Customer support representative\" title=\"Frequently Asked Questions\" description=\"Find answers to common questions\" textboxLayout=\"default\" useInvertedBackground={false} mediaPosition=\"left\" />",
+  "do": [
+    "Use for help pages",
+    "Use for support sections",
+    "Requires faqs[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

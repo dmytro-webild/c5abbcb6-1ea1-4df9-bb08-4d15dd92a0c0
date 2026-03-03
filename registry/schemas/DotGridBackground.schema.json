@@ -1,0 +1,8 @@
+{
+  "name": "DotGridBackground",
+  "propsSchema": {
+    "size?": "'small' | 'medium' | 'large' (default: 'medium')",
+    "perspectiveThreeD?": "boolean (default: false)",
+    "className?": "string"
+  }
+}

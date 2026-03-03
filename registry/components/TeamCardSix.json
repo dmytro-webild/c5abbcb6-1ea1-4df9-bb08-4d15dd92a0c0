@@ -1,0 +1,122 @@
+{
+  "name": "TeamCardSix",
+  "description": "Team member card with full-bleed image background and blurred gradient overlay with name and role text at bottom.",
+  "details": "Use for team member displays with visual impact and modern blur effect. Layout: Full Image Background with Blurred Gradient Overlay at bottom third. Image fills entire card (rounded-theme-capped). Name (2xl font-medium) and role (base size) displayed in overlay at bottom with text-foreground color. Backdrop blur effect (backdrop-blur-xl) covers bottom 1/3 with gradient mask (transparent to black 60%). Uses CardStack pattern for responsive grid or carousel layout. Automatically switches between grid (1-4 items) and carousel (5+ items) based on gridVariant. All core fields required for visual consistency. Best for team showcases, staff galleries, or about us sections where photos are prominent. Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Meet Our Team",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "The talented people behind our success",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Team",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "teamMemberRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "name": {
+        "required": true,
+        "example": "Sarah Johnson",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Team member name displayed at 2xl font-medium with truncate in blurred overlay"
+      },
+      "role": {
+        "required": true,
+        "example": "CEO & Founder",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Role/title displayed at base size with truncate in blurred overlay"
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/team/sarah.jpg",
+        "note": "Image path for team member photo (full-bleed with rounded-theme-capped)"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/team/sarah.mp4",
+        "note": "Video path for team member (alternative to imageSrc)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Portrait of Sarah Johnson",
+        "note": "Alt text for image (defaults to member name if not provided)"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Video of Sarah Johnson",
+        "note": "Aria label for video (defaults to member name if not provided)"
+      }
+    }
+  },
+  "propsSchema": {
+    "members": "Array<{ id: string, name: string, role: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "gridVariant": "'uniform-all-items-equal' | 'bento-grid' | 'bento-grid-inverted' | 'asymmetric-60-wide-40-narrow' | 'three-columns-all-equal-width' | 'one-large-right-three-stacked-left' | 'items-top-row-full-width-bottom' | 'full-width-top-items-bottom-row' | 'one-large-left-three-stacked-right' (required - determines grid layout or carousel trigger)",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-95 2xl:min-h-105')",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Team section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "imageClassName?": "string",
+    "overlayClassName?": "string",
+    "nameClassName?": "string",
+    "roleClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<TeamCardSix members={[{ id: '1', name: 'Sarah Johnson', role: 'CEO & Founder', imageSrc: '/team/sarah.jpg' }, { id: '2', name: 'Michael Chen', role: 'CTO', imageSrc: '/team/michael.jpg' }]} gridVariant=\"uniform-all-items-equal\" animationType=\"slide-up\" title=\"Meet Our Team\" description=\"The talented people behind our success\" textboxLayout=\"default\" useInvertedBackground={false} tag=\"Team\" tagIcon={Users} />",
+  "do": [
+    "Use for about pages",
+    "Use for company information",
+    "Use for team pages",
+    "Use for staff directories",
+    "Requires members[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

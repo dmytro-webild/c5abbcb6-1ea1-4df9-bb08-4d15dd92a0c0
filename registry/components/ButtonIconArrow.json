@@ -1,0 +1,36 @@
+{
+  "name": "ButtonIconArrow",
+  "description": "Button with a trailing arrow icon that transforms on hover.",
+  "details": "Use for CTAs where a subtle icon transformation helps indicate forward navigation. The arrow icon transitions into a square on hover/focus. Keep label short and simple.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Button",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "textClassName?": "string",
+    "iconClassName?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonIconArrow text=\"Continue\" href=\"next-section\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

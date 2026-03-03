@@ -1,0 +1,109 @@
+{
+  "name": "FeatureCardTwentyOne",
+  "description": "Split layout with media on one side and TextBox with accordion items on the other.",
+  "details": "Use for feature sections that need expandable content areas. Layout: 50/50 split with image/video on one side and TextBox + accordion on the other. Media position configurable (left/right). First accordion item open by default. Accordion items have divider lines between them. Mobile: stacked vertically with centered text. Supports inverted backgrounds.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Custom designs",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Explore our range of customizable solutions designed to meet your unique needs.",
+        "minChars": 10,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "accordionRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "note": "Unique identifier for each accordion item"
+      },
+      "title": {
+        "required": true,
+        "example": "Inspiration + innovation",
+        "minChars": 2,
+        "maxChars": 60,
+        "note": "Accordion header text"
+      },
+      "content": {
+        "required": true,
+        "example": "From custom colourways to bespoke elements built from the ground up.",
+        "minChars": 10,
+        "maxChars": 500,
+        "note": "Accordion expanded content (supports HTML)"
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 6,
+      "recommendedItems": 3
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "accordionItems": "Array<{ id: string, title: string, content: string }>",
+    "imageSrc?": "string (either imageSrc or videoSrc required)",
+    "imageAlt?": "string",
+    "videoSrc?": "string (either imageSrc or videoSrc required)",
+    "videoAriaLabel?": "string",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "mediaPosition?": "'left' | 'right' (default: 'left')",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "contentClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "accordionContainerClassName?": "string",
+    "accordionClassName?": "string",
+    "accordionTitleClassName?": "string",
+    "accordionContentClassName?": "string",
+    "accordionIconContainerClassName?": "string",
+    "accordionIconClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentyOne title=\"Custom designs\" description=\"Explore our range of customizable solutions.\" tag=\"Features\" imageSrc=\"/images/feature.webp\" imageAlt=\"Feature showcase\" accordionItems={[{ id: '1', title: 'Inspiration + innovation', content: 'Collaborate with us on custom designs.' }, { id: '2', title: 'Sustainability + us', content: 'Committed to sustainable practices.' }, { id: '3', title: 'Request samples', content: 'Get in touch for samples and pricing.' }]} buttons={[{ text: 'Learn more', href: '#' }]} useInvertedBackground={false} mediaPosition=\"left\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]",
+    "Requires accordionItems[]"
+  ],
+  "dont": [
+    "Do not use less than 2 items",
+    "Do not use more than 6 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "NavbarStyleFullscreen",
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "brandName?": "string (default: 'Webild')",
+    "bottomLeftText?": "string (default: 'Global Community')",
+    "bottomRightText?": "string (default: 'hello@example.com')",
+    "topBarClassName?": "string (default: '')"
+  }
+}

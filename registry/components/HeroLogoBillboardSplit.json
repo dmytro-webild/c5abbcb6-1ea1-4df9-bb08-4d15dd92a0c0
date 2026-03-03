@@ -1,0 +1,105 @@
+{
+  "name": "HeroLogoBillboardSplit",
+  "description": "Hero section with split layout (description left, buttons right), large text logo that scales to fill container width, and single framed media at bottom. Supports flex-col or flex-col-reverse layout order.",
+  "details": "Use for brand-focused landing pages that prioritize messaging and CTAs with flexible logo positioning. Features split layout on desktop with description text on the left (1/2 width) and up to 2 action buttons on the right, aligned to bottom of description. Large responsive text logo automatically fills the container width and can be positioned above or below the split section using layoutOrder prop ('default' = split then logo, 'reverse' = logo then split). Media section at bottom can be displayed in simple card frame or browser mockup with address bar. Description text is larger on desktop (text-3xl) than mobile (text-lg). Only first 2 buttons are displayed using slice(0, 2).",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": true,
+        "example": "ACME",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "description": {
+        "required": true,
+        "example": "Create stunning, responsive websites with our comprehensive component library",
+        "minChars": 5,
+        "maxChars": 150
+      }
+    },
+    "layoutRules": {
+      "layoutOrder": {
+        "required": true,
+        "options": [
+          "default",
+          "reverse"
+        ],
+        "note": "'default' displays split section (description/buttons) then logo (flex-col). 'reverse' displays logo then split section (flex-col-reverse)."
+      }
+    },
+    "buttonRules": {
+      "buttons": {
+        "required": true,
+        "minItems": 1,
+        "maxItems": 2,
+        "note": "Only first 2 buttons are displayed using slice(0, 2). Uses theme.defaultButtonVariant for styling."
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Product showcase",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "frameStyle": {
+        "required": false,
+        "options": [
+          "card",
+          "browser"
+        ],
+        "default": "card",
+        "note": "'card' displays media in simple card with padding. 'browser' wraps media in browser mockup with address bar and window controls."
+      }
+    }
+  },
+  "propsSchema": {
+    "logoText": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}> (required)",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "layoutOrder": "'default' | 'reverse' (required)",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "frameStyle?": "'card' | 'browser' (default: 'card')",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoContainerClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "logoClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "browserBarClassName?": "string",
+    "addressBarClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\" cardStyle=\"layered-gradient\">\n  <HeroLogoBillboardSplit \n    logoText=\"ACME\" \n    description=\"Create stunning, responsive websites with our comprehensive component library\" \n    background={{ variant: \"radial-gradient\" }}\n    buttons={[\n      { text: 'Get Started', href: '#' },\n      { text: 'Learn More', href: '#' }\n    ]}\n    layoutOrder=\"default\"\n    imageSrc=\"/hero.jpg\"\n    imageAlt=\"Hero showcase\"\n    frameStyle=\"browser\"\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires buttons[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

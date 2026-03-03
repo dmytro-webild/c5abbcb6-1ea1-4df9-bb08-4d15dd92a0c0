@@ -1,0 +1,36 @@
+{
+  "name": "AvatarGroup",
+  "description": "Displays a group of user avatars with overlapping layout and optional text label.",
+  "details": "Use for showing user participation, testimonials, or social proof. Displays up to 5 avatars by default with remaining count badge. Avatars overlap with card styling. Includes optional text label (e.g., 'Join 1,000+ members').",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": false,
+        "example": "Join 1,000+ members",
+        "minChars": 2,
+        "maxChars": 50
+      }
+    }
+  },
+  "propsSchema": {
+    "avatars": "Array<{ src: string, alt?: string }> - User avatar images",
+    "text?": "string",
+    "maxVisible?": "number (default: 5)",
+    "className?": "string",
+    "avatarClassName?": "string",
+    "textClassName?": "string",
+    "ariaLabel?": "string (default: 'User avatars')"
+  },
+  "usageExample": "<AvatarGroup avatars={[{ src: '/avatar1.jpg', alt: 'User 1' }, { src: '/avatar2.jpg', alt: 'User 2' }]} text=\"Join 1,000+ members\" />",
+  "do": [
+    "Use for social proof",
+    "Use for customer reviews",
+    "Requires avatars[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

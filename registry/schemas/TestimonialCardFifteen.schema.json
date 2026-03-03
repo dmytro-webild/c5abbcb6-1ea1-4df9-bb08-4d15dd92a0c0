@@ -1,0 +1,21 @@
+{
+  "name": "TestimonialCardFifteen",
+  "propsSchema": {
+    "testimonial": "string",
+    "rating": "number (0-5)",
+    "author": "string",
+    "avatars": "Array<{ src: string, alt: string }>",
+    "ratingAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatarsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Testimonial section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "ratingClassName?": "string",
+    "starClassName?": "string",
+    "testimonialClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "avatarClassName?": "string",
+    "avatarImageClassName?": "string"
+  }
+}

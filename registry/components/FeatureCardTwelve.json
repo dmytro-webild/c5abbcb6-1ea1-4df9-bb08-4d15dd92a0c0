@@ -1,0 +1,119 @@
+{
+  "name": "FeatureCardTwelve",
+  "description": "List-based feature section with large label on left and content with bullet points on right.",
+  "details": "Use for feature comparisons, tier showcases, or service level displays. Uses CardList with variant system for card or border layouts. Layout: Optional TextBox Header → Vertical Stack of Features. Each feature card has horizontal split (md breakpoint): Left side (50%): Large label text (5xl mobile / 6xl desktop). Right side (50%): Title + inline bullet list with accent-colored dots (•) + optional buttons (0-2). Card variant: Items wrapped in cards with full padding (p-6 md:p-15) and mobile divider line. Border variant: Items separated by accent divider lines with bottom padding (pb-6 md:pb-10), no mobile divider. Text colors conditional on variant: border uses useInvertedBackground directly, card uses shouldUseLightText. Supports 0-2 buttons per feature with automatic primary/secondary styling via getButtonProps. Best for pricing tiers, service levels, or feature breakdowns with clear labeling.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Choose Your Plan",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Find the perfect fit for your needs",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Plans",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureRules": {
+      "id": {
+        "required": true,
+        "example": "premium",
+        "note": "Unique identifier for the feature"
+      },
+      "label": {
+        "required": true,
+        "example": "Premium",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Large display label shown on left side (5xl mobile, 6xl desktop)"
+      },
+      "title": {
+        "required": true,
+        "example": "Premium features for your most demanding needs",
+        "minChars": 10,
+        "maxChars": 120,
+        "note": "Feature heading shown at xl (mobile) / 3xl (desktop)"
+      },
+      "items": {
+        "required": true,
+        "minItems": 1,
+        "maxItems": 8,
+        "structure": "string[]",
+        "note": "Inline bullet list with accent-colored dots. Each item should be 5-50 characters."
+      },
+      "buttons": {
+        "required": false,
+        "maxButtons": 2,
+        "structure": "Array<{text: string, onClick?: () => void, href?: string}>",
+        "note": "Optional buttons at bottom of content area. First button is primary, second is secondary."
+      }
+    },
+    "itemRules": {
+      "minItems": 1,
+      "maxItems": 8,
+      "recommendedItems": "2-5",
+      "note": "Works best with 2-5 features for clear comparison"
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, label: string, title: string, items: string[], buttons?: Array<{text: string, onClick?: () => void, href?: string}> }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "cardContentClassName?": "string",
+    "labelClassName?": "string",
+    "cardTitleClassName?": "string",
+    "itemsContainerClassName?": "string",
+    "itemTextClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwelve features={[{ id: 'premium', label: 'Premium', title: 'Premium features for your most demanding needs and growth goals', items: ['Priority support', 'Advanced features', 'Custom integrations'], buttons: [{ text: 'Learn more', href: '#' }, { text: 'Get started', onClick: () => console.log('clicked') }] }]} animationType=\"opacity\" variant=\"border\" title=\"Choose Your Plan\" description=\"Find the perfect fit for your needs\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Requires features[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 8 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

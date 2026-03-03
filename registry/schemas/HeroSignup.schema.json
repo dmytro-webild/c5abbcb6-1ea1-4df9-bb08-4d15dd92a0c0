@@ -1,0 +1,26 @@
+{
+  "name": "HeroSignup",
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'glowing-orb-sparkles' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Get Started')",
+    "onSubmit?": "(email: string) => void",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

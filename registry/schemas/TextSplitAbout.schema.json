@@ -1,0 +1,19 @@
+{
+  "name": "TextSplitAbout",
+  "propsSchema": {
+    "title": "string",
+    "description": "string[]",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "showBorder?": "boolean (default: false)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

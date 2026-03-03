@@ -1,0 +1,132 @@
+{
+  "name": "FeatureCardNineteen",
+  "description": "Timeline feature section with full-width cards showing step numbers and rotated media.",
+  "details": "Use for process or step-by-step showcases with large visual impact. Layout: TextBox Header → Full-width timeline cards with scroll-triggered stacking. Each card has: Tag + Large title (left), Subtitle + Description + Buttons (bottom left), Step number (top right), Rotated image/video (right). Mobile: Single column with divider line, step number hidden. Best for showcasing 3-6 step processes or service phases.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Process",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover how we bring ideas to life",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "How it works",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "id": {
+        "required": true,
+        "example": 1,
+        "note": "Numeric ID used to generate step number (01, 02, etc.)"
+      },
+      "tag": {
+        "required": true,
+        "example": "Expertise",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "title": {
+        "required": true,
+        "example": "Strategy",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "subtitle": {
+        "required": true,
+        "example": "Data-driven decisions for growth.",
+        "minChars": 5,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "We analyze market trends and user behavior to create strategies that drive real results.",
+        "minChars": 50,
+        "maxChars": 350
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/images/strategy.webp",
+        "note": "Image source URL (either imageSrc or videoSrc)"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/videos/strategy.mp4",
+        "note": "Video source URL (either imageSrc or videoSrc)"
+      },
+      "buttons": {
+        "required": false,
+        "example": [
+          {
+            "text": "Learn more",
+            "href": "/strategy"
+          }
+        ],
+        "note": "Optional buttons per feature card (max 2)"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: number, tag: string, title: string, subtitle: string, description: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, buttons?: Array<{text: string, onClick?: () => void, href?: string}> }> (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "cardContentClassName?": "string",
+    "cardTagClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string",
+    "imageContainerClassName?": "string",
+    "imageClassName?": "string"
+  },
+  "usageExample": "<FeatureCardNineteen features={[{ id: 1, tag: 'Expertise', title: 'Strategy', subtitle: 'Data-driven decisions', description: 'We analyze market trends...', imageSrc: '/images/strategy.webp' }]} title=\"Our Process\" description=\"Discover how we bring ideas to life\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires features[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use multiple items",
+    "Do not use non-sequential content",
+    "Do not use single item"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

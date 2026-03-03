@@ -1,0 +1,121 @@
+{
+  "name": "HeroSplit",
+  "description": "Split-layout hero section with configurable background, text content on one side, and single image/video on the other, with responsive centering.",
+  "details": "Use for hero sections where visual content and text have equal weight. Features required background variant (choose from animated grids, gradient effects, glowing orb, or 'plain' for no background), split layout with configurable image position (left/right), one image or video with fixed height control. Responsive design centers content on mobile. Optional tag with icon and up to 2 CTA buttons. Text automatically centers on mobile and aligns left on desktop. Background variants include preset options for zero-config usage.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Build Better Products",
+        "minChars": 2,
+        "maxChars": 36
+      },
+      "description": {
+        "required": true,
+        "example": "Create exceptional user experiences with our design system",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "New Release",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Product showcase",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "imagePosition": {
+        "required": false,
+        "options": [
+          "left",
+          "right"
+        ],
+        "default": "right"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://example.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "avatars?": "Avatar[] - Array of avatar objects with src and alt properties",
+    "avatarText?": "string - Text displayed next to the avatar group",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "imagePosition?": "'left' | 'right' (default: 'right')",
+    "fixedMediaHeight?": "boolean (default: true) - When true, media wrapper is aspect-square on mobile and md:h-[65vh] on desktop",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "marqueeItems?": "Array<{ type: 'image', src: string, alt?: string } | { type: 'text', text: string } | { type: 'text-icon', text: string, icon: LucideIcon }> - Optional marquee at bottom of hero",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true) - Card styling for text/text-icon items, images never have cards",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <HeroSplit \n    background={{ variant: 'glowing-orb' }}\n    title=\"Build Better Products\" \n    description=\"Create exceptional user experiences with our design system\" \n    tag=\"New Release\"\n    imagePosition=\"right\" \n    imageSrc=\"/hero.jpg\"\n    imageAlt=\"Product showcase\"\n    buttons={[{ text: 'Start Building', href: 'https://example.com' }, { text: 'View Demo', href: 'demo' }]} \n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires buttons?[]",
+    "Requires avatars?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

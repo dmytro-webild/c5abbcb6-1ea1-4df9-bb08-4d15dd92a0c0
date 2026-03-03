@@ -1,0 +1,25 @@
+{
+  "name": "HeroBillboardDashboard",
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "dashboard": "{title: string, stats: [DashboardStat, DashboardStat, DashboardStat], logoIcon: LucideIcon, sidebarItems: DashboardSidebarItem[], searchPlaceholder?: string, buttons: ButtonConfig[], chartTitle?: string, chartData?: ChartDataItem[], listItems: DashboardListItem[], listTitle?: string, imageSrc: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, className?: string, containerClassName?: string, sidebarClassName?: string, statClassName?: string, chartClassName?: string, listClassName?: string}",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "dashboardClassName?": "string"
+  }
+}

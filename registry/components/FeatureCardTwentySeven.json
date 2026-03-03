@@ -1,0 +1,93 @@
+{
+  "name": "FeatureCardTwentySeven",
+  "description": "Interactive flip cards with 3D rotation effect. Front shows title, icon, and media; back reveals description.",
+  "details": "Use for interactive feature showcases where users can explore details by clicking. Each card flips 180 degrees on Y-axis with 3D perspective. Front side displays title with Plus icon button and media content (image/video). Back side shows same title with X icon (rotated Plus) and description text. Uses CardStack for grid/carousel layout. Best for 3-6 items where engagement and exploration is desired.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Services",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover what makes us different",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Services",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureRules": {
+      "minItems": 3,
+      "maxItems": 8,
+      "recommendedItems": "4",
+      "structure": {
+        "id": "string - Unique identifier (required)",
+        "title": "string - Card title on both sides (required)",
+        "description": "string - Description shown on back side (required)",
+        "imageSrc": "string - Path to image (optional if videoSrc provided)",
+        "videoSrc": "string - Path to video (optional if imageSrc provided)",
+        "imageAlt": "string - Alt text for image"
+      },
+      "note": "Each feature requires id, title, description, and media (image or video). Cards flip to reveal description on click."
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, description: string, imageSrc?: string, videoSrc?: string, imageAlt?: string }>",
+    "gridVariant": "GridVariant (required)",
+    "animationType": "CardAnimationType (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "'noInvert' | 'invertDefault' (required)",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-none')",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentySeven features={[{ id: '1', title: 'Web Development', description: 'Custom websites built with modern technologies.', imageSrc: '/service1.jpg', imageAlt: 'Web Development' }]} gridVariant=\"uniform-4-items\" animationType=\"slide-up\" title=\"Our Services\" description=\"Discover what makes us different\" textboxLayout=\"default\" useInvertedBackground=\"noInvert\" />",
+  "do": [
+    "Use for interactive feature showcases where exploration is desired",
+    "Best for 3-6 items (4 recommended)",
+    "Use high-quality images or videos for the front side",
+    "Keep descriptions concise for back side readability"
+  ],
+  "dont": [
+    "Do not use without media for each feature",
+    "Do not use for text-heavy content on front side",
+    "Do not use for more than 8 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

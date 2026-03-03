@@ -1,0 +1,96 @@
+{
+  "name": "MediaAbout",
+  "description": "Full-width media about section with centered TextBox content overlaid on image or video.",
+  "details": "Use for impactful visual-first about sections where the media is the primary focus with overlaid text content. Features full-width media (image or video) in aspect-video ratio with content-width constraint, rounded corners (theme-capped), and centered TextBox overlay containing title (text-6xl), description, optional tag, and 1-2 CTA buttons. TextBox is constrained to w-content-width md:w-45 for optimal readability. Perfect for hero-like about sections, product showcases, or call-to-action moments where visual impact is key. Section uses standard py-20 padding with useInvertedBackground support for section background.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Elevate Your Experience",
+        "minChars": 2,
+        "maxChars": 100
+      },
+      "description": {
+        "required": true,
+        "example": "Discover a new way to connect, create, and inspire with our innovative solutions.",
+        "minChars": 10,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "About Us",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/about-hero.jpg",
+        "note": "Either imageSrc or videoSrc should be provided. Image is recommended for static visuals."
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/about-video.mp4",
+        "note": "Either imageSrc or videoSrc should be provided. Video is recommended for motion content."
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Our team in action",
+        "note": "Alt text for image. Defaults to empty string (decorative)."
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "About us video",
+        "note": "ARIA label for video accessibility."
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "minButtons": 0,
+      "note": "Buttons are part of TextBox, centered and overlaid on media. First button is primary, second is secondary. Button variant controlled by ThemeProvider's defaultButtonVariant."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string",
+    "videoAriaLabel?": "string",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<MediaAbout title=\"Elevate Your Experience\" description=\"Discover a new way to connect, create, and inspire.\" tag=\"About Us\" imageSrc=\"/about-hero.jpg\" imageAlt=\"Our team\" buttons={[{ text: 'Shop Now', href: '/shop' }]} useInvertedBackground={false} />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for about pages",
+    "Use for company information",
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "name": "FeatureCardTwentyFive",
+  "description": "Two-column grid feature cards with icon, title, description, and dual media items per card.",
+  "details": "Use for showcasing services or features with visual emphasis. Each card displays an icon in a primary button style box, title, description, and two side-by-side images/videos at the bottom. Uses fixed 'two-items-per-row' grid layout on desktop (2 cards per row), button carousel on mobile. Cards have flexible height with images filling remaining space.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Features",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover what makes us different",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Services",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureRules": {
+      "minItems": 2,
+      "maxItems": 8,
+      "recommendedItems": "4",
+      "structure": {
+        "title": "string - Feature card title (required)",
+        "description": "string - Feature card description (required)",
+        "icon": "LucideIcon - Icon displayed in primary button box (required)",
+        "mediaItems": "[MediaItem, MediaItem] - Tuple of exactly 2 media items (required)"
+      },
+      "mediaItemStructure": {
+        "imageSrc": "string - Path to image (optional if videoSrc provided)",
+        "videoSrc": "string - Path to video (optional if imageSrc provided)",
+        "imageAlt": "string - Alt text for image",
+        "videoAriaLabel": "string - Aria label for video"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ title: string, description: string, icon: LucideIcon, mediaItems: [MediaItem, MediaItem] }> - Feature cards with dual media",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean (required)",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "mediaClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "cardIconClassName?": "string",
+    "cardIconWrapperClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentyFive features={[{ title: 'Business Strategy', description: 'Crafting clear strategies for growth.', icon: Target, mediaItems: [{ imageSrc: '/img1.jpg', imageAlt: 'Strategy 1' }, { imageSrc: '/img2.jpg', imageAlt: 'Strategy 2' }] }]} animationType=\"depth-3d\" title=\"Our Features\" description=\"Discover what makes us different\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for features with visual examples",
+    "Each feature requires exactly 2 media items",
+    "Use relevant icons for each feature",
+    "Supports 3D animations"
+  ],
+  "dont": [
+    "Do not use without 2 media items per feature",
+    "Do not use without icons"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

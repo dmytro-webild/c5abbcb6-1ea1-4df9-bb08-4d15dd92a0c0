@@ -1,0 +1,28 @@
+{
+  "name": "BentoGlobe",
+  "description": "Interactive 3D rotating globe component using COBE library with theme-aware colors and customizable markers.",
+  "details": "Use for showcasing global presence, international reach, or geographic data. Features auto-rotating 3D globe with location markers. Colors automatically sync with theme CSS variables (--card for base/glow, --primary-cta for markers). Fully customizable via COBEOptions config. Includes default world markers. Responsive with smooth opacity fade-in. Requires 'cobe' package. Best used within a card container with fixed dimensions.",
+  "constraints": {
+    "globeRules": {
+      "config": {
+        "required": false,
+        "note": "Optional COBEOptions object to customize globe appearance. Default config uses theme colors: baseColor and glowColor use --card, markerColor uses --primary-cta. Can override: phi (rotation), theta (tilt), dark (darkness 0-1), diffuse (lighting), mapSamples, mapBrightness, markers (array of {location: [lat, lng], size: number}), and more. See COBE documentation for full options."
+      }
+    }
+  },
+  "propsSchema": {
+    "className?": "string",
+    "config?": "COBEOptions - Custom globe configuration (see COBE docs)"
+  },
+  "usageExample": "<BentoGlobe className=\"w-full h-full\" config={{ markers: [{ location: [40.7128, -74.006], size: 0.1 }] }} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

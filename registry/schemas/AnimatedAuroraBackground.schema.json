@@ -1,0 +1,8 @@
+{
+  "name": "AnimatedAuroraBackground",
+  "propsSchema": {
+    "className?": "string",
+    "showRadialGradient?": "boolean (default: true)",
+    "invertColors": "boolean (REQUIRED - true for light backgrounds, false for dark backgrounds)"
+  }
+}

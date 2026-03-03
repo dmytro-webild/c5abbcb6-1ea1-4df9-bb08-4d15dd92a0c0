@@ -1,0 +1,2423 @@
+{
+  "NavbarStyleApple": {
+    "category": "navbar",
+    "intent": "product showcase",
+    "bestFor": [
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "navItems[]"
+    ],
+    "import": "@/components/navbar/NavbarStyleApple/NavbarStyleApple",
+    "registryType": "component"
+  },
+  "NavbarLayoutFloatingInline": {
+    "category": "navbar",
+    "intent": "feature showcase",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "navItems[]"
+    ],
+    "import": "@/components/navbar/NavbarLayoutFloatingInline",
+    "registryType": "component"
+  },
+  "NavbarLayoutFloatingOverlay": {
+    "category": "navbar",
+    "intent": "feature showcase",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "navItems[]"
+    ],
+    "import": "@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay",
+    "registryType": "component"
+  },
+  "NavbarStyleFullscreen": {
+    "category": "navbar",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "navItems[]"
+    ],
+    "import": "@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen",
+    "registryType": "component"
+  },
+  "NavbarStyleCentered": {
+    "category": "navbar",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "navItems[]"
+    ],
+    "import": "@/components/navbar/NavbarStyleCentered/NavbarStyleCentered",
+    "registryType": "component"
+  },
+  "HeroBillboard": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "multiple items"
+    ],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboard",
+    "registryType": "section"
+  },
+  "HeroBillboardCarousel": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "portfolios",
+      "image galleries"
+    ],
+    "avoidWhen": [
+      "less than 5 items"
+    ],
+    "requires": [
+      "buttons?[]",
+      "mediaItems[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardCarousel",
+    "registryType": "section"
+  },
+  "HeroBillboardGallery": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "portfolios",
+      "image galleries"
+    ],
+    "avoidWhen": [
+      "less than 5 items"
+    ],
+    "requires": [
+      "buttons?[]",
+      "mediaItems[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardGallery",
+    "registryType": "section"
+  },
+  "HeroSplit": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]",
+      "avatars?[]"
+    ],
+    "import": "@/components/sections/hero/HeroSplit",
+    "registryType": "section"
+  },
+  "HeroSplitKpi": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "kpis[]",
+      "buttons?[]",
+      "avatars?[]"
+    ],
+    "import": "@/components/sections/hero/HeroSplitKpi",
+    "registryType": "section"
+  },
+  "HeroOverlay": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroOverlay",
+    "registryType": "section"
+  },
+  "HeroLogo": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons[]"
+    ],
+    "import": "@/components/sections/hero/HeroLogo",
+    "registryType": "section"
+  },
+  "HeroLogoBillboard": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "multiple items"
+    ],
+    "requires": [],
+    "import": "@/components/sections/hero/HeroLogoBillboard",
+    "registryType": "section"
+  },
+  "HeroLogoBillboardSplit": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons[]"
+    ],
+    "import": "@/components/sections/hero/HeroLogoBillboardSplit",
+    "registryType": "section"
+  },
+  "HeroBillboardScroll": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardScroll",
+    "registryType": "section"
+  },
+  "HeroBillboardRotatedCarousel": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "portfolios",
+      "image galleries",
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [
+      "less than 5 items"
+    ],
+    "requires": [
+      "buttons?[]",
+      "carouselItems[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardRotatedCarousel",
+    "registryType": "section"
+  },
+  "HeroCarouselLogo": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "less than 5 items"
+    ],
+    "requires": [
+      "buttons[]",
+      "slides[]"
+    ],
+    "import": "@/components/sections/hero/heroCarouselLogo/HeroCarouselLogo",
+    "registryType": "section"
+  },
+  "HeroCentered": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "avatars[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroCentered",
+    "registryType": "section"
+  },
+  "HeroSignup": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "lead generation",
+      "newsletter signups"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/sections/hero/HeroSignup",
+    "registryType": "section"
+  },
+  "HeroSplitDualMedia": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "coaching",
+      "consulting"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "mediaItems[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroSplitDualMedia",
+    "registryType": "section"
+  },
+  "HeroPersonalLinks": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "personal pages",
+      "portfolios",
+      "link-in-bio"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "linkCards[]",
+      "socialLinks?[]"
+    ],
+    "import": "@/components/sections/hero/HeroPersonalLinks",
+    "registryType": "section"
+  },
+  "HeroBillboardDashboard": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "SaaS products",
+      "analytics platforms"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "dashboard",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardDashboard",
+    "registryType": "section"
+  },
+  "HeroSplitDoubleCarousel": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "portfolios",
+      "image galleries",
+      "creative agencies"
+    ],
+    "avoidWhen": [
+      "less than 4 items per column"
+    ],
+    "requires": [
+      "leftCarouselItems[]",
+      "rightCarouselItems[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/hero/HeroSplitDoubleCarousel",
+    "registryType": "section"
+  },
+  "HeroSplitTestimonial": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "testimonials[]",
+      "buttons?[]",
+      "avatars?[]"
+    ],
+    "import": "@/components/sections/hero/HeroSplitTestimonial",
+    "registryType": "section"
+  },
+  "HeroBillboardTestimonial": {
+    "category": "hero",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "testimonials[]",
+      "buttons?[]",
+      "avatars?[]"
+    ],
+    "import": "@/components/sections/hero/HeroBillboardTestimonial",
+    "registryType": "section"
+  },
+  "SplitAbout": {
+    "category": "about",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "about pages",
+      "company information"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "titleSegments?[]",
+      "buttons?[]",
+      "bulletPoints[]"
+    ],
+    "import": "@/components/sections/about/SplitAbout",
+    "registryType": "section"
+  },
+  "TextSplitAbout": {
+    "category": "about",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "about pages",
+      "company information"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/about/TextSplitAbout",
+    "registryType": "section"
+  },
+  "TextAbout": {
+    "category": "about",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "about pages",
+      "company information"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/about/TextAbout",
+    "registryType": "section"
+  },
+  "MediaAbout": {
+    "category": "about",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "about pages",
+      "company information",
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/about/MediaAbout",
+    "registryType": "section"
+  },
+  "TestimonialAboutCard": {
+    "category": "about",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "social proof",
+      "customer reviews",
+      "about pages",
+      "company information"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [],
+    "import": "@/components/sections/about/TestimonialAboutCard",
+    "registryType": "section"
+  },
+  "InlineImageSplitTextAbout": {
+    "category": "about",
+    "intent": "about section",
+    "bestFor": [
+      "about pages",
+      "company information"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "heading[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/about/InlineImageSplitTextAbout",
+    "registryType": "section"
+  },
+  "AboutMetric": {
+    "category": "about",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "about pages",
+      "company information",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "metrics[]"
+    ],
+    "import": "@/components/sections/about/AboutMetric",
+    "registryType": "section"
+  },
+  "MetricSplitMediaAbout": {
+    "category": "about",
+    "intent": "about section",
+    "bestFor": [
+      "about pages",
+      "company information",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "metrics[]"
+    ],
+    "import": "@/components/sections/about/MetricSplitMediaAbout",
+    "registryType": "section"
+  },
+  "FeatureCardOne": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardOne",
+    "registryType": "section"
+  },
+  "FeatureCardThree": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/featureCardThree/FeatureCardThree",
+    "registryType": "section"
+  },
+  "FeatureCardSix": {
+    "category": "feature",
+    "intent": "sequential process",
+    "bestFor": [
+      "process flows",
+      "roadmaps",
+      "step-by-step explanation",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "non-sequential content",
+      "single item"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardSix",
+    "registryType": "section"
+  },
+  "FeatureCardSeven": {
+    "category": "feature",
+    "intent": "sequential vertical steps with alternating layout",
+    "bestFor": [
+      "process flows",
+      "roadmaps",
+      "step-by-step explanation",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "non-sequential content",
+      "single item"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardSeven",
+    "registryType": "section"
+  },
+  "FeatureCardEight": {
+    "category": "feature",
+    "intent": "horizontal timeline",
+    "bestFor": [
+      "process flows",
+      "roadmaps",
+      "step-by-step explanation",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "non-sequential content",
+      "single item",
+      "more than 4 items",
+      "less than 2 items",
+      "more than 4 items"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardEight",
+    "registryType": "section"
+  },
+  "FeatureCardNine": {
+    "category": "feature",
+    "intent": "vertical sticky scroll timeline",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "less than 2 items",
+      "more than 4 items"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardNine",
+    "registryType": "section"
+  },
+  "FeatureCardTwelve": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [
+      "more than 8 items"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwelve",
+    "registryType": "section"
+  },
+  "FeatureCardSixteen": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardSixteen",
+    "registryType": "section"
+  },
+  "FeatureCardNineteen": {
+    "category": "feature",
+    "intent": "sequential process",
+    "bestFor": [
+      "process flows",
+      "roadmaps",
+      "step-by-step explanation",
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "multiple items",
+      "non-sequential content",
+      "single item"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardNineteen",
+    "registryType": "section"
+  },
+  "FeatureCardTwentyOne": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "less than 2 items",
+      "more than 6 items"
+    ],
+    "requires": [
+      "titleSegments?[]",
+      "buttons?[]",
+      "accordionItems[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentyOne",
+    "registryType": "section"
+  },
+  "FeatureCardMedia": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardMedia",
+    "registryType": "section"
+  },
+  "FeatureCardTen": {
+    "category": "feature",
+    "intent": "sequential process",
+    "bestFor": [
+      "process flows",
+      "step-by-step explanation",
+      "feature showcases"
+    ],
+    "avoidWhen": [
+      "non-sequential content"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTen",
+    "registryType": "section"
+  },
+  "FeatureCardTwentyThree": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentyThree",
+    "registryType": "section"
+  },
+  "FeatureCardTwentyFour": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentyFour",
+    "registryType": "section"
+  },
+  "FeatureCardTwentyFive": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentyFive",
+    "registryType": "section"
+  },
+  "FeatureCardTwentySix": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "less than 4 items"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentySix",
+    "registryType": "section"
+  },
+  "FeatureCardTwentySeven": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "interactive feature displays",
+      "service showcases",
+      "exploratory content"
+    ],
+    "avoidWhen": [
+      "text-heavy front side content",
+      "more than 8 items"
+    ],
+    "requires": [
+      "features[]",
+      "gridVariant",
+      "animationType"
+    ],
+    "import": "@/components/sections/feature/FeatureCardTwentySeven",
+    "registryType": "section"
+  },
+  "FeatureBento": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "interactive visualizations"
+    ],
+    "avoidWhen": [
+      "simple text-only features"
+    ],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/FeatureBento",
+    "registryType": "section"
+  },
+  "FeatureBorderGlow": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/featureBorderGlow/FeatureBorderGlow",
+    "registryType": "section"
+  },
+  "FeatureHoverPattern": {
+    "category": "feature",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "features[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/feature/featureHoverPattern/FeatureHoverPattern",
+    "registryType": "section"
+  },
+  "ProductCardOne": {
+    "category": "product",
+    "intent": "contact form",
+    "bestFor": [
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "products[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/product/ProductCardOne",
+    "registryType": "section"
+  },
+  "ProductCardTwo": {
+    "category": "product",
+    "intent": "testimonials",
+    "bestFor": [
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "products[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/product/ProductCardTwo",
+    "registryType": "section"
+  },
+  "ProductCardThree": {
+    "category": "product",
+    "intent": "product showcase",
+    "bestFor": [
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "products[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/product/ProductCardThree",
+    "registryType": "section"
+  },
+  "ProductCardFour": {
+    "category": "product",
+    "intent": "product showcase",
+    "bestFor": [
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "products[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/product/ProductCardFour",
+    "registryType": "section"
+  },
+  "PricingCardOne": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardOne",
+    "registryType": "section"
+  },
+  "PricingCardTwo": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardTwo",
+    "registryType": "section"
+  },
+  "PricingCardThree": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardThree",
+    "registryType": "section"
+  },
+  "PricingCardFive": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardFive",
+    "registryType": "section"
+  },
+  "PricingCardEight": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardEight",
+    "registryType": "section"
+  },
+  "PricingCardNine": {
+    "category": "pricing",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "plans[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/pricing/PricingCardNine",
+    "registryType": "section"
+  },
+  "MetricCardOne": {
+    "category": "metric",
+    "intent": "metrics display",
+    "bestFor": [
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardOne",
+    "registryType": "section"
+  },
+  "MetricCardTwo": {
+    "category": "metric",
+    "intent": "metrics display",
+    "bestFor": [
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardTwo",
+    "registryType": "section"
+  },
+  "MetricCardThree": {
+    "category": "metric",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardThree",
+    "registryType": "section"
+  },
+  "MetricCardSeven": {
+    "category": "metric",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "pricing pages",
+      "subscription tiers",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardSeven",
+    "registryType": "section"
+  },
+  "MetricCardTen": {
+    "category": "metric",
+    "intent": "pricing plans",
+    "bestFor": [
+      "pricing pages",
+      "subscription tiers",
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [
+      "more than 12 items"
+    ],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardTen",
+    "registryType": "section"
+  },
+  "MetricCardEleven": {
+    "category": "metric",
+    "intent": "metrics display",
+    "bestFor": [
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [
+      "more than 4 items",
+      "more than 6 items"
+    ],
+    "requires": [
+      "metrics[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardEleven",
+    "registryType": "section"
+  },
+  "MetricCardFourteen": {
+    "category": "metric",
+    "intent": "metrics display",
+    "bestFor": [
+      "statistics displays",
+      "achievement showcases"
+    ],
+    "avoidWhen": [
+      "more than 4 items",
+      "more than 4 items"
+    ],
+    "requires": [
+      "metrics[]"
+    ],
+    "import": "@/components/sections/metrics/MetricCardFourteen",
+    "registryType": "section"
+  },
+  "TeamCardOne": {
+    "category": "team",
+    "intent": "team section",
+    "bestFor": [
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "members[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/team/TeamCardOne",
+    "registryType": "section"
+  },
+  "TeamCardTwo": {
+    "category": "team",
+    "intent": "about section",
+    "bestFor": [
+      "about pages",
+      "company information",
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "members[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/team/TeamCardTwo",
+    "registryType": "section"
+  },
+  "TeamCardFive": {
+    "category": "team",
+    "intent": "team section",
+    "bestFor": [
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [
+      "more than 4 items",
+      "less than 2 items",
+      "more than 12 items"
+    ],
+    "requires": [
+      "team[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/team/TeamCardFive",
+    "registryType": "section"
+  },
+  "TeamCardSix": {
+    "category": "team",
+    "intent": "about section",
+    "bestFor": [
+      "about pages",
+      "company information",
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "members[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/team/TeamCardSix",
+    "registryType": "section"
+  },
+  "TeamCardTen": {
+    "category": "team",
+    "intent": "team section",
+    "bestFor": [
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [
+      "multiple items",
+      "more than 4 items",
+      "more than 6 items"
+    ],
+    "requires": [
+      "members[]"
+    ],
+    "import": "@/components/sections/team/TeamCardTen",
+    "registryType": "section"
+  },
+  "TeamCardEleven": {
+    "category": "team",
+    "intent": "contact form",
+    "bestFor": [
+      "contact pages",
+      "lead generation",
+      "team pages",
+      "staff directories"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "groups[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/team/TeamCardEleven",
+    "registryType": "section"
+  },
+  "TestimonialCardOne": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardOne",
+    "registryType": "section"
+  },
+  "TestimonialCardTwo": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardTwo",
+    "registryType": "section"
+  },
+  "TestimonialCardFive": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [
+      "less than 3 items",
+      "more than 10 items"
+    ],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardFive",
+    "registryType": "section"
+  },
+  "TestimonialCardSix": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [
+      "less than 6 items",
+      "more than 20 items"
+    ],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardSix",
+    "registryType": "section"
+  },
+  "TestimonialCardTen": {
+    "category": "testimonial",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardTen",
+    "registryType": "section"
+  },
+  "TestimonialCardTwelve": {
+    "category": "testimonial",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [
+      "multiple items",
+      "less than 3 items",
+      "more than 10 items"
+    ],
+    "requires": [
+      "testimonials[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardTwelve",
+    "registryType": "section"
+  },
+  "TestimonialCardThirteen": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews",
+      "product catalogs",
+      "e-commerce"
+    ],
+    "avoidWhen": [
+      "multiple items"
+    ],
+    "requires": [
+      "testimonials[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardThirteen",
+    "registryType": "section"
+  },
+  "TestimonialCardFifteen": {
+    "category": "testimonial",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [
+      "multiple items"
+    ],
+    "requires": [
+      "avatars[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardFifteen",
+    "registryType": "section"
+  },
+  "TestimonialCardSixteen": {
+    "category": "testimonial",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "customer reviews"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "testimonials[]",
+      "kpiItems[]"
+    ],
+    "import": "@/components/sections/testimonial/TestimonialCardSixteen",
+    "registryType": "section"
+  },
+  "SocialProofOne": {
+    "category": "socialProof",
+    "intent": "testimonials",
+    "bestFor": [
+      "social proof",
+      "partner names",
+      "partner logos"
+    ],
+    "avoidWhen": [
+      "less than 4 items"
+    ],
+    "requires": [
+      "names[]",
+      "logos?[]"
+    ],
+    "import": "@/components/sections/socialProof/SocialProofOne",
+    "registryType": "section"
+  },
+  "FaqBase": {
+    "category": "faq",
+    "intent": "contact form",
+    "bestFor": [
+      "help pages",
+      "support sections"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "faqs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/faq/FaqBase",
+    "registryType": "section"
+  },
+  "FaqDouble": {
+    "category": "faq",
+    "intent": "contact form",
+    "bestFor": [
+      "help pages",
+      "support sections"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "faqs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/faq/FaqDouble",
+    "registryType": "section"
+  },
+  "FaqSplitMedia": {
+    "category": "faq",
+    "intent": "faq section",
+    "bestFor": [
+      "help pages",
+      "support sections"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "faqs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/faq/FaqSplitMedia",
+    "registryType": "section"
+  },
+  "FaqSplitText": {
+    "category": "faq",
+    "intent": "faq section",
+    "bestFor": [
+      "help pages",
+      "support sections"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "faqs[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/faq/FaqSplitText",
+    "registryType": "section"
+  },
+  "BlogCardOne": {
+    "category": "blog",
+    "intent": "content listing",
+    "bestFor": [
+      "blog listings",
+      "article grids"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "blogs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/blog/BlogCardOne",
+    "registryType": "section"
+  },
+  "BlogCardTwo": {
+    "category": "blog",
+    "intent": "content listing",
+    "bestFor": [
+      "blog listings",
+      "article grids"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "blogs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/blog/BlogCardTwo",
+    "registryType": "section"
+  },
+  "BlogCardThree": {
+    "category": "blog",
+    "intent": "hero with media",
+    "bestFor": [
+      "landing pages",
+      "feature showcases",
+      "capability displays",
+      "blog listings",
+      "article grids"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "blogs[]",
+      "titleSegments?[]",
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/blog/BlogCardThree",
+    "registryType": "section"
+  },
+  "ContactCenter": {
+    "category": "contact",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "contact pages",
+      "lead generation"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/sections/contact/ContactCenter",
+    "registryType": "section"
+  },
+  "ContactSplit": {
+    "category": "contact",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "contact pages",
+      "lead generation"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/sections/contact/ContactSplit",
+    "registryType": "section"
+  },
+  "ContactSplitForm": {
+    "category": "contact",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays",
+      "contact pages",
+      "lead generation"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "inputs[]"
+    ],
+    "import": "@/components/sections/contact/ContactSplitForm",
+    "registryType": "section"
+  },
+  "ContactText": {
+    "category": "contact",
+    "intent": "contact form",
+    "bestFor": [
+      "contact pages",
+      "lead generation"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons?[]"
+    ],
+    "import": "@/components/sections/contact/ContactText",
+    "registryType": "section"
+  },
+  "ContactFaq": {
+    "category": "contact",
+    "intent": "contact form",
+    "bestFor": [
+      "contact pages",
+      "lead generation",
+      "help pages",
+      "support sections"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "faqs[]"
+    ],
+    "import": "@/components/sections/contact/ContactFaq",
+    "registryType": "section"
+  },
+  "ContactCTA": {
+    "category": "contact",
+    "intent": "contact form",
+    "bestFor": [
+      "contact pages",
+      "lead generation",
+      "call-to-action sections"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "buttons[]"
+    ],
+    "import": "@/components/sections/contact/ContactCTA",
+    "registryType": "section"
+  },
+  "FooterBase": {
+    "category": "footer",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterBase",
+    "registryType": "section"
+  },
+  "FooterMedia": {
+    "category": "footer",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterMedia",
+    "registryType": "section"
+  },
+  "FooterBaseReveal": {
+    "category": "footer",
+    "intent": "footer",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterBaseReveal",
+    "registryType": "section"
+  },
+  "FooterLogoEmphasis": {
+    "category": "footer",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [
+      "more than 4 items"
+    ],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterLogoEmphasis",
+    "registryType": "section"
+  },
+  "FooterCard": {
+    "category": "footer",
+    "intent": "footer",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "socialLinks?[]"
+    ],
+    "import": "@/components/sections/footer/FooterCard",
+    "registryType": "section"
+  },
+  "FooterBaseCard": {
+    "category": "footer",
+    "intent": "footer",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterBaseCard",
+    "registryType": "section"
+  },
+  "FooterLogoReveal": {
+    "category": "footer",
+    "intent": "footer",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/sections/footer/FooterLogoReveal",
+    "registryType": "section"
+  },
+  "FooterSimple": {
+    "category": "footer",
+    "intent": "feature showcase",
+    "bestFor": [
+      "feature showcases",
+      "capability displays"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "columns[]"
+    ],
+    "import": "@/components/sections/footer/FooterSimple",
+    "registryType": "section"
+  },
+  "CardStack": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "adaptive layout component that displays children in a grid, ",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "children"
+    ],
+    "import": "@/components/cardStack/CardStack"
+  },
+  "TimelineHorizontalCardStack": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "horizontal auto-playing timeline component that displays 2-4",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "children"
+    ],
+    "import": "@/components/cardStack/layouts/timelines/TimelineHorizontalCardStack"
+  },
+  "TimelineCardStack": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "vertical sticky scroll timeline component where cards stack ",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "children"
+    ],
+    "import": "@/components/cardStack/layouts/timelines/TimelineCardStack"
+  },
+  "TimelinePhoneView": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "scroll-animated timeline displaying content with dual phone ",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "items[]"
+    ],
+    "import": "@/components/cardStack/layouts/timelines/TimelinePhoneView"
+  },
+  "TimelineProcessFlow": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "vertical timeline with alternating media/content layout and ",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "items[]"
+    ],
+    "import": "@/components/cardStack/layouts/timelines/TimelineProcessFlow"
+  },
+  "TextBox": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "flexible text composition component with animated title and ",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "children"
+    ],
+    "import": "@/components/Textbox"
+  },
+  "AvatarGroup": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "displays a group of user avatars with overlapping layout and",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/shared/AvatarGroup"
+  },
+  "BentoGlobe": {
+    "category": "layout",
+    "registryType": "component",
+    "intent": "interactive 3d rotating globe component using cobe library w",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/bento/BentoGlobe"
+  },
+  "TextAnimation": {
+    "category": "title",
+    "registryType": "component",
+    "intent": "unified scroll-triggered text animation component with three",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "children"
+    ],
+    "import": "@/components/text/TextAnimation"
+  },
+  "TextNumberCount": {
+    "category": "title",
+    "registryType": "component",
+    "intent": "animated number counter that increments smoothly from a star",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/text/TextNumberCount"
+  },
+  "ButtonTextUnderline": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "text-only button where an underline animates in on hover.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonTextUnderline"
+  },
+  "ButtonIconArrow": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "button with a trailing arrow icon that transforms on hover.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonIconArrow"
+  },
+  "ButtonTextStagger": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with character stagger animation on hover.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonTextStagger/ButtonTextStagger"
+  },
+  "ButtonShiftHover": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button where the label nudges upward on hover and a trai",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonShiftHover/ButtonShiftHover"
+  },
+  "ButtonHoverMagnetic": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button that subtly follows the cursor with a magnetic ho",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonHoverMagnetic/ButtonHoverMagnetic"
+  },
+  "ButtonHoverBubble": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with expanding bubble animation where an arrow ic",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonHoverBubble"
+  },
+  "ButtonExpandHover": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with expanding background animation from right to",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonExpandHover"
+  },
+  "ButtonBounceEffect": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with bouncing character animation on hover.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonBounceEffect/ButtonBounceEffect"
+  },
+  "ButtonDirectionalHover": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with a circle that expands from the mouse entry p",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonDirectionalHover/ButtonDirectionalHover"
+  },
+  "ButtonElasticEffect": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with elastic scale animation on hover.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonElasticEffect/ButtonElasticEffect"
+  },
+  "ButtonTextShift": {
+    "category": "button",
+    "registryType": "component",
+    "intent": "cta button with synchronized character shift animation on ho",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/button/ButtonTextShift/ButtonTextShift"
+  },
+  "Input": {
+    "category": "form",
+    "registryType": "component",
+    "intent": "styled text input field with secondary-button styling and ro",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/form/Input"
+  },
+  "Textarea": {
+    "category": "form",
+    "registryType": "component",
+    "intent": "styled textarea field with secondary-button styling and roun",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/form/Textarea"
+  },
+  "EmailSignupForm": {
+    "category": "form",
+    "registryType": "component",
+    "intent": "compact email signup form with inline input and submit butto",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/form/EmailSignupForm"
+  },
+  "ContactForm": {
+    "category": "form",
+    "registryType": "component",
+    "intent": "complete contact form component with tag, animated title and",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/form/ContactForm"
+  },
+  "PlainBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "simple solid background using theme background color.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/PlainBackground"
+  },
+  "GridBackround": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "grid pattern background with line-based grid and optional 3d",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/GridBackround"
+  },
+  "DotGridBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "dot pattern background with radial gradient dots and optiona",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/DotGridBackground"
+  },
+  "CircleGradientBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "two large gradient circles positioned diagonally in corners.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/CircleGradientBackground"
+  },
+  "AuroraBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "aurora borealis-style background with multiple rotated gradi",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/AuroraBackground"
+  },
+  "FloatingGradientBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "five animated gradient circles with css animations and verti",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/floatingGradientBackground/FloatingGradientBackground"
+  },
+  "AnimatedGridBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "grid pattern with animated pulsing squares using framer moti",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/AnimatedGridBackground"
+  },
+  "AnimatedAuroraBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "aurora borealis effect with animated repeating gradients and",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/AnimatedAuroraBackground"
+  },
+  "FluidBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "generative fluid patterns using cppn shader with theme color",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/FluidBackground"
+  },
+  "RadialGradientBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "customizable radial gradient background with theme color int",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/RadialGradientBackground"
+  },
+  "GradientBarsBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "gradient bars on left and right edges with fade masks creati",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/GradientBarsBackground"
+  },
+  "CanvasRevealEffect": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "animated dot matrix reveal effect using webgl shaders with c",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/CanvasRevealEffect"
+  },
+  "CanvasRevealBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "animated webgl dot matrix effect with ball-shaped radial gra",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/CanvasRevealBackground"
+  },
+  "CellWaveBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "animated vertical cell columns with gsap creating sequential",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/CellWaveBackground"
+  },
+  "GlowingOrbBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "glowing orb effect at bottom center with layered radial grad",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/GlowingOrbBackground"
+  },
+  "BlurBottomBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "backdrop blur effect positioned at the bottom of the page wi",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/BlurBottomBackground"
+  },
+  "RotatedRaysBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "atmospheric light rays emanating from a rotated origin point",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/RotatedRaysBackground"
+  },
+  "DownwardRaysBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "atmospheric light rays emanating from top center directly do",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/DownwardRaysBackground"
+  },
+  "RotatingGradientBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "two rotating circular gradients with optional sparkle ring e",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/RotatingGradientBackground"
+  },
+  "Sparkles": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "interactive particle effect background with animated sparkle",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/Sparkles"
+  },
+  "SparklesGradientBackground": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "combined gradient background with sparkle particles, featuri",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/SparklesGradientBackground"
+  },
+  "HeroBackgrounds": {
+    "category": "background",
+    "registryType": "component",
+    "intent": "unified background component with preset variants for hero s",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/background/HeroBackgrounds"
+  },
+  "ProductDetailCard": {
+    "category": "ecommerce",
+    "registryType": "section",
+    "intent": "product detail page with image carousel, variants, rating, a",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/ecommerce/productDetail/ProductDetailCard"
+  },
+  "ProductCart": {
+    "category": "ecommerce",
+    "registryType": "section",
+    "intent": "slide-in cart drawer with backdrop overlay, item list, total",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [
+      "items[]"
+    ],
+    "import": "@/components/ecommerce/cart/ProductCart"
+  },
+  "ProductCartItem": {
+    "category": "ecommerce",
+    "registryType": "section",
+    "intent": "cart item row with image, name, variants, price, quantity co",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/ecommerce/cart/ProductCartItem"
+  },
+  "ProductCatalog": {
+    "category": "ecommerce",
+    "registryType": "section",
+    "intent": "product catalog grid with search bar and filter dropdowns.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/ecommerce/productCatalog/ProductCatalog"
+  },
+  "ProductCatalogItem": {
+    "category": "ecommerce",
+    "registryType": "section",
+    "intent": "product card with image, category, name, rating, and price.",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/ecommerce/productCatalog/ProductCatalogItem"
+  },
+  "LegalSection": {
+    "category": "legal",
+    "registryType": "section",
+    "intent": "legal content page for privacy policies, terms of service, a",
+    "bestFor": [
+      "general use"
+    ],
+    "avoidWhen": [],
+    "requires": [],
+    "import": "@/components/legal/LegalSection"
+  }
+}

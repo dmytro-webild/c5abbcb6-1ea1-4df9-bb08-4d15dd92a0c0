@@ -1,0 +1,96 @@
+{
+  "name": "TimelineProcessFlow",
+  "description": "Vertical timeline with alternating media/content layout and scroll-triggered progress line animation.",
+  "details": "Use for process flows, company history, product development timelines, or step-by-step guides. Features vertical center line with GSAP scroll-animated fill effect, numbered badges at center, alternating left/right layout controlled by reverse prop. Each item accepts custom ReactNode for both media and content, allowing full flexibility (images, videos, text, lists, etc.). Desktop: Split layout with media and content on opposite sides. Mobile: Stacked vertical layout. Integrates CardStackTextBox for section header with all textboxLayout options. Perfect for storytelling, journey maps, or sequential content.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Journey",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover the milestones that shaped our story",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Timeline",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. All sections should be wrapped in a single ThemeProvider at the app/page level."
+    },
+    "itemRules": {
+      "structure": {
+        "id": "string - Unique identifier displayed in number badge (required)",
+        "content": "React.ReactNode - Custom content for the item (required)",
+        "media": "React.ReactNode - Custom media element (image, video, etc.) (required)",
+        "reverse": "boolean - When true, swaps media/content positions on desktop (required)"
+      },
+      "note": "Fully flexible - pass any ReactNode for content and media. Common patterns: media (Image/video), content (h3 title + p description + ul list with icons)."
+    }
+  },
+  "propsSchema": {
+    "items": "Array<{ id: string, content: React.ReactNode, media: React.ReactNode, reverse: boolean }> - Timeline items with content and media",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "ariaLabel?": "string (default: 'Timeline process flow section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "itemClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "numberClassName?": "string",
+    "contentWrapperClassName?": "string",
+    "gapClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider with smooth scrolling (ReactLenis)\n<ThemeProvider defaultButtonVariant=\"icon-arrow\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" contentWidth=\"medium\" sizing=\"medium\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <ReactLenis root>\n    <TimelineProcessFlow \n      title=\"Our Journey\" \n      description=\"Discover the milestones that shaped our story\" \n      tag=\"Timeline\" \n      textboxLayout=\"default\" \n      animationType=\"slide-up\" \n      items={[\n        { id: '1', reverse: false, media: <Image src=\"/milestone1.jpg\" alt=\"First milestone\" width={500} height={500} className=\"w-full h-full object-cover\" />, content: <><h3>Foundation</h3><p>Started our journey</p><ul><li>Launched MVP</li><li>First customer</li></ul></> },\n        { id: '2', reverse: true, media: <video src=\"/milestone2.mp4\" autoPlay loop muted className=\"w-full h-full object-cover\" />, content: <><h3>Growth</h3><p>Expanded our reach</p><ul><li>Scaled team</li><li>Global expansion</li></ul></> }\n      ]} \n    />\n  </ReactLenis>\n</ThemeProvider>",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires items[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use non-sequential content",
+    "Do not use single item"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "NavbarLayoutFloatingOverlay",
+  "description": "Floating rounded navbar with right‑side CTA and a circular menu button. Clicking the button opens a rounded overlay panel with the site menu.",
+  "details": "Use for minimalist headers where the primary navigation lives in an overlay. Default state shows logo at left, optional CTA chip and a menu icon at right. The overlay slides in and lists links vertically with an optional title and close control.",
+  "constraints": {
+    "minLinks": 2,
+    "maxLinks": 8,
+    "preferredCount": 5,
+    "brandRules": {
+      "required": false,
+      "minChars": 2,
+      "maxChars": 20,
+      "example": "Webild",
+      "fallbackBehavior": "Shows brandName text"
+    },
+    "buttonRules": {
+      "text": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 24,
+        "example": "Get Started"
+      },
+      "href": {
+        "required": false,
+        "format": "url | section-id",
+        "example": "https://webild.io"
+      },
+      "onClick": {
+        "required": false,
+        "note": "Optional click handler"
+      }
+    },
+    "linkRules": {
+      "name": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "About"
+      },
+      "id": {
+        "required": true,
+        "format": "section-id | url",
+        "examples": [
+          "about",
+          "services",
+          "https://github.com",
+          "www.example.com"
+        ],
+        "behavior": "Internal IDs scroll to section, URLs open in new tab"
+      }
+    }
+  },
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "className?": "string",
+    "brandName?": "string (default: 'Webild')",
+    "button": "{text: string, onClick?: () => void, href?: string}",
+    "buttonClassName?": "string (default: '')",
+    "buttonTextClassName?": "string (default: '')"
+  },
+  "usageExample": "<NavbarLayoutFloatingOverlay />",
+  "do": [
+    "Use for general use",
+    "Requires navItems[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

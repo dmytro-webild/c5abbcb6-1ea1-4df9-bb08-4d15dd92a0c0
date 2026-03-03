@@ -1,0 +1,86 @@
+{
+  "name": "ContactFaq",
+  "description": "Split-panel contact section with CTA card on left and FAQ accordions on right.",
+  "details": "Use for combining contact CTA with frequently asked questions. Layout: Left Panel (4 cols) - Icon → Title → Description → CTA Button. Right Panel (8 cols) - FAQ Accordions. CTA panel uses card styling with centered content and primary-button icon container. FAQ accordions support both smooth and instant animation types. Best for sales/support pages requiring both contact options and common questions. Grid-based layout (12-column system) for responsive behavior.",
+  "constraints": {
+    "textRules": {
+      "ctaTitle": {
+        "required": true,
+        "example": "Book an intro call",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "ctaDescription": {
+        "required": true,
+        "example": "Let's get started with a brief intro call.",
+        "minChars": 5,
+        "maxChars": 100
+      }
+    },
+    "faqRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "title": {
+        "required": true,
+        "example": "What's included in the subscription?",
+        "minChars": 5,
+        "maxChars": 100
+      },
+      "content": {
+        "required": true,
+        "example": "Your subscription covers end-to-end digital design services...",
+        "minChars": 10,
+        "maxChars": 500,
+        "note": "Supports HTML content"
+      }
+    }
+  },
+  "propsSchema": {
+    "faqs": "Array<{ id: string, title: string, content: string }>",
+    "ctaTitle": "string",
+    "ctaDescription": "string",
+    "ctaButton": "{text: string, onClick?: () => void, href?: string}",
+    "ctaIcon": "LucideIcon (required)",
+    "useInvertedBackground": "boolean",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect on panels)",
+    "accordionAnimationType?": "'smooth' | 'instant' (default: 'smooth')",
+    "showCard?": "boolean (default: true - controls accordion card styling)",
+    "ariaLabel?": "string (default: 'Contact and FAQ section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "ctaPanelClassName?": "string",
+    "ctaIconClassName?": "string",
+    "ctaTitleClassName?": "string",
+    "ctaDescriptionClassName?": "string",
+    "ctaButtonClassName?": "string",
+    "ctaButtonTextClassName?": "string",
+    "faqsPanelClassName?": "string",
+    "faqsContainerClassName?": "string",
+    "accordionClassName?": "string",
+    "accordionTitleClassName?": "string",
+    "accordionIconContainerClassName?": "string",
+    "accordionIconClassName?": "string",
+    "accordionContentClassName?": "string",
+    "separatorClassName?": "string"
+  },
+  "usageExample": "<ContactFaq faqs={[{ id: '1', title: \"What's included?\", content: 'Your subscription covers...' }]} ctaTitle=\"Book an intro call\" ctaDescription=\"Let's get started with a brief intro call.\" ctaButton={{ text: 'Book a Free Call', href: '#contact' }} ctaIcon={Phone} useInvertedBackground={false} animationType=\"slide-up\" />",
+  "do": [
+    "Use for contact pages",
+    "Use for lead generation",
+    "Use for help pages",
+    "Use for support sections",
+    "Requires faqs[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

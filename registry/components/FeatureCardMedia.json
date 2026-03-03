@@ -1,0 +1,96 @@
+{
+  "name": "FeatureCardMedia",
+  "description": "Feature section with media cards displaying tag overlay, title, description, and optional buttons.",
+  "details": "Displays feature cards in a responsive grid or carousel layout. Each card shows media (image/video) with required tag overlay positioned top-right, followed by title, description, and optional action buttons. Uses CardStack for layout management with grid (1-4 items) and carousel (5+ items) modes.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "From concept to launch, we've got you covered",
+        "minChars": 10,
+        "maxChars": 100
+      },
+      "description": {
+        "required": true,
+        "example": "Discover how we bring ideas to life through a proven methodology",
+        "minChars": 20,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Our Process",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featuresRules": {
+      "minItems": 2,
+      "recommendedItems": 3,
+      "maxItems": 6,
+      "structure": {
+        "id": "string - Unique identifier (required)",
+        "title": "string - Card title (required)",
+        "description": "string - Card description (required)",
+        "tag": "string - Tag displayed on media top-right (required)",
+        "imageSrc": "string - Image source URL (optional)",
+        "videoSrc": "string - Video source URL (optional)",
+        "buttons": "ButtonConfig[] - Optional action buttons for the card"
+      },
+      "note": "Each card requires id, title, description, and tag. Media (imageSrc or videoSrc) recommended. Buttons are optional per card."
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, description: string, tag: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, buttons?: ButtonConfig[], onCardClick?: () => void }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal'",
+    "title": "string",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image'",
+    "useInvertedBackground": "boolean",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }>",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "ButtonConfig[]",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "ariaLabel?": "string (default: 'Features section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "itemClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "tagClassName?": "string",
+    "contentClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "cardButtonContainerClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureCardMedia features={[{ id: '1', title: 'Research', description: 'Understanding user needs and market trends', tag: 'Phase 1', imageSrc: '/img.jpg', buttons: [{ text: 'Learn more', href: '#' }] }]} animationType=\"slide-up\" textboxLayout=\"default\" title=\"Our Process\" description=\"Discover how we work\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires features[]",
+    "Requires titleSegments?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

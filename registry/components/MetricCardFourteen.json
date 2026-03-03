@@ -1,0 +1,79 @@
+{
+  "name": "MetricCardFourteen",
+  "description": "Metrics section with animated title, tag badge, and metric cards with large values and descriptions.",
+  "details": "Use for impact metrics or sustainability stats. Layout: Animated title at top, horizontal divider, then tag badge on left with metric cards grid on right. Each metric card has large value at top, divider line, and description text below. Cards are aspect-video with justify-between for proper spacing. Supports 1-2 column grid based on item count. Supports inverted backgrounds.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "We're committed to sustainability and reducing our environmental impact.",
+        "minChars": 10,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": true,
+        "example": "Impact",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "note": "Unique identifier for each metric"
+      },
+      "value": {
+        "required": true,
+        "example": "16x",
+        "minChars": 1,
+        "maxChars": 10,
+        "note": "Large metric value displayed prominently"
+      },
+      "description": {
+        "required": true,
+        "example": "By using 80% less steel, we've lowered our carbon footprint by 16x.",
+        "minChars": 10,
+        "maxChars": 200,
+        "note": "Description text below the divider"
+      }
+    },
+    "itemRules": {
+      "minItems": 1,
+      "maxItems": 4,
+      "recommendedItems": 2
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "tag": "string",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "metrics": "Array<{ id: string, value: string, description: string }>",
+    "metricsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "tagClassName?": "string",
+    "metricsContainerClassName?": "string",
+    "metricClassName?": "string",
+    "valueClassName?": "string",
+    "descriptionClassName?": "string"
+  },
+  "usageExample": "<MetricCardFourteen title=\"We're committed to sustainability and reducing our environmental impact.\" tag=\"Impact\" metrics={[{ id: '1', value: '16x', description: 'By using 80% less steel, we've lowered our carbon footprint.' }, { id: '2', value: '95%', description: 'Customer satisfaction rate across all products.' }]} useInvertedBackground={false} />",
+  "do": [
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items",
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "name": "TestimonialCardTen",
+  "description": "Split layout testimonial section with titled quote card, navigation arrows, and media display. Supports card and border variants.",
+  "details": "Use for showcasing featured testimonials with a title heading per testimonial. Layout: CardStackTextBox header → 2-column grid with quote card (left) and media (right). Quote card contains title, quote text, and bottom row with author info (name, role) on left and navigation buttons on right. Mobile divider line separates quote from bottom row. Uses AnimationContainer for smooth fade transitions when navigating. Card variant: quote area has card styling. Border variant: removes card styling, adds vertical border between columns on desktop and horizontal borders on mobile, uses inverted background directly for text color. Best for testimonials that benefit from a headline/title per quote.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Trusted by industry leaders",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "See what our customers have to say",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Testimonials",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "testimonialRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "note": "Unique identifier for the testimonial"
+      },
+      "title": {
+        "required": true,
+        "example": "Personalized AI, redefined with Mindex",
+        "minChars": 10,
+        "maxChars": 80,
+        "note": "Headline/title displayed at top of quote card"
+      },
+      "quote": {
+        "required": true,
+        "example": "Working with this AI has been a game changer! It feels like the system really listens and adapts to what I need.",
+        "minChars": 20,
+        "maxChars": 500
+      },
+      "name": {
+        "required": true,
+        "example": "Sarah Mitchell",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "role": {
+        "required": true,
+        "example": "CEO of BrightPath Solutions",
+        "minChars": 2,
+        "maxChars": 100
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/images/testimonial1.webp",
+        "note": "Image source URL (either imageSrc or videoSrc required)"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/videos/testimonial.mp4",
+        "note": "Video source URL (either imageSrc or videoSrc required)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Sarah Mitchell headshot",
+        "note": "Alt text for images"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Testimonial video",
+        "note": "Aria label for videos"
+      }
+    }
+  },
+  "propsSchema": {
+    "testimonials": "Array<{ id: string, title: string, quote: string, name: string, role: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Testimonials section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "contentClassName?": "string",
+    "quoteCardClassName?": "string",
+    "testimonialTitleClassName?": "string",
+    "quoteClassName?": "string",
+    "nameClassName?": "string",
+    "roleClassName?": "string",
+    "navigationClassName?": "string",
+    "navigationButtonClassName?": "string",
+    "mediaCardClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<TestimonialCardTen testimonials={[{ id: '1', title: 'Personalized AI, redefined with Mindex', quote: 'Working with this AI has been a game changer! It feels like the system really listens and adapts to what I need.', name: 'Sarah Mitchell', role: 'CEO of BrightPath Solutions', imageSrc: '/images/testimonial1.webp', imageAlt: 'Sarah Mitchell' }]} title=\"Trusted by industry leaders\" description=\"See what our customers have to say\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for social proof",
+    "Use for customer reviews",
+    "Requires testimonials[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

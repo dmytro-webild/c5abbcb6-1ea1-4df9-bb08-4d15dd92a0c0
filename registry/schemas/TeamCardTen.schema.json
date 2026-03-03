@@ -1,0 +1,22 @@
+{
+  "name": "TeamCardTen",
+  "propsSchema": {
+    "title": "string",
+    "tag": "string",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "membersAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "members": "Array<{ id: string, name: string, imageSrc?: string, imageAlt?: string, videoSrc?: string, videoAriaLabel?: string }>",
+    "memberVariant": "'default' | 'card' (required - 'default': no card styling, 'card': each member wrapped in card with rounded corners)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Team section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "tagClassName?": "string",
+    "membersContainerClassName?": "string",
+    "memberClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "nameClassName?": "string"
+  }
+}

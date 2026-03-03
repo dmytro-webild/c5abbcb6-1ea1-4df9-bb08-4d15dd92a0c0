@@ -1,0 +1,11 @@
+{
+  "name": "GradientBarsBackground",
+  "propsSchema": {
+    "className?": "string",
+    "numBarsPerSide?": "number (default: 8)",
+    "gradientFrom?": "string (default: 'var(--color-primary-cta)')",
+    "gradientTo?": "string (default: 'transparent')",
+    "opacity?": "number (default: 0.075)",
+    "sideWidth?": "string (default: '35%')"
+  }
+}

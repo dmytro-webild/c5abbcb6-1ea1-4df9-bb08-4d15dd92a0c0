@@ -1,0 +1,109 @@
+{
+  "name": "TestimonialCardSixteen",
+  "description": "Uniform grid testimonial cards with image, star rating overlay, and KPI stats section below.",
+  "details": "Use for showcasing multiple testimonials with a stats/KPI summary. Layout: TextBox Header → Uniform Grid of Testimonial Cards → KPI Stats Bar. Each card displays a full-bleed image with a glassmorphic overlay containing star rating, name, role, and company. Fixed 'uniform-all-items-equal' grid layout. Below the grid, a responsive KPI section shows 3 stats with value and label, separated by dividers (horizontal on mobile, vertical on desktop). Best for client testimonials with credibility metrics.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "What Our Clients Say",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Hear from those who've experienced our work",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Testimonials",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "testimonialRules": {
+      "minItems": 1,
+      "maxItems": 4,
+      "recommendedItems": "3",
+      "structure": {
+        "id": "string - Unique identifier (required)",
+        "name": "string - Client name (required)",
+        "role": "string - Client role/position (required)",
+        "company": "string - Client company (required)",
+        "rating": "number - Star rating 0-5 (required)",
+        "imageSrc?": "string - Path to client image",
+        "videoSrc?": "string - Path to client video",
+        "imageAlt?": "string - Alt text for image",
+        "videoAriaLabel?": "string - Aria label for video"
+      }
+    },
+    "kpiRules": {
+      "kpiItems": {
+        "required": true,
+        "fixedCount": 3,
+        "note": "Exactly 3 KPI items required"
+      },
+      "kpiItemStructure": {
+        "value": "string - The stat value (e.g., '180+', '96%', '15+') (required)",
+        "label": "string - Description of the stat (required)"
+      }
+    }
+  },
+  "propsSchema": {
+    "testimonials": "Array<{ id: string, name: string, role: string, company: string, rating: number, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "kpiItems": "[KpiItem, KpiItem, KpiItem] - Exactly 3 KPI stats (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean (required)",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-95 2xl:min-h-105')",
+    "ariaLabel?": "string (default: 'Testimonials section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "imageClassName?": "string",
+    "overlayClassName?": "string",
+    "ratingClassName?": "string",
+    "nameClassName?": "string",
+    "roleClassName?": "string",
+    "companyClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<TestimonialCardSixteen testimonials={[{ id: '1', name: 'Alisa Hester', role: 'PM', company: 'Web Design Agency', rating: 5, imageSrc: '/placeholder.jpg' }]} kpiItems={[{ value: '180+', label: 'Projects completed' }, { value: '96%', label: 'Client satisfaction' }, { value: '15+', label: 'Years experience' }]} animationType=\"slide-up\" title=\"What Our Clients Say\" description=\"Hear from those who've experienced our work\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for testimonial sections with visual emphasis on people",
+    "Include exactly 3 KPI items for the bottom section",
+    "Use high-quality portrait images",
+    "Supports 3D animations"
+  ],
+  "dont": [
+    "Do not use without KPI items",
+    "Do not use without portrait images"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

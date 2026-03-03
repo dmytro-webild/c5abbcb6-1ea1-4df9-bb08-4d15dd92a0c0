@@ -1,0 +1,73 @@
+{
+  "name": "TestimonialCardFifteen",
+  "description": "Centered testimonial with star rating, animated text, author, and avatar group.",
+  "details": "Use for showcasing a single prominent testimonial with social proof. Layout: Star Rating (5 stars at top) → Large Animated Testimonial Text (TextAnimation) → Author Name → Avatar Group. Stars show filled/unfilled based on rating value. TextAnimation uses theme's defaultTextAnimation. AvatarGroup shows 3 avatars on mobile, 6 on desktop. Best for hero-style testimonial sections or featured customer reviews.",
+  "constraints": {
+    "textRules": {
+      "testimonial": {
+        "required": true,
+        "example": "This product has completely transformed how we work. The results speak for themselves.",
+        "minChars": 20,
+        "maxChars": 300
+      },
+      "author": {
+        "required": true,
+        "example": "James Carter, Journalist",
+        "minChars": 2,
+        "maxChars": 60
+      }
+    },
+    "ratingRules": {
+      "rating": {
+        "required": true,
+        "min": 0,
+        "max": 5,
+        "example": 5,
+        "note": "Number of filled stars (0-5)"
+      }
+    },
+    "avatarRules": {
+      "avatars": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{ src: '/avatars/user1.jpg', alt: 'User 1' }]",
+        "note": "Array of avatar objects with src and alt. Shows 3 on mobile, 6 on desktop."
+      }
+    }
+  },
+  "propsSchema": {
+    "testimonial": "string",
+    "rating": "number (0-5)",
+    "author": "string",
+    "avatars": "Array<{ src: string, alt: string }>",
+    "ratingAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal' (required)",
+    "avatarsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal' (required)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Testimonial section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "ratingClassName?": "string",
+    "starClassName?": "string",
+    "testimonialClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "avatarClassName?": "string",
+    "avatarImageClassName?": "string"
+  },
+  "usageExample": "<TestimonialCardFifteen testimonial=\"This product has completely transformed how we work.\" rating={5} author=\"James Carter, Journalist\" avatars={[{ src: '/avatars/user1.jpg', alt: 'User 1' }, { src: '/avatars/user2.jpg', alt: 'User 2' }]} useInvertedBackground={false} />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for social proof",
+    "Use for customer reviews",
+    "Requires avatars[]"
+  ],
+  "dont": [
+    "Do not use multiple items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

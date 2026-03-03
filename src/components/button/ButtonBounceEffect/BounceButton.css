@@ -1,0 +1,30 @@
+.bounce-button {
+  --ease-elastic: linear(0, 0.55 7.5%, 0.85 12%, 0.95 14%, 1.03 16.5%, 1.09 20%, 1.13 22%, 1.14 23%, 1.15 24.5%, 1.15 26%, 1.13 28%, 1.11 31%, 1.05 39%, 1.02 43%, 0.99 47%, 0.98 52%, 0.97 59%, 1.002 81%, 1);
+  transition: transform 0.65s var(--ease-elastic);
+}
+
+.bounce-button [data-button-animate-chars] span {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0px calc(var(--text-sm) * 1.5) currentColor;
+  transform: translateY(0) rotate(0.001deg);
+  transition: transform 0.65s var(--ease-elastic);
+}
+
+.bounce-button:hover {
+  transform: scale(0.92) rotate(-3deg);
+}
+
+.bounce-button:hover [data-button-animate-chars] span {
+  transform: translateY(calc(var(--text-sm) * -1.5)) rotate(3deg);
+}
+
+@media (max-width: 768px) {
+  .bounce-button:hover {
+    transform: scale(1) rotate(0deg);
+  }
+
+  .bounce-button:hover [data-button-animate-chars] span {
+    transform: translateY(0) rotate(0);
+  }
+}

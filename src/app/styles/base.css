@@ -1,0 +1,28 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0);
+}
+
+html {
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-sans-3), sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-source-sans-3), sans-serif;
+}

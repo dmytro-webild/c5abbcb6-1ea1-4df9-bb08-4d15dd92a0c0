@@ -1,0 +1,36 @@
+{
+  "name": "Textarea",
+  "description": "Styled textarea field with secondary-button styling and rounded-theme-capped borders.",
+  "details": "Use for multi-line text input in forms. Features secondary-button background styling, customizable row height, resize disabled, and focus states. Includes disabled state with reduced opacity. Ideal for messages, comments, or longer text content.",
+  "constraints": {
+    "textRules": {
+      "placeholder": {
+        "required": false,
+        "example": "Type your message...",
+        "minChars": 2,
+        "maxChars": 100
+      }
+    }
+  },
+  "propsSchema": {
+    "value": "string (required)",
+    "onChange": "(value: string) => void (required)",
+    "placeholder?": "string",
+    "rows?": "number (default: 5)",
+    "required?": "boolean (default: false)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "className?": "string"
+  },
+  "usageExample": "<Textarea value={message} onChange={(value) => setMessage(value)} placeholder=\"Type your message...\" rows={5} required />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "TextAbout",
+  "propsSchema": {
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "title": "string",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

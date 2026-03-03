@@ -1,0 +1,104 @@
+{
+  "name": "FeatureBorderGlow",
+  "description": "CardStack feature section with animated glowing border effect that follows cursor/scroll.",
+  "details": "Use for feature showcases with premium animated border effect. Uses CardStack with uniform-all-items-equal grid (hardcoded). Each card displays an icon at top, title and description below, with an animated glowing border overlay using Motion React. The border glow dynamically follows mouse position on desktop (within proximity threshold of 64px), or activates on scroll for mobile. Effect uses CSS variables (accent, background-accent) for theme-aware colors. Border width is 1.5px with 40deg spread and smooth angle transitions (2s duration). Desktop: Glowing effect tracks mouse movement with conic gradient mask following cursor angle. Mobile: Effect centers on viewport when card enters view. Each card uses primary-button styling for icon container (3.75rem square) with card styling and rounded-theme-capped borders. All cards have min-h-75 2xl:min-h-85 default height. The glowing effect has inactive zone of 0.01 (nearly no dead zone in center). Best for 2-6 features to showcase premium product benefits with elegant visual polish.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Powerful Features with Border Glow",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Hover over each card to reveal the glowing border effect",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "icon": {
+        "required": true,
+        "example": "Zap",
+        "note": "LucideIcon component displayed at top of card with glowing border"
+      },
+      "title": {
+        "required": true,
+        "example": "Lightning Fast",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "description": {
+        "required": true,
+        "example": "Optimized for performance with minimal overhead and blazing fast load times",
+        "minChars": 10,
+        "maxChars": 200
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 6,
+      "recommendedItems": "2-6",
+      "note": "Works best with 2-6 features for optimal grid layout"
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ icon: LucideIcon, title: string, description: string }> (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean (required)",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons' - for 5+ items)",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-75 2xl:min-h-85')",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "iconContainerClassName?": "string",
+    "iconClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string"
+  },
+  "usageExample": "<FeatureBorderGlow features={[{ icon: Zap, title: 'Lightning Fast', description: 'Optimized for performance with minimal overhead' }, { icon: Shield, title: 'Secure by Default', description: 'Built with security best practices' }]} title=\"Powerful Features with Border Glow\" description=\"Hover over each card to reveal the glowing border effect\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for premium feature showcases with elegant visual polish",
+    "Best for 2-6 features",
+    "Each feature requires icon, title, and description",
+    "Use for modern landing pages"
+  ],
+  "dont": [
+    "Do not use for simple text-only feature lists",
+    "Do not use without icons for each feature"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

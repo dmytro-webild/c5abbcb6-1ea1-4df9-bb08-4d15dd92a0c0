@@ -1,0 +1,80 @@
+{
+  "name": "HeroSignup",
+  "description": "Full-screen centered hero section with tag badge above title, centered text content, configurable background, and email signup form below.",
+  "details": "Use for lead generation landing pages focused on email capture. Features full viewport height (h-svh on mobile, h-screen on desktop) with vertically and horizontally centered content. Tag badge with optional icon is displayed above the title. Includes animated title and description via TextBox, required background variant, and EmailSignupForm for newsletter/early access signups. No buttons prop - CTA is the email signup form.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Join the Future of Web Development",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Be the first to experience our revolutionary platform. Sign up now and get exclusive early access.",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": true,
+        "example": "Early Access",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "inputPlaceholder": {
+        "required": false,
+        "example": "Enter your email",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "buttonText": {
+        "required": false,
+        "example": "Get Early Access",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string (required)",
+    "description": "string (required)",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'glowing-orb-sparkles' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag": "string (required)",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Get Started')",
+    "onSubmit?": "(email: string) => void",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"hover-bubble\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\">\n  <HeroSignup \n    background={{ variant: 'sparkles-gradient' }}\n    tag=\"Early Access\"\n    tagIcon={Sparkles}\n    title=\"Join the Future of Web Development\" \n    description=\"Be the first to experience our revolutionary platform. Sign up now and get exclusive early access.\" \n    inputPlaceholder=\"Enter your email\"\n    buttonText=\"Get Early Access\"\n    onSubmit={(email) => console.log('Email:', email)}\n  />\n</ThemeProvider>",
+  "do": [
+    "Use ONLY for waitlist or coming soon websites",
+    "Use for single-page early access email capture",
+    "Include a compelling tag badge"
+  ],
+  "dont": [
+    "Never use for any other type of website",
+    "Never use for multi-section websites",
+    "Never use for product, company, or portfolio websites",
+    "Do not use for heroes that need multiple CTA buttons",
+    "Do not use for heroes with media content"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

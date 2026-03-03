@@ -1,0 +1,34 @@
+{
+  "name": "ButtonTextUnderline",
+  "description": "Text-only button where an underline animates in on hover.",
+  "details": "Use for inline or minimal CTAs or links where you want the hover state to reveal affordance without altering color or layout. The underline appears smoothly under the label when hovered.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Learn more",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonTextUnderline text=\"Learn more\" href=\"about\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

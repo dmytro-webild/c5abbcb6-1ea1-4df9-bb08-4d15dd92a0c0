@@ -1,0 +1,66 @@
+{
+  "name": "TextBox",
+  "description": "Flexible text composition component with animated title and description.",
+  "details": "Use for text content blocks with optional tag and up to 2 CTAs. Supports default (centered), split (tag + title + description left, buttons right), split-actions (tag + title left, buttons only right), or split-description (tag + title left, description only right). Text animations use ThemeProvider defaults.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Welcome to Our Platform",
+        "minChars": 2,
+        "maxChars": 100
+      },
+      "description": {
+        "required": true,
+        "example": "Discover amazing features and capabilities",
+        "minChars": 5,
+        "maxChars": 500
+      },
+      "tag": {
+        "required": false,
+        "example": "New",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "type?": "'entrance-slide' | 'reveal-blur' | 'background-highlight'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' (required)",
+    "center?": "boolean (default: false)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "duration?": "number (default: 1)",
+    "start?": "string (default: 'top 80%')",
+    "end?": "string (default: 'top 20%')",
+    "gradientColors?": "{ from: string, to: string }",
+    "children?": "React.ReactNode",
+    "className?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "avatars?": "Array<{ src: string, alt?: string }> - User avatar images",
+    "avatarText?": "string",
+    "avatarGroupClassName?": "string"
+  },
+  "usageExample": "<TextBox title=\"Welcome\" description=\"Get started with our platform today\" buttons={[{ text: 'Learn More', href: 'about' }]} center={true} />",
+  "do": [
+    "Use for general use",
+    "Requires buttons?[]",
+    "Requires avatars?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

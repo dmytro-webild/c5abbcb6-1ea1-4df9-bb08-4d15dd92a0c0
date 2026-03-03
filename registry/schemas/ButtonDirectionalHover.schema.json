@@ -1,0 +1,16 @@
+{
+  "name": "ButtonDirectionalHover",
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "scrollToSection?": "boolean",
+    "className?": "string",
+    "bgClassName?": "string",
+    "textClassName?": "string",
+    "circleClassName?": "string - Controls the expanding circle color",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  }
+}

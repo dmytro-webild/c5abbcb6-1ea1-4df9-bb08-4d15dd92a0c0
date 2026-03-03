@@ -1,0 +1,141 @@
+{
+  "horizontal timeline": [
+    "FeatureCardEight"
+  ],
+  "vertical sticky scroll timeline": [
+    "FeatureCardNine"
+  ],
+  "sequential process": [
+    "FeatureCardSix",
+    "FeatureCardNineteen",
+    "FeatureCardTen"
+  ],
+  "testimonials": [
+    "ProductCardTwo",
+    "TestimonialCardOne",
+    "TestimonialCardTwo",
+    "TestimonialCardFive",
+    "TestimonialCardSix",
+    "TestimonialCardThirteen",
+    "TestimonialCardSixteen",
+    "SocialProofOne"
+  ],
+  "feature showcase": [
+    "NavbarStyleFullscreen",
+    "NavbarStyleCentered",
+    "SplitAbout",
+    "TextSplitAbout",
+    "TextAbout",
+    "TestimonialAboutCard",
+    "AboutMetric",
+    "FeatureCardOne",
+    "FeatureCardThree",
+    "FeatureCardTwelve",
+    "FeatureCardSixteen",
+    "FeatureCardTwentyOne",
+    "FeatureCardMedia",
+    "FeatureCardTwentyThree",
+    "FeatureCardTwentyFour",
+    "FeatureCardTwentyFive",
+    "FeatureCardTwentySix",
+    "FeatureCardTwentySeven",
+    "FeatureBento",
+    "FeatureBorderGlow",
+    "FeatureHoverPattern",
+    "PricingCardOne",
+    "PricingCardTwo",
+    "PricingCardThree",
+    "PricingCardFive",
+    "PricingCardEight",
+    "PricingCardNine",
+    "MetricCardThree",
+    "MetricCardSeven",
+    "TestimonialCardTen",
+    "TestimonialCardTwelve",
+    "ContactCenter",
+    "ContactSplit",
+    "ContactSplitForm",
+    "FooterBase",
+    "FooterMedia",
+    "FooterLogoEmphasis",
+    "FooterSimple",
+    "NavbarLayoutFloatingInline",
+    "NavbarLayoutFloatingOverlay"
+  ],
+  "metrics display": [
+    "MetricCardOne",
+    "MetricCardTwo",
+    "MetricCardEleven",
+    "MetricCardFourteen"
+  ],
+  "contact form": [
+    "ProductCardOne",
+    "TeamCardEleven",
+    "FaqBase",
+    "FaqDouble",
+    "ContactText",
+    "ContactFaq",
+    "ContactCTA"
+  ],
+  "hero with media": [
+    "HeroBillboard",
+    "HeroBillboardCarousel",
+    "HeroBillboardGallery",
+    "HeroSplit",
+    "HeroSplitKpi",
+    "HeroOverlay",
+    "HeroLogo",
+    "HeroLogoBillboard",
+    "HeroLogoBillboardSplit",
+    "HeroBillboardScroll",
+    "HeroBillboardRotatedCarousel",
+    "HeroCarouselLogo",
+    "HeroCentered",
+    "HeroSignup",
+    "HeroSplitDualMedia",
+    "HeroPersonalLinks",
+    "HeroBillboardDashboard",
+    "HeroSplitDoubleCarousel",
+    "HeroSplitTestimonial",
+    "HeroBillboardTestimonial",
+    "MediaAbout",
+    "TestimonialCardFifteen",
+    "BlogCardThree"
+  ],
+  "product showcase": [
+    "NavbarStyleApple",
+    "ProductCardThree",
+    "ProductCardFour"
+  ],
+  "about section": [
+    "InlineImageSplitTextAbout",
+    "MetricSplitMediaAbout",
+    "TeamCardTwo",
+    "TeamCardSix"
+  ],
+  "sequential vertical steps with alternating layout": [
+    "FeatureCardSeven"
+  ],
+  "pricing plans": [
+    "MetricCardTen"
+  ],
+  "team section": [
+    "TeamCardOne",
+    "TeamCardFive",
+    "TeamCardTen"
+  ],
+  "faq section": [
+    "FaqSplitMedia",
+    "FaqSplitText"
+  ],
+  "content listing": [
+    "BlogCardOne",
+    "BlogCardTwo"
+  ],
+  "footer": [
+    "FooterBaseReveal",
+    "FooterCard",
+    "FooterBaseCard",
+    "FooterLogoReveal"
+  ]
+}

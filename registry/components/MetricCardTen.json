@@ -1,0 +1,130 @@
+{
+  "name": "MetricCardTen",
+  "description": "Job listing style metric cards with title, subtitle, category indicator, value, and optional footer buttons.",
+  "details": "Use for job listings, pricing tiers, or any metric display with detailed information. Layout: Title (job title/name) → Subtitle (location/details) → Bottom row with category indicator (dot + label, truncates) on left and value (salary/price) on right → Optional footer with accent background containing up to 2 buttons. Uses CardStack with hardcoded uniform-all-items-equal grid and carousel threshold of 4 (switches to carousel with 4+ items). Supports card or default container styles with inverted text logic.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Open Positions",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Join our team and help shape the future of AI",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Careers",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "title": {
+        "required": true,
+        "example": "Senior Software Engineer, Platform",
+        "minChars": 5,
+        "maxChars": 80,
+        "note": "Main title displayed at top of card, truncates if too long"
+      },
+      "subtitle": {
+        "required": true,
+        "example": "San Francisco, CA · Full-time · Remote eligible",
+        "minChars": 5,
+        "maxChars": 100,
+        "note": "Secondary info like location, type, or details"
+      },
+      "category": {
+        "required": true,
+        "example": "Engineering",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Category label with dot indicator, truncates on overflow"
+      },
+      "value": {
+        "required": true,
+        "example": "$185K – $265K",
+        "minChars": 1,
+        "maxChars": 25,
+        "note": "Value displayed on bottom right (salary, price, etc.)"
+      },
+      "buttons": {
+        "required": false,
+        "maxItems": 2,
+        "note": "Optional buttons in footer section with accent background"
+      }
+    },
+    "itemRules": {
+      "minItems": 1,
+      "maxItems": 12,
+      "recommendedItems": "3-6"
+    }
+  },
+  "propsSchema": {
+    "metrics": "Array<{ id: string, title: string, subtitle: string, category: string, value: string, buttons?: Array<{text: string, onClick?: () => void, href?: string}> }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'centered' | 'left' | 'right' | 'spread'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "cardTitleClassName?": "string",
+    "subtitleClassName?": "string",
+    "categoryClassName?": "string",
+    "valueClassName?": "string",
+    "footerClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<MetricCardTen metrics={[{ id: '1', title: 'Senior Software Engineer, Platform', subtitle: 'San Francisco, CA · Full-time · Remote eligible', category: 'Engineering', value: '$185K – $265K', buttons: [{ text: 'Apply Now', href: '#' }] }, { id: '2', title: 'Product Designer, Enterprise', subtitle: 'New York, NY · Full-time', category: 'Design', value: '$145K – $195K', buttons: [{ text: 'Apply Now', href: '#' }] }, { id: '3', title: 'Data Scientist, ML Platform', subtitle: 'Remote · Full-time', category: 'Data Science', value: '$168K – $238K', buttons: [{ text: 'Apply Now', href: '#' }] }]} title=\"Open Positions\" description=\"Join our team and help shape the future of AI\" textboxLayout=\"default\" useInvertedBackground={false} animationType=\"slide-up\" />",
+  "do": [
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 12 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

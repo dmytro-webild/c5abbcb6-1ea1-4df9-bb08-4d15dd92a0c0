@@ -1,0 +1,95 @@
+{
+  "name": "HeroLogo",
+  "description": "Full-screen hero section with background media, large text logo at bottom that scales to fill container width, description and button row above, featuring a linear gradient blur overlay.",
+  "details": "Use for brand-focused landing pages that emphasize logo and visual identity with strong background imagery. Features full viewport height with background media (image or video), linear gradient blur overlay at bottom (75vh height) for improved logo visibility, and large responsive text logo that automatically fills the container width. Above the logo is a horizontal row with description text on the left and up to 2 buttons on the right (stacked vertically on mobile).",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": true,
+        "example": "Webild",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "description": {
+        "required": true,
+        "example": "Building the future of web design with innovative solutions",
+        "minChars": 5,
+        "maxChars": 200
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-background.jpg",
+        "note": "Background image that fills the viewport. Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-background.mp4",
+        "note": "Background video that fills the viewport. Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Hero background",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "showDimOverlay": {
+        "required": false,
+        "default": false,
+        "note": "Adds semi-transparent dark overlay (bg-background/20) over background media for improved text and logo contrast"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://github.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Buttons are required (cannot be empty array). Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "logoText": "string",
+    "description": "string",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "showDimOverlay?": "boolean (default: false)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentContainerClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "logoContainerClassName?": "string",
+    "logoClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "blurClassName?": "string",
+    "dimOverlayClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"hover-bubble\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\">\n  <HeroLogo \n    logoText=\"Webild\" \n    description=\"Building the future of web design with innovative solutions\" \n    buttons={[{ text: 'Get Started', href: 'https://github.com' }, { text: 'Learn More', href: 'about' }]} \n    imageSrc=\"/placeholders/placeholder5.jpg\" \n    imageAlt=\"Hero background\"\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires buttons[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

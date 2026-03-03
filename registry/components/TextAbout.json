@@ -1,0 +1,55 @@
+{
+  "name": "TextAbout",
+  "description": "Centered about section with optional tag, large animated text, and optional buttons below.",
+  "details": "Use for simple, impactful about statements. Features an optional Tag chip above the title, centered large text (2xl on mobile, 5xl on desktop) with TextAnimation using words-trigger variant, and up to 2 optional CTA buttons with primary/secondary styling. Button variant controlled by ThemeProvider, text animations use theme defaults.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "We build products that empower teams to create exceptional digital experiences",
+        "minChars": 10,
+        "maxChars": 200
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. Border radius controlled by ThemeProvider's borderRadius. All sections should be wrapped in a single ThemeProvider at the app/page level."
+    }
+  },
+  "propsSchema": {
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "title": "string",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\n<ThemeProvider defaultButtonVariant=\"icon-arrow\" defaultTextAnimation=\"reveal-blur\" borderRadius=\"soft\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <TextAbout tag=\"About Us\" title=\"We create exceptional digital experiences\" useInvertedBackground={false} buttons={[{ text: 'Get Started', href: 'https://example.com' }, { text: 'Learn More', href: 'about' }]} />\n</ThemeProvider>",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for about pages",
+    "Use for company information",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

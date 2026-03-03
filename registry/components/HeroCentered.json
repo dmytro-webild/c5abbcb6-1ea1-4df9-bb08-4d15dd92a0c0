@@ -1,0 +1,92 @@
+{
+  "name": "HeroCentered",
+  "description": "Full-screen centered hero section with avatar group above title, centered text content, configurable background, and optional buttons.",
+  "details": "Use for impactful landing pages with social proof emphasis. Features full viewport height (h-svh on mobile, h-screen on desktop) with vertically and horizontally centered content. Avatar group with optional text is displayed above the title for social proof. Includes animated title and description via TextBox, required background variant, and up to 2 CTA buttons. No media content below - purely text-focused hero.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Build Modern Web Experiences",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Create stunning, responsive websites with our comprehensive component library",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "avatarText": {
+        "required": false,
+        "example": "Trusted by 1000+ users",
+        "minChars": 2,
+        "maxChars": 50
+      }
+    },
+    "avatarRules": {
+      "avatars": {
+        "required": true,
+        "minItems": 1,
+        "maxItems": 5,
+        "structure": {
+          "src": "string - Avatar image source (required)",
+          "alt": "string - Alt text for accessibility (required)"
+        },
+        "note": "Avatars are displayed above the title for social proof"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs open in new tab. Internal values scroll to sections",
+        "onClick": "() => void - Additional click handler (optional)"
+      },
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant"
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "avatars": "Array<{ src: string, alt: string }> (required)",
+    "avatarText?": "string",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "avatarGroupClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "marqueeItems?": "Array<{ type: 'image', src: string, alt?: string } | { type: 'text', text: string } | { type: 'text-icon', text: string, icon: LucideIcon }> - Optional marquee at bottom of hero",
+    "marqueeSpeed?": "number (default: 30)",
+    "showMarqueeCard?": "boolean (default: true) - Card styling for text/text-icon items, images never have cards",
+    "marqueeClassName?": "string",
+    "marqueeItemClassName?": "string",
+    "marqueeCardClassName?": "string",
+    "marqueeImageClassName?": "string",
+    "marqueeTextClassName?": "string",
+    "marqueeIconClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"hover-bubble\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\">\n  <HeroCentered \n    background={{ variant: 'downward-rays-static' }}\n    avatars={[{ src: '/avatar1.jpg', alt: 'User 1' }, { src: '/avatar2.jpg', alt: 'User 2' }, { src: '/avatar3.jpg', alt: 'User 3' }]}\n    avatarText=\"Trusted by 1000+ users\"\n    title=\"Build Modern Web Experiences\" \n    description=\"Create stunning, responsive websites with our comprehensive component library\" \n    buttons={[{ text: 'Get Started', href: 'https://example.com' }, { text: 'Learn More', href: 'about' }]} \n  />\n</ThemeProvider>",
+  "do": [
+    "Use for impactful landing pages with social proof emphasis",
+    "Include avatars for social proof",
+    "Use appropriate background variant",
+    "Full viewport height - purely text-focused hero"
+  ],
+  "dont": [
+    "Do not use without avatars",
+    "Do not use for heroes with media content below"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

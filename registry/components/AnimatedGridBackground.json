@@ -1,0 +1,25 @@
+{
+  "name": "AnimatedGridBackground",
+  "description": "Grid pattern with animated pulsing squares using Framer Motion with 3D perspective and radial mask from top center.",
+  "details": "Use for modern, interactive backgrounds with subtle animation. Features SVG grid with randomly positioned squares that pulse in opacity. Includes 3D perspective with skew transform (skew-y-12) and stretched height (200%). Radial gradient mask positioned at top center (ellipse 100% 100% at 50% 0%) creates a dome-shaped spotlight effect fading towards edges and bottom. Uses accent color for grid lines (20% opacity) and background-accent for animated squares. Perfect for hero sections where grid should be most prominent at top. Requires framer-motion.",
+  "constraints": {},
+  "propsSchema": {
+    "squareSize?": "number (default: 100)",
+    "numSquares?": "number (default: 50)",
+    "maxOpacity?": "number (default: 0.15)",
+    "className?": "string"
+  },
+  "usageExample": "<AnimatedGridBackground squareSize={100} numSquares={50} maxOpacity={0.15} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

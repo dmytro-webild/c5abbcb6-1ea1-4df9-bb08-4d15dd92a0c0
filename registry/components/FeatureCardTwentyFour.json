@@ -1,0 +1,84 @@
+{
+  "name": "FeatureCardTwentyFour",
+  "description": "Two-column feature card list with title, author, description, tags, and media.",
+  "details": "Use for feature articles, case studies, or content with author attribution. Uses CardList component with card or border variants. Layout: CardStackTextBox header → Vertical list of items. Each card uses 10-column grid on desktop (6/10 text, 4/10 media). Text area includes title with inline author (lighter opacity), tags using Tag components, and description. Media on right side. Text colors adapt based on variant and useInvertedBackground settings. Best for featured content, case studies, or highlighted features.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Latest Features",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Stay updated with our latest announcements",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "itemRules": {
+      "minItems": 1,
+      "maxItems": 10,
+      "recommendedItems": "2-4",
+      "note": "Each feature requires id, title, author, description, tags array. Media uses discriminated union: either imageSrc (with optional imageAlt) OR videoSrc (with optional videoAriaLabel)."
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, author: string, description: string, tags: string[], imageSrc?: string, imageAlt?: string, videoSrc?: string, videoAriaLabel?: string, onFeatureClick?: () => void }> - Feature card items (requires imageSrc or videoSrc)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean (required)",
+    "ariaLabel?": "string (default: 'Features section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "cardContentClassName?": "string",
+    "cardTitleClassName?": "string",
+    "authorClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "tagsContainerClassName?": "string",
+    "tagClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentyFour features={[{ id: '1', title: 'New Genre Featured in Fonts in Use', author: 'Leon Brown', description: 'We have been featured in Fonts in Use for our typography choices.', tags: ['Feature', 'Design'], imageSrc: '/feature1.jpg' }]} animationType=\"slide-up\" title=\"Latest Features\" description=\"Stay updated with our latest announcements\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature articles, case studies, or content with author attribution",
+    "Best for 2-4 featured items",
+    "Include relevant tags for each feature",
+    "Use high-quality images or videos"
+  ],
+  "dont": [
+    "Do not use without author attribution",
+    "Do not use for simple feature lists without descriptions"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

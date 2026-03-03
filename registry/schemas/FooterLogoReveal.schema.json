@@ -1,0 +1,12 @@
+{
+  "name": "FooterLogoReveal",
+  "propsSchema": {
+    "logoText?": "string (default: 'Webild')",
+    "logoLineHeight?": "number (default: 1.1)",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "wrapperClassName?": "string",
+    "containerClassName?": "string",
+    "logoClassName?": "string"
+  }
+}

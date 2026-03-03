@@ -1,0 +1,61 @@
+{
+  "name": "FooterCard",
+  "description": "Minimalist footer with card wrapper containing logo, divider, copyright, and optional social links.",
+  "details": "Use for simple, clean footer layouts with card styling. Layout: Section wrapper (py-20) → Card container (w-content-width, rounded-theme-capped, px-10) → FooterLogo → Divider line (h-px, bg-accent/20) → Bottom section (copyright text + optional social links). Logo supports either image (logoSrc) or SVG text (logoText via FooterLogo component). Divider uses accent color with 20% opacity. Bottom section displays copyright (text-accent/75, text-sm) on left and optional social icons on right in flex row (mobile: stacks vertically). Social links are conditionally rendered only when provided. All elements contained within card for unified appearance. Best for simple, modern footer designs without extensive navigation. Uses semantic footer tag with contentinfo role.",
+  "constraints": {
+    "textRules": {
+      "copyrightText": {
+        "required": false,
+        "example": "© 2025 | Webild",
+        "minChars": 5,
+        "maxChars": 100,
+        "note": "Copyright text displayed at bottom left"
+      },
+      "logoText": {
+        "required": false,
+        "example": "Webild",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Text used for SVG logo"
+      }
+    },
+    "socialLinksRules": {
+      "required": false,
+      "structure": {
+        "icon": "LucideIcon - Icon component (required)",
+        "href": "string - Social profile URL (required)",
+        "ariaLabel": "string - Accessibility label (required)"
+      },
+      "note": "Optional array of social links. Only renders if provided and has length > 0."
+    },
+    "logoRules": {
+      "note": "Uses logoText for SVG text logo via FooterLogo component."
+    }
+  },
+  "propsSchema": {
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "socialLinks?": "Array<{ icon: LucideIcon, href: string, ariaLabel: string }> - Social media links",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "logoClassName?": "string",
+    "dividerClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "socialContainerClassName?": "string",
+    "socialIconClassName?": "string"
+  },
+  "usageExample": "<FooterCard logoText=\"Webild\" copyrightText=\"© 2025 | Webild\" socialLinks={[{ icon: Twitter, href: 'https://twitter.com/webild', ariaLabel: 'Twitter' }, { icon: Linkedin, href: 'https://linkedin.com/company/webild', ariaLabel: 'LinkedIn' }]} />",
+  "do": [
+    "Use for general use",
+    "Requires socialLinks?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

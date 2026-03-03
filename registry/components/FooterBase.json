@@ -1,0 +1,81 @@
+{
+  "name": "FooterBase",
+  "description": "Classic footer with logo, multi-column navigation, copyright text, and privacy policy link.",
+  "details": "Use for standard website footers with organized navigation. Features logoText as h2 heading on left, flexible column layout for navigation links, copyright text, and privacy policy button. All links use ButtonTextUnderline component. Footer uses primary-button background with text-background color scheme.",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": false,
+        "default": "Webild",
+        "example": "Company Name",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "copyrightText": {
+        "required": false,
+        "default": "© 2025 | Webild",
+        "example": "© 2025 Company Name",
+        "minChars": 5,
+        "maxChars": 50
+      },
+      "columnTitle": {
+        "required": true,
+        "example": "Product",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "itemLabel": {
+        "required": true,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "structureRules": {
+      "columns": {
+        "required": true,
+        "minColumns": 1,
+        "maxColumns": 3,
+        "note": "Each column must have title and items array"
+      },
+      "items": {
+        "required": true,
+        "minItems": 1,
+        "structure": {
+          "label": "string - Link text (required)",
+          "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+          "onClick": "() => void - Additional click handler (optional)"
+        }
+      }
+    }
+  },
+  "propsSchema": {
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns (required)",
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoTextClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  },
+  "usageExample": "<FooterBase columns={[{ title: 'Product', items: [{ label: 'Features', href: 'features' }, { label: 'Pricing', href: 'pricing' }] }]} copyrightText=\"© 2025 | Company\" onPrivacyClick={() => console.log('Privacy clicked')} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires columns[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

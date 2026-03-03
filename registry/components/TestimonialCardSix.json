@@ -1,0 +1,130 @@
+{
+  "name": "TestimonialCardSix",
+  "description": "Dual auto-scrolling marquee testimonial section with reversed testimonial cards moving in opposite directions.",
+  "details": "Use for dynamic testimonial displays with continuous scrolling. Layout: Optional TextBox Header → Dual Auto-Scrolling Marquees (Top & Bottom). Each testimonial card shows quote text (line-clamped to 2 lines for consistent heights) with TestimonialAuthor below (avatar/icon, name, handle). Top marquee moves in one direction (default: left), bottom marquee automatically moves opposite direction (right). Both marquees use same speed and display same testimonials in reversed order to avoid perfect alignment. Uses react-fast-marquee for smooth infinite scrolling. Supports quote icon or custom icon per testimonial. Speed is customizable (default: 40px/s). All core fields required for visual consistency. Best for social proof sections, client feedback showcases, or review displays. Optional header with title, description, tag, and buttons via CardStackTextBox.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "What Our Clients Say",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Hear from those who've experienced our work",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Testimonials",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "testimonialRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "name": {
+        "required": true,
+        "example": "Sarah Johnson",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "handle": {
+        "required": true,
+        "example": "@sarahj",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Social media handle or role/company"
+      },
+      "testimonial": {
+        "required": true,
+        "example": "This component library has transformed our development workflow. The quality and attention to detail is exceptional.",
+        "minChars": 20,
+        "maxChars": 200,
+        "note": "Testimonial text automatically clamped to 2 lines for consistent card heights"
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/avatar.jpg",
+        "note": "Avatar image shown in TestimonialAuthor (aspect-square)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Sarah Johnson",
+        "note": "Alt text for avatar image"
+      },
+      "icon": {
+        "required": false,
+        "example": "Quote",
+        "note": "LucideIcon component to display if no imageSrc provided (defaults to Quote icon)"
+      }
+    },
+    "itemRules": {
+      "minItems": 6,
+      "maxItems": 20,
+      "recommendedItems": "8-12",
+      "note": "Works best with 8-12 testimonials. Continuously scrolls with top and bottom marquees in opposite directions."
+    }
+  },
+  "propsSchema": {
+    "testimonials": "Array<{ id: string, name: string, handle: string, testimonial: string, imageSrc?: string, imageAlt?: string, icon?: LucideIcon }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "speed?": "number (default: 40)",
+    "topMarqueeDirection?": "'left' | 'right' (default: 'left')",
+    "ariaLabel?": "string (default: 'Testimonials section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "carouselClassName?": "string",
+    "bottomCarouselClassName?": "string",
+    "cardClassName?": "string",
+    "testimonialClassName?": "string",
+    "imageWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "iconClassName?": "string",
+    "nameClassName?": "string",
+    "handleClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<TestimonialCardSix testimonials={[{ id: '1', name: 'Sarah Johnson', handle: '@sarahj', testimonial: 'This component library has transformed our development workflow. The quality and attention to detail is exceptional.', imageSrc: '/avatar1.jpg', imageAlt: 'Sarah Johnson' }, { id: '2', name: 'Michael Chen', handle: '@mchen', testimonial: 'Incredibly well-designed components that are both beautiful and functional. Highly recommend!', imageSrc: '/avatar2.jpg', imageAlt: 'Michael Chen' }]} animationType=\"slide-up\" title=\"What Our Clients Say\" description=\"Hear from those who've experienced our work\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for social proof",
+    "Use for customer reviews",
+    "Requires testimonials[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use less than 6 items",
+    "Do not use more than 20 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

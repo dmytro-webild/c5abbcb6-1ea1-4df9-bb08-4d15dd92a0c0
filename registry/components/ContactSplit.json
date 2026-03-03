@@ -1,0 +1,96 @@
+{
+  "name": "ContactSplit",
+  "description": "Split layout contact section with tag, animated title and description on one side, media content on the other, and email signup form.",
+  "details": "Use for newsletter signups or email capture with visual context. Features split layout with ContactForm (tag with optional icon, animated title and description, EmailSignupForm) on one side and image or video media on the other. Form is placed in a card with constrained width on larger screens. Media can be positioned left or right. Media uses fixed height on desktop. Ideal for contact sections that benefit from visual storytelling alongside the signup form.",
+  "constraints": {
+    "textRules": {
+      "tag": {
+        "required": true,
+        "example": "Newsletter",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "title": {
+        "required": true,
+        "example": "Medium length heading goes here",
+        "minChars": 4,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "minChars": 20,
+        "maxChars": 200
+      },
+      "inputPlaceholder": {
+        "required": false,
+        "default": "Enter your email",
+        "example": "Your email address",
+        "minChars": 5,
+        "maxChars": 30
+      },
+      "buttonText": {
+        "required": false,
+        "default": "Sign Up",
+        "example": "Subscribe",
+        "minChars": 2,
+        "maxChars": 15
+      },
+      "termsText": {
+        "required": false,
+        "default": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions.",
+        "example": "We respect your privacy. Unsubscribe at any time.",
+        "minChars": 10,
+        "maxChars": 150
+      }
+    }
+  },
+  "propsSchema": {
+    "tag": "string",
+    "title": "string",
+    "description": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "useInvertedBackground": "boolean",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Contact section video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "mediaPosition?": "'left' | 'right' (default: 'right')",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "termsText?": "string (default: 'By clicking Sign Up you're confirming that you agree with our Terms and Conditions.')",
+    "onSubmit?": "(email: string) => void",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string",
+    "contactFormClassName?": "string",
+    "tagClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "termsClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<ContactSplit tag=\"Newsletter\" title=\"Stay updated\" description=\"Subscribe to our newsletter for weekly updates and exclusive content.\" background={{ variant: 'sparkles-gradient' }} useInvertedBackground={false} imageSrc=\"/contact.jpg\" onSubmit={(email) => console.log(email)} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for contact pages",
+    "Use for lead generation"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

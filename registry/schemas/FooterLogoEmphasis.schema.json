@@ -1,0 +1,16 @@
+{
+  "name": "FooterLogoEmphasis",
+  "propsSchema": {
+    "columns": "Array<{ items: Array<{ label: string, href?: string, onClick?: () => void }> }> - Footer navigation columns (required, max 5)",
+    "logoText?": "string (default: 'Webild')",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "itemClassName?": "string",
+    "iconClassName?": "string",
+    "buttonClassName?": "string"
+  }
+}

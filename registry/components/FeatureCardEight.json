@@ -1,0 +1,132 @@
+{
+  "name": "FeatureCardEight",
+  "description": "Horizontal timeline feature section with auto-advancing progress bars, numbered step badges, and shared media display.",
+  "details": "Use for sequential feature presentations or process flows in a horizontal timeline layout. Displays 2-4 feature cards in a grid (2-4 columns on desktop, stacked on mobile) with auto-advancing progress bars that fill over 5 seconds. Each card shows a numbered step badge, title, and description. The shared media area above cards displays images/videos that smoothly transition (opacity fade) as cards advance. Media uses aspect-square on mobile and aspect-video on desktop. Active and previous cards are fully visible (opacity-100), future cards are dimmed (opacity-50). Users can click any card to jump to that step. Grid adapts: 2 items = 2 columns, 3 items = 3 columns, 4+ items = 4 columns. Automatically loops back to first card. Optional header with title, description, tag, and buttons. Header supports centered or split textbox layout (split: tag + title + description left, buttons right; split-actions: tag + title left, buttons only right; split-description: tag + title left, description only right).",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Process",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Discover how we bring ideas to life",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "How It Works",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 3,
+        "note": "Step number displayed in circular badge"
+      },
+      "title": {
+        "required": true,
+        "example": "Research & Planning",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Understanding user needs, market trends, and project requirements",
+        "minChars": 10,
+        "maxChars": 300
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": true,
+        "example": "/feature1.jpg",
+        "note": "Either imageSrc or videoSrc required per card (discriminated union)"
+      },
+      "videoSrc": {
+        "required": true,
+        "example": "/feature1.mp4",
+        "note": "Either imageSrc or videoSrc required per card (discriminated union)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Research and planning illustration",
+        "note": "Falls back to feature title if not provided"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Research and planning video",
+        "note": "Falls back to feature title if not provided"
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 4,
+      "recommendedItems": "2-4",
+      "note": "Works best with 2-4 features. Grid layout adapts based on item count."
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: number, title: string, description: string } & ({ imageSrc: string, imageAlt?: string } | { videoSrc: string, videoAriaLabel?: string })>",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "cardClassName?": "string",
+    "progressBarClassName?": "string",
+    "cardContentClassName?": "string",
+    "stepNumberClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "mediaContainerClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<FeatureCardEight features={[{ id: 1, title: 'Research & Planning', description: 'Understanding user needs, market trends, and project requirements', imageSrc: '/feature1.jpg' }]} title=\"Our Process\" description=\"Discover how we bring ideas to life\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires features[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use non-sequential content",
+    "Do not use single item",
+    "Do not use more than 4 items",
+    "Do not use less than 2 items",
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "SplitAbout",
+  "description": "Split-layout about section with bullet points on one side and image/video on the other.",
+  "details": "Use for about sections showcasing features or benefits with visual support. Features responsive split layout with configurable image position (left/right), bullet points with optional icons, title, and description. Image side takes 60% width on desktop (70% on 2xl), text takes 40% (30% on 2xl). Both sides have card styling with theme border radius.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "About Us",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Learn more about our mission, values, and what drives us forward",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Our Story",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. All sections should be wrapped in a single ThemeProvider at the app/page level."
+    },
+    "bulletPointRules": {
+      "structure": {
+        "title": "string - Bullet point heading (required)",
+        "description": "string - Bullet point text (required)",
+        "icon": "LucideIcon - Optional icon displayed above title"
+      },
+      "note": "Bullet points are separated by horizontal dividers. Border radius controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level."
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/about-image.jpg",
+        "note": "Supports external URLs"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/about-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "About us",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "bulletPoints": "Array<{ title: string, description: string, icon?: LucideIcon }>",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'About section video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'About section')",
+    "imagePosition?": "'left' | 'right' (default: 'right')",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "contentClassName?": "string",
+    "bulletPointClassName?": "string",
+    "bulletTitleClassName?": "string",
+    "bulletDescriptionClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\n<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <SplitAbout title=\"About Us\" description=\"Learn more about our mission, values, and what drives us forward\" textboxLayout=\"default\" useInvertedBackground={false} bulletPoints={[{ title: 'Innovation', description: 'We push boundaries', icon: Lightbulb }, { title: 'Quality', description: 'Excellence in every detail' }]} imageSrc=\"/about.jpg\" />\n</ThemeProvider>",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for about pages",
+    "Use for company information",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]",
+    "Requires bulletPoints[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

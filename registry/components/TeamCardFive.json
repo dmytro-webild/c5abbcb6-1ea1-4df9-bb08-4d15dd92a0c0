@@ -1,0 +1,125 @@
+{
+  "name": "TeamCardFive",
+  "description": "Team section with overlapping portrait cards in responsive flex layout showing centered vertical cards with name and role.",
+  "details": "Use for team member displays with overlapping card effect. Layout: Optional CardStackTextBox Header → Responsive Flex Grid with Overlap. Mobile: 2 items per row (w-55%, -mx-4% overlap). Desktop: Up to 4 items per row (w-28%, -mx-2% overlap) with flex-wrap for additional rows. Each card shows aspect-square media in card wrapper (p-2, rounded-theme) with centered name (2xl font-medium, truncate) and role (base size, 75% opacity, truncate) below. Uses flex-wrap for multi-row support with gap-y-6 vertical spacing. Text uses direct useInvertedBackground logic (not card-aware) as text sits outside card element. Supports both image and video media. Uses useCardAnimation hook for GSAP scroll animations with stagger effect. Best for creative team showcases, staff galleries with visual impact. Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Meet Our Team",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "The talented people behind our success",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Team",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "teamMemberRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "name": {
+        "required": true,
+        "example": "Sarah Johnson",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Team member name displayed at 2xl font-medium, centered with truncate"
+      },
+      "role": {
+        "required": true,
+        "example": "CEO & Founder",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Role/title displayed at base size with 75% opacity, centered with truncate"
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/team/sarah.jpg",
+        "note": "Image path for team member photo (aspect-square in card wrapper with p-2, rounded-theme)"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/team/sarah.mp4",
+        "note": "Video path for team member (aspect-square in card wrapper with p-2, rounded-theme)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Portrait of Sarah Johnson",
+        "note": "Alt text for image (defaults to member name if not provided)"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Video of Sarah Johnson",
+        "note": "ARIA label for video (defaults to member name if not provided)"
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 12,
+      "recommendedItems": "4-8",
+      "note": "Works best with 4-8 team members. Mobile: 2 per row with overlap. Desktop: up to 4 per row with overlap and wrap support for additional rows."
+    }
+  },
+  "propsSchema": {
+    "team": "Array<{ id: string, name: string, role: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Team section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "gridClassName?": "string",
+    "cardClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "nameClassName?": "string",
+    "roleClassName?": "string"
+  },
+  "usageExample": "<TeamCardFive team={[{ id: '1', name: 'Sarah Johnson', role: 'CEO & Founder', imageSrc: '/team/sarah.jpg' }, { id: '2', name: 'Michael Chen', role: 'CTO', imageSrc: '/team/michael.jpg' }, { id: '3', name: 'Emma Davis', role: 'Head of Design', imageSrc: '/team/emma.jpg' }, { id: '4', name: 'James Wilson', role: 'Lead Developer', imageSrc: '/team/james.jpg' }]} animationType=\"slide-up\" title=\"Meet Our Team\" description=\"The talented people behind our success\" textboxLayout=\"default\" useInvertedBackground={false} tag=\"Team\" tagIcon={Users} />",
+  "do": [
+    "Use for team pages",
+    "Use for staff directories",
+    "Requires team[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items",
+    "Do not use less than 2 items",
+    "Do not use more than 12 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

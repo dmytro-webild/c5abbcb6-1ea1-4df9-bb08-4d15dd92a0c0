@@ -1,0 +1,66 @@
+{
+  "name": "TextSplitAbout",
+  "description": "Split-layout about section with large heading on left and multiple description paragraphs with optional buttons on right.",
+  "details": "Use for about sections with prominent messaging and optional CTA. Features responsive split layout with large animated heading (7xl) on left, multiple description paragraphs with optional buttons on right. Each description text animates independently. Supports up to 2 buttons with primary/secondary styling, optional border separator below content. Button variant controlled by ThemeProvider, text animations use theme defaults.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "About Us",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "description": {
+        "required": true,
+        "type": "array of strings",
+        "example": [
+          "We're a team passionate about creating exceptional digital experiences",
+          "Our mission is to empower designers and developers"
+        ],
+        "minChars": 10,
+        "maxChars": 300,
+        "note": "Each description paragraph should be 10-300 characters"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. Border radius controlled by ThemeProvider's borderRadius. All sections should be wrapped in a single ThemeProvider at the app/page level."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string[]",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "showBorder?": "boolean (default: false)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\n<ThemeProvider defaultButtonVariant=\"shift-hover\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <TextSplitAbout title=\"About Us\" description={[\"We create amazing experiences\", \"Our mission is to empower teams\"]} showBorder={true} useInvertedBackground={false} buttons={[{ text: 'Learn More', href: 'about' }]} />\n</ThemeProvider>",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for about pages",
+    "Use for company information",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

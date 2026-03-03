@@ -1,0 +1,15 @@
+{
+  "name": "TextNumberCount",
+  "propsSchema": {
+    "value": "number",
+    "startFrom?": "number",
+    "duration?": "number",
+    "format?": "Intl.NumberFormatOptions (notation excludes 'scientific' and 'engineering')",
+    "locales?": "string | string[] | Intl.Locale",
+    "prefix?": "string",
+    "suffix?": "string",
+    "animateOnScroll?": "boolean",
+    "threshold?": "number",
+    "className?": "string"
+  }
+}

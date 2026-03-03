@@ -1,0 +1,87 @@
+{
+  "name": "HeroLogoBillboard",
+  "description": "Hero section with large text logo at top that scales to fill container width, description text, and single framed media (card or browser style) below.",
+  "details": "Use for brand-focused landing pages that emphasize logo with a key hero image or video. Features large responsive text logo that automatically fills the container width at the top, followed by description text aligned to the right (desktop) or centered (mobile), and single media below with optional card or browser frame styling. Description text is larger on desktop (text-3xl) than mobile (text-lg). Media can be displayed in simple card frame or browser mockup with address bar.",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": true,
+        "example": "klime studio",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "description": {
+        "required": true,
+        "example": "we help driven founders build the brands of tomorrow through websites, product design & branding.",
+        "minChars": 5,
+        "maxChars": 300
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/hero-image.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/hero-video.mp4",
+        "note": "Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Product showcase",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "frameStyle": {
+        "required": false,
+        "options": [
+          "card",
+          "browser"
+        ],
+        "default": "card",
+        "note": "'card' displays media in simple card with padding. 'browser' wraps media in browser mockup with address bar and window controls."
+      }
+    }
+  },
+  "propsSchema": {
+    "logoText": "string",
+    "description": "string",
+    "buttons": "Array<{ text: string, onClick?: () => void, href?: string }> - Primary and secondary buttons (required, max 2)",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "frameStyle?": "'card' | 'browser' (default: 'card')",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoContainerClassName?": "string",
+    "logoClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "browserBarClassName?": "string",
+    "addressBarClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\" cardStyle=\"layered-gradient\">\n  <HeroLogoBillboard \n    logoText=\"klime studio\" \n    description=\"we help driven founders build the brands of tomorrow through websites, product design & branding.\"\n    buttons={[{ text: 'Get Started' }, { text: 'Learn More' }]}\n    background={{ variant: \"sparkles-gradient\" }}\n    imageSrc=\"/hero.jpg\"\n    imageAlt=\"Hero showcase\"\n    frameStyle=\"card\"\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [
+    "Do not use multiple items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

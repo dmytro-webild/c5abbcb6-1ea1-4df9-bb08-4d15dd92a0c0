@@ -1,0 +1,129 @@
+{
+  "name": "TeamCardEleven",
+  "description": "Team directory section with groups of members displayed in a list layout with avatar, title, subtitle, and detail.",
+  "details": "Use for team directories or contact lists organized by groups (e.g., locations, departments). Layout: CardStackTextBox header followed by group cards. Each group contains: Group title and member rows with divider lines. Each member row shows: Avatar image (left), Title + Subtitle stacked (center), Detail text like email (right). Uses CardList wrapper for group containers. Supports scroll animations via animationType. Best for 1-4 groups with 2-6 members each.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Meet Our Team",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "The talented people behind our success",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Team",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "groupRules": {
+      "minItems": 1,
+      "maxItems": 4,
+      "recommendedItems": "1-3",
+      "id": {
+        "required": true,
+        "example": "global",
+        "note": "Unique identifier for the group"
+      },
+      "groupTitle": {
+        "required": true,
+        "example": "Global",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "memberRules": {
+      "minItems": 1,
+      "maxItems": 10,
+      "recommendedItems": "2-6",
+      "id": {
+        "required": true,
+        "example": "1",
+        "note": "Unique identifier for the member"
+      },
+      "title": {
+        "required": true,
+        "example": "Mihai Toma",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "subtitle": {
+        "required": true,
+        "example": "Partner",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "detail": {
+        "required": true,
+        "example": "mihai@company.com",
+        "minChars": 2,
+        "maxChars": 100
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/team/mihai.jpg",
+        "note": "Avatar image"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/team/mihai.mp4",
+        "note": "Video alternative to image"
+      }
+    }
+  },
+  "propsSchema": {
+    "groups": "Array<{ id: string, groupTitle: string, members: Array<{ id: string, title: string, subtitle: string, detail: string, imageSrc?: string, imageAlt?: string, videoSrc?: string, videoAriaLabel?: string }> }> (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "ariaLabel?": "string (default: 'Team section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "groupTitleClassName?": "string",
+    "memberClassName?": "string",
+    "memberImageClassName?": "string",
+    "memberTitleClassName?": "string",
+    "memberSubtitleClassName?": "string",
+    "memberDetailClassName?": "string"
+  },
+  "usageExample": "<TeamCardEleven groups={[{ id: 'global', groupTitle: 'Global', members: [{ id: '1', title: 'Mihai Toma', subtitle: 'Partner', detail: 'mihai@company.com', imageSrc: '/team/mihai.jpg' }] }]} animationType=\"slide-up\" title=\"Meet Our Team\" description=\"The talented people behind our success\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for contact pages",
+    "Use for lead generation",
+    "Use for team pages",
+    "Use for staff directories",
+    "Requires groups[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

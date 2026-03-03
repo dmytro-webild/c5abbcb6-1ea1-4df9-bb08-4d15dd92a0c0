@@ -1,0 +1,129 @@
+{
+  "name": "ProductCardTwo",
+  "description": "Product card displaying brand name, star rating, and review count for social proof.",
+  "details": "Use when brand reputation and customer reviews are important selling points. Layout: Image (top) → Brand Name (small, muted) → Product Name (medium) → Star Rating + Review Count → Price (large text). Shows 5-star rating visualization with filled/unfilled stars and review count in parentheses (e.g., '23.9k'). Best for marketplaces, brand-heavy catalogs, or when social proof drives purchases. Each card has favorite button overlay on image and image scales 105% on hover. Does NOT show: arrow button, quantity controls.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Premium Collection",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Curated selection of top-rated products",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Best Sellers",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "productCardRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "brand": {
+        "required": true,
+        "example": "Wofurnitures",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "name": {
+        "required": true,
+        "example": "Single Accent Chair",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "price": {
+        "required": true,
+        "example": "$650.00",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "rating": {
+        "required": true,
+        "example": 4,
+        "note": "Number from 1-5 representing star rating"
+      },
+      "reviewCount": {
+        "required": true,
+        "example": "23.9k",
+        "minChars": 1,
+        "maxChars": 10
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": true,
+        "example": "/product.jpg",
+        "note": "Supports external URLs with unoptimized prop"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Product name",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      }
+    }
+  },
+  "propsSchema": {
+    "products?": "Array<{ id: string, brand: string, name: string, price: string, rating: number, reviewCount: string, imageSrc: string, imageAlt?: string, onFavorite?: () => void, onProductClick?: () => void, isFavorited?: boolean }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "gridVariant": "'uniform-all-items-equal' | 'bento-grid' | 'bento-grid-inverted' | 'two-columns-alternating-heights' | 'asymmetric-60-wide-40-narrow' | 'three-columns-all-equal-width' | 'four-items-2x2-equal-grid' (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-95 2xl:min-h-105')",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Product section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "imageClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "cardBrandClassName?": "string",
+    "cardNameClassName?": "string",
+    "cardPriceClassName?": "string",
+    "cardRatingClassName?": "string",
+    "actionButtonClassName?": "string - Styles the action button on product image",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<ProductCardTwo products={[{ id: '1', brand: 'Wofurnitures', name: 'Single Accent Chair', price: '$650.00', rating: 4, reviewCount: '23.9k', imageSrc: '/product.jpg', onProductClick: () => window.open('https://example.com', '_blank') }]} title=\"Premium Collection\" description=\"Explore our curated collection\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires products[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

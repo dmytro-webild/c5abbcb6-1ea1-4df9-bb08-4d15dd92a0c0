@@ -1,0 +1,135 @@
+{
+  "name": "PricingCardTwo",
+  "description": "Pricing card with badge, price, subtitle, two CTA buttons, and feature list with checkmarks.",
+  "details": "Use for pricing plans with direct call-to-action buttons for conversion. Layout: Badge (with optional icon) → Price (large, bold, centered) → Subtitle (plan description, centered) → Two CTA Buttons (full-width, primary/secondary styling) → Divider → Feature List (with check icons). All cards must have badge, subtitle, and features for visual consistency. Buttons use primary/secondary logic (first button = primary-button, second = secondary-button) controlled by ThemeProvider. Best for pricing, subscription plans, or tiered services requiring immediate action. Automatically switches between grid (1-4 items) and carousel (5+ items). Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Choose Your Plan",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Select the perfect plan for your needs",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Pricing",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "pricingPlanRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "badge": {
+        "required": true,
+        "example": "Business Plan",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Required for visual consistency across all cards"
+      },
+      "price": {
+        "required": true,
+        "example": "$29/mo",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "subtitle": {
+        "required": true,
+        "example": "Perfect for small teams",
+        "minChars": 5,
+        "maxChars": 100,
+        "note": "Required for visual consistency across all cards"
+      },
+      "buttons": {
+        "required": true,
+        "maxButtons": 2,
+        "structure": {
+          "text": "string - Button label (required)",
+          "href": "string - Link destination (optional)",
+          "onClick": "() => void - Click handler (optional)",
+          "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+        },
+        "note": "First button (index 0) = primary-button, second (index 1) = secondary-button. Button variant controlled by ThemeProvider's defaultButtonVariant. Border radius controlled by ThemeProvider's borderRadius. All sections should be wrapped in a single ThemeProvider at the app/page level."
+      },
+      "features": {
+        "required": true,
+        "example": [
+          "Up to 10 team members",
+          "100GB storage",
+          "Priority support"
+        ],
+        "note": "Array of feature strings, required for visual consistency"
+      },
+      "badgeIcon": {
+        "required": false,
+        "example": "Sparkles",
+        "note": "Optional Lucide icon to display next to badge"
+      }
+    }
+  },
+  "propsSchema": {
+    "plans": "Array<{ id: string, badge: string, badgeIcon?: LucideIcon, price: string, subtitle: string, buttons: Array<{text: string, onClick?: () => void, href?: string}>, features: string[] }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Pricing section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "badgeClassName?": "string",
+    "priceClassName?": "string",
+    "subtitleClassName?": "string",
+    "planButtonContainerClassName?": "string",
+    "planButtonClassName?": "string",
+    "featuresClassName?": "string",
+    "featureItemClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<PricingCardTwo plans={[{ id: '1', badge: 'Business Plan', price: '$29/mo', subtitle: 'Perfect for small teams', buttons: [{ text: 'Get Started', onClick: () => console.log('clicked') }, { text: 'Chat to Sales', onClick: () => console.log('chat') }], features: ['Up to 10 team members', '100GB storage', 'Priority support'] }]} title=\"Choose Your Plan\" description=\"Find the perfect plan for your needs\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Requires plans[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "FooterMedia",
+  "propsSchema": {
+    "imageSrc": "string (required if no videoSrc)",
+    "imageAlt?": "string (default: '')",
+    "videoSrc": "string (required if no imageSrc)",
+    "videoAriaLabel?": "string (default: 'Footer video')",
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns",
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "logoTextClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "GradientBarsBackground",
+  "description": "Gradient bars on left and right edges with fade masks creating a spotlight center effect.",
+  "details": "Use for modern backgrounds with vertical gradient bars positioned on left and right sides. Features two groups of bars (8 per side by default) that fade towards the center using CSS masks. Main container has vertical fade from bottom to top. Left bars fade towards center (270deg mask), right bars fade towards center (90deg mask). Creates an open center area (30% by default) for content. Each bar has horizontal gradient using theme primary color. Perfect for hero sections or landing pages where center content needs visual framing.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string",
+    "numBarsPerSide?": "number (default: 8)",
+    "gradientFrom?": "string (default: 'var(--color-primary-cta)')",
+    "gradientTo?": "string (default: 'transparent')",
+    "opacity?": "number (default: 0.075)",
+    "sideWidth?": "string (default: '35%')"
+  },
+  "usageExample": "<GradientBarsBackground numBarsPerSide={8} opacity={0.075} sideWidth=\"35%\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for statistics displays",
+    "Use for achievement showcases"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

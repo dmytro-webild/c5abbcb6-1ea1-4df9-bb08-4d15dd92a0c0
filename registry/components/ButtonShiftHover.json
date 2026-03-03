@@ -1,0 +1,38 @@
+{
+  "name": "ButtonShiftHover",
+  "description": "CTA button where the label nudges upward on hover and a trailing dot fills from outline to solid.",
+  "details": "Use for primary or secondary CTAs that benefit from a gentle motion cue. Keep the label short and single‑line. The trailing dot is purely decorative and fills on hover.",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Get Started",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "bgClassName?": "string",
+    "textClassName?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonShiftHover text=\"Get Started\" href=\"pricing\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [
+    "Do not use multiple items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "BlogCardThree",
+  "description": "Blog section with vertical card layout featuring tag, title, excerpt, optional author info, and media with overlay button.",
+  "details": "Use for featured blog posts with prominent visual layout. Uses CardStack for adaptive layout (grid for 1-4 items, carousel for 5+). Card structure: Tag → Title → Excerpt → Optional Author (avatar + name + date) → Media content with overlay arrow button. Author info is optional and displays only when authorName or date is provided. Best for hero blog sections or featured articles.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Featured Articles",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Explore our latest insights",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Blog",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "blogRules": {
+      "blogs": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{\"id\": \"1\", \"category\": \"Software Development\", \"title\": \"Redefining Digital Performance\", \"excerpt\": \"Optimizing speed and scalability\", \"imageSrc\": \"/blog-1.jpg\"}]",
+        "note": "Array of blog items. Each item requires id, category, title, excerpt, and imageSrc."
+      }
+    }
+  },
+  "propsSchema": {
+    "blogs": "Array<{ id: string, category: string, title: string, excerpt: string, imageSrc: string, imageAlt?: string, authorName: string, authorAvatar: string, date: string, onBlogClick?: () => void }> - Blog card items",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-[600px]')",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Blog section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "cardContentClassName?": "string",
+    "categoryTagClassName?": "string",
+    "cardTitleClassName?": "string",
+    "excerptClassName?": "string",
+    "authorContainerClassName?": "string",
+    "authorAvatarClassName?": "string",
+    "authorNameClassName?": "string",
+    "dateClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<BlogCardThree blogs={[{id: '1', category: 'Software Development', title: 'Redefining Digital Performance at Scale', excerpt: 'Optimizing speed, scalability, and user experience.', imageSrc: '/blog-1.jpg', authorName: 'Alex Chen', authorAvatar: '/avatar.jpg', date: 'Jan 15, 2025', onBlogClick: () => console.log('clicked')}]} title=\"Featured Articles\" description=\"Explore our latest insights\" textboxLayout=\"default\" useInvertedBackground={false} animationType=\"slide-up\" />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for blog listings",
+    "Use for article grids",
+    "Requires blogs[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

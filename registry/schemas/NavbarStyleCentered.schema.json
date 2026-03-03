@@ -1,0 +1,10 @@
+{
+  "name": "NavbarStyleCentered",
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "button": "{text: string, onClick?: () => void, href?: string}",
+    "topBarButton?": "{text: string, onClick?: () => void, href?: string}",
+    "brandName?": "string (default: 'Webild')",
+    "className?": "string (default: '')"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "FeatureBento",
+  "description": "Feature section with bento-style cards displaying interactive visualizations (globe, charts, 3D cards, map).",
+  "details": "Use for feature showcases with rich interactive content. Each feature card contains a bento component visualization. Supports 11 bento types: globe (3D rotating globe), icon-info-cards (scrolling metric cards), animated-bar-chart (animated chart), 3d-stack-cards (three stacked notification cards), 3d-task-list (rotated task list card), orbiting-icons (orbiting integration icons on rings), map (world map with animated location markers), marquee (scrolling text/icon rows with centered icon), line-chart (area line chart with gradient fill), phone (interactive phone mockup with notification animation), or media-stack (three stacked images/videos that fan out on hover). Automatically switches between grid (1-4 items) and carousel (5+ items). Carousel offers auto-scroll or button controls (recommended: keep default buttons). Optional header with title, description, tag, and buttons. Supports centered or split textbox layouts. Best for modern landing pages showcasing platform capabilities with visual flair.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Features",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Discover the tools and capabilities that make our platform powerful",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "title": {
+        "required": true,
+        "example": "Advanced Analytics",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Get detailed insights into your business performance",
+        "minChars": 10,
+        "maxChars": 250
+      }
+    },
+    "bentoComponentRules": {
+      "note": "Each feature must specify bentoComponent type. Requirements vary by type:",
+      "types": {
+        "globe": "{ bentoComponent: 'globe' } - No additional fields required",
+        "animated-bar-chart": "{ bentoComponent: 'animated-bar-chart' } - No additional fields required",
+        "map": "{ bentoComponent: 'map' } - No additional fields required",
+        "line-chart": "{ bentoComponent: 'line-chart' } - No additional fields required",
+        "icon-info-cards": "{ bentoComponent: 'icon-info-cards', items: Array<{ icon: LucideIcon, label: string, value: string }> } - Requires items array",
+        "3d-stack-cards": "{ bentoComponent: '3d-stack-cards', items: [Bento3DItem, Bento3DItem, Bento3DItem] } - Requires exactly 3 items. Each item: { icon: LucideIcon, title: string, subtitle: string, detail: string }",
+        "3d-task-list": "{ bentoComponent: '3d-task-list', title: string, items: Array<{ icon: LucideIcon, label: string, time: string }> } - Requires title and items array",
+        "orbiting-icons": "{ bentoComponent: 'orbiting-icons', centerIcon: LucideIcon, items: Array<{ icon: LucideIcon, ring?: 1 | 2 | 3, duration?: number }> } - Requires centerIcon and items array. ring defaults to 2, duration defaults to 10s",
+        "marquee": "{ bentoComponent: 'marquee', centerIcon: LucideIcon, variant: 'text' | 'icon', texts?: string[], icons?: LucideIcon[] } - Requires centerIcon and variant. If variant='text', requires texts array. If variant='icon', requires icons array. Shows scrolling rows with centered icon",
+        "phone": "{ bentoComponent: 'phone', statusIcon: LucideIcon, alertIcon: LucideIcon, alertTitle: string, alertMessage: string, apps: PhoneApps8 } - Requires all fields. statusIcon is displayed at top (e.g. Lock), alertIcon for notification, alertTitle/alertMessage for notification content, apps is exactly 8 items Array<{ name: string, icon: LucideIcon }>. Interactive phone mockup with notification slide-in animation and app grid on hover",
+        "chat": "{ bentoComponent: 'chat', aiIcon: LucideIcon, userIcon: LucideIcon, exchanges: Array<{ userMessage: string, aiResponse: string }>, placeholder: string } - Requires aiIcon, userIcon, exchanges array, and placeholder. Each exchange contains a user message and AI response pair. Chat interface with vertical marquee animation",
+        "3d-card-grid": "{ bentoComponent: '3d-card-grid', items: [GridCardItem, GridCardItem, GridCardItem, GridCardItem], centerIcon: LucideIcon } - Requires exactly 4 items and centerIcon. Each item: { name: string, icon: LucideIcon }. 3D perspective grid with cards at corners and center icon",
+        "reveal-icon": "{ bentoComponent: 'reveal-icon', icon: LucideIcon } - Requires icon. Animated doors that slide open on hover revealing center icon with glow effect",
+        "timeline": "{ bentoComponent: 'timeline', heading: string, subheading: string, items: [TimelineItem, TimelineItem, TimelineItem], completedLabel: string } - Requires heading, subheading, exactly 3 items, and completedLabel. Each item: { label: string, detail: string }. Animated timeline with staggered reveal on hover",
+        "media-stack": "{ bentoComponent: 'media-stack', items: [MediaStackItem, MediaStackItem, MediaStackItem] } - Requires exactly 3 items. Each item: { imageSrc?: string, videoSrc?: string, imageAlt?: string }. Three stacked images/videos with rotation that fan out on hover"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<FeatureCard> - Each card has { title: string, description: string, button?: ButtonConfig } and one of: { bentoComponent: 'globe' } | { bentoComponent: 'animated-bar-chart' } | { bentoComponent: 'map' } | { bentoComponent: 'line-chart' } | { bentoComponent: 'phone', statusIcon: LucideIcon, alertIcon: LucideIcon, alertTitle: string, alertMessage: string, apps: Array<{ name: string, icon: LucideIcon }> (exactly 8 items) } | { bentoComponent: 'chat', aiIcon: LucideIcon, userIcon: LucideIcon, exchanges: Array<{ userMessage: string, aiResponse: string }>, placeholder: string } | { bentoComponent: 'icon-info-cards', items: Array<{ icon: LucideIcon, label: string, value: string }> } | { bentoComponent: '3d-stack-cards', items: [{ icon: LucideIcon, title: string, subtitle: string, detail: string }, { icon: LucideIcon, title: string, subtitle: string, detail: string }, { icon: LucideIcon, title: string, subtitle: string, detail: string }] } | { bentoComponent: '3d-task-list', title: string, items: Array<{ icon: LucideIcon, label: string, time: string }> } | { bentoComponent: 'orbiting-icons', centerIcon: LucideIcon, items: Array<{ icon: LucideIcon, ring?: 1 | 2 | 3, duration?: number }> } | { bentoComponent: 'marquee', centerIcon: LucideIcon, variant: 'text', texts: string[] } | { bentoComponent: 'marquee', centerIcon: LucideIcon, variant: 'icon', icons: LucideIcon[] } | { bentoComponent: '3d-card-grid', items: [{ name: string, icon: LucideIcon }, { name: string, icon: LucideIcon }, { name: string, icon: LucideIcon }, { name: string, icon: LucideIcon }], centerIcon: LucideIcon } | { bentoComponent: 'reveal-icon', icon: LucideIcon } | { bentoComponent: 'timeline', heading: string, subheading: string, items: [{ label: string, detail: string }, { label: string, detail: string }, { label: string, detail: string }], completedLabel: string } | { bentoComponent: 'media-stack', items: [{ imageSrc?: string, videoSrc?: string, imageAlt?: string }, { imageSrc?: string, videoSrc?: string, imageAlt?: string }, { imageSrc?: string, videoSrc?: string, imageAlt?: string }] }",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'blur-reveal' (required)",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean (required)",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "cardButtonClassName?": "string",
+    "cardButtonTextClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureBento features={[{ title: 'Global Reach', description: 'Worldwide presence', bentoComponent: 'globe' }, { title: 'Integrations', description: 'Connect your tools', bentoComponent: 'orbiting-icons', centerIcon: Shield, items: [{ icon: Users, ring: 1 }, { icon: Zap, ring: 2 }] }]} title=\"Features\" description=\"Discover our platform\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for showcasing features with interactive visualizations",
+    "Use appropriate bentoComponent for each feature type",
+    "Provide all required props for each bentoComponent type",
+    "Best for modern landing pages showcasing platform capabilities"
+  ],
+  "dont": [
+    "Do not use without proper items for bento types that require them",
+    "Do not use for simple text-only feature lists",
+    "Do not use the same bentoComponent type for multiple features - each feature should have a unique visualization"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

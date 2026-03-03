@@ -1,0 +1,18 @@
+{
+  "name": "InlineImageSplitTextAbout",
+  "propsSchema": {
+    "heading": "Array<{ type: 'text'; content: string } | { type: 'image'; src: string; alt?: string }>",
+    "buttons?": "Array<{ text: string, onClick?: () => void, href?: string, props?: Partial<ButtonPropsForVariant<CTAButtonVariant>> }>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "headingClassName?": "string",
+    "imageWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "CircleGradientBackground",
+  "description": "Two large gradient circles positioned diagonally in corners.",
+  "details": "Use for soft, modern backgrounds with subtle color accents. Features two blurred gradient circles in diagonal corners (primary: top-right + bottom-left, secondary: top-left + bottom-right). Circles are responsive (w-100 mobile, md:w-70 desktop) with 10% opacity. Uses background-accent color.",
+  "constraints": {},
+  "propsSchema": {
+    "diagonal?": "'primary' | 'secondary' (default: 'primary')",
+    "className?": "string"
+  },
+  "usageExample": "<CircleGradientBackground diagonal=\"primary\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

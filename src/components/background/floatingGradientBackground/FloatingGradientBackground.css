@@ -1,0 +1,102 @@
+.floating-gradient-background-container {
+  --circle-size: 80%;
+  --circle-size-small: 60%;
+  --blending: hard-light;
+}
+
+.floating-gradient-background-circle-one {
+  background: radial-gradient(circle at center, var(--color-background-accent) 0, rgba(255, 255, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size-small) / 2);
+  left: calc(50% - var(--circle-size-small) / 2);
+  transform-origin: center center;
+  animation: moveVertical 20s ease infinite;
+}
+
+.floating-gradient-background-circle-two {
+  background: radial-gradient(circle at center, var(--color-accent) 0, rgba(255, 255, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size-small) / 2);
+  left: calc(50% - var(--circle-size-small) / 2);
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+}
+
+.floating-gradient-background-circle-three {
+  background: radial-gradient(circle at center, var(--color-primary-cta) 0, rgba(255, 255, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size-small);
+  height: var(--circle-size-small);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 30s linear infinite;
+}
+
+.floating-gradient-background-circle-four {
+  background: radial-gradient(circle at center, var(--color-background-accent) 0, rgba(255, 255, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size-small);
+  height: var(--circle-size-small);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 30s ease infinite;
+}
+
+.floating-gradient-background-circle-five {
+  background: radial-gradient(circle at center, var(--color-primary-cta) 0, rgba(255, 255, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: calc(var(--circle-size-small) * 2);
+  height: calc(var(--circle-size-small) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "FluidBackground",
+  "propsSchema": {
+    "className?": "string"
+  }
+}

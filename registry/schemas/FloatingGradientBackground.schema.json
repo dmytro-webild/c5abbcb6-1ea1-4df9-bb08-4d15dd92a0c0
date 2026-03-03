@@ -1,0 +1,6 @@
+{
+  "name": "FloatingGradientBackground",
+  "propsSchema": {
+    "className?": "string"
+  }
+}

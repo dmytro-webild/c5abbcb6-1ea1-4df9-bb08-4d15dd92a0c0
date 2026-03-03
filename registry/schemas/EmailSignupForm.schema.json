@@ -1,0 +1,12 @@
+{
+  "name": "EmailSignupForm",
+  "propsSchema": {
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "onSubmit?": "(email: string) => void",
+    "className?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

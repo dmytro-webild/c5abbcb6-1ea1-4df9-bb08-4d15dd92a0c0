@@ -1,0 +1,106 @@
+{
+  "name": "TimelineHorizontalCardStack",
+  "description": "Horizontal auto-playing timeline component that displays 2-4 cards in a grid with animated progress bars and optional media display.",
+  "details": "Use for showcasing features, steps, or processes with automatic progression. Displays cards in a horizontal grid (2-4 columns on desktop, stacked on mobile) with auto-advancing progress bars. Each card has an animated progress bar that fills over 5 seconds before advancing to the next. Users can click any card to jump to that step. Active and previous cards are fully visible (opacity-100), future cards are dimmed (opacity-50). Grid adapts: 2 items = 2 columns, 3 items = 3 columns, 4+ items = 4 columns. Automatically loops back to first card after completing the sequence. Progress bars use theme foreground color. Optional mediaItems prop displays a shared media area above cards that smoothly transitions (opacity fade) between images/videos as cards advance. Media uses aspect-square on mobile and aspect-video on desktop. Children are card content that gets wrapped in card styling.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Process",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Follow our step-by-step approach to success",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "How It Works",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 4,
+      "recommendedItems": "2-4",
+      "note": "Works best with 2-4 card content children. Grid layout adapts based on item count. Each child is wrapped in card styling with progress bar."
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/step1.jpg",
+        "note": "Either imageSrc or videoSrc per media item"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/step1.mp4",
+        "note": "Either imageSrc or videoSrc per media item"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Step 1 illustration"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Step 1 video"
+      }
+    }
+  },
+  "propsSchema": {
+    "children": "React.ReactNode",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground?": "boolean",
+    "mediaItems?": "Array<{ imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "ariaLabel?": "string (default: 'Timeline section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "cardClassName?": "string",
+    "progressBarClassName?": "string",
+    "mediaContainerClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<TimelineHorizontalCardStack title=\"Our Process\" description=\"Follow our step-by-step approach\" textboxLayout=\"default\" mediaItems={[{ imageSrc: '/step1.jpg', imageAlt: 'Step 1' }, { imageSrc: '/step2.jpg', imageAlt: 'Step 2' }]}><div><h3>Step 1</h3><p>Description</p></div><div><h3>Step 2</h3><p>Description</p></div></TimelineHorizontalCardStack>",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]",
+    "Requires mediaItems?[]"
+  ],
+  "dont": [
+    "Do not use non-sequential content",
+    "Do not use single item",
+    "Do not use more than 4 items",
+    "Do not use less than 2 items",
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

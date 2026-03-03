@@ -1,0 +1,150 @@
+{
+  "name": "FeatureCardTen",
+  "description": "Timeline process flow feature section with numbered steps, alternating layout, and list items.",
+  "details": "Use for step-by-step process showcases with detailed feature lists. Creates a vertical timeline with a progress line that fills on scroll. Each feature displays as a horizontal layout with media (image/video card) on one side and content (title, description, icon list) on the other. Numbered badges appear on the timeline. Layout alternates between left/right based on reverse property. Desktop: centered vertical line with 30% width columns. Mobile: right-aligned vertical line with 70% width columns. Media displays in aspect-square on mobile, aspect-[16/10] on desktop with card styling. Each feature has a list of items with icons displayed in rounded icon containers. Best for 3-6 step processes to showcase detailed features with visual support.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Powerful Features",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Everything you need to build and scale your business with confidence",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureCardRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 3,
+        "note": "Feature identifier displayed in numbered badge"
+      },
+      "title": {
+        "required": true,
+        "example": "Advanced Analytics Dashboard",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Get comprehensive insights into your business performance with our powerful analytics tools and real-time reporting.",
+        "minChars": 10,
+        "maxChars": 300
+      },
+      "reverse": {
+        "required": true,
+        "example": "false",
+        "note": "Controls whether media and content positions are swapped (alternating layout)"
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": true,
+        "example": "/feature.webp",
+        "note": "Either imageSrc or videoSrc required (discriminated union)"
+      },
+      "videoSrc": {
+        "required": true,
+        "example": "/feature.mp4",
+        "note": "Either imageSrc or videoSrc required (discriminated union)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Analytics dashboard interface",
+        "note": "Falls back to feature title if not provided"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Analytics dashboard video",
+        "note": "Falls back to '[title] video' if not provided"
+      }
+    },
+    "listItemRules": {
+      "icon": {
+        "required": true,
+        "example": "Check",
+        "note": "LucideIcon component for list item"
+      },
+      "text": {
+        "required": true,
+        "example": "Real-time data visualization",
+        "minChars": 2,
+        "maxChars": 100
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "recommendedItems": "2-4"
+    },
+    "itemRules": {
+      "minItems": 3,
+      "maxItems": 6,
+      "recommendedItems": "3-6",
+      "note": "Works best with 3-6 features for optimal timeline length"
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, description: string, media: ({ imageSrc: string, imageAlt?: string } | { videoSrc: string, videoAriaLabel?: string }), items: Array<{ icon: LucideIcon, text: string }>, reverse: boolean }>",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "itemClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaCardClassName?": "string",
+    "numberClassName?": "string",
+    "contentWrapperClassName?": "string",
+    "featureTitleClassName?": "string",
+    "featureDescriptionClassName?": "string",
+    "listItemClassName?": "string",
+    "iconContainerClassName?": "string",
+    "iconClassName?": "string",
+    "gapClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTen features={[{ id: '1', title: 'Advanced Analytics Dashboard', description: 'Get comprehensive insights into your business performance', media: { imageSrc: '/placeholder1.webp' }, items: [{ icon: Check, text: 'Real-time data visualization' }, { icon: Check, text: 'Custom report generation' }], reverse: false }]} title=\"Powerful Features\" description=\"Everything you need to build and scale your business\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for step-by-step process showcases",
+    "Best for 3-6 step processes",
+    "Alternate reverse property for visual variety",
+    "Include relevant icons for list items"
+  ],
+  "dont": [
+    "Do not use without media for each feature",
+    "Do not use without list items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

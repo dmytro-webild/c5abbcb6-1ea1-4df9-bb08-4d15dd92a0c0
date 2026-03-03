@@ -1,0 +1,123 @@
+{
+  "name": "FeatureCardTwentyThree",
+  "description": "Feature section with separate media and card layout, featuring tags and arrow navigation.",
+  "details": "Use for feature listings with prominent imagery. Layout: CardStackTextBox header → Grid of feature items. Each item has separate media (aspect-square) above a card containing title, tags row, and arrow icon. Media and card are visually distinct with gap-6 spacing. Tags use the Tag component and arrow rotates -45deg on hover. Best for visual-focused feature listings with clean separation between imagery and content.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Features",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Stay updated with the latest trends and insights",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "note": "Unique identifier for the feature item"
+      },
+      "title": {
+        "required": true,
+        "example": "Discover the essential features of our app",
+        "minChars": 10,
+        "maxChars": 100
+      },
+      "tags": {
+        "required": true,
+        "minItems": 1,
+        "maxItems": 4,
+        "structure": "string[]",
+        "example": "['Features', 'Jan 29, 2025']",
+        "note": "Array of tag strings displayed using Tag component"
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/feature-1.jpg",
+        "note": "Either imageSrc or videoSrc should be provided"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/feature-1.mp4",
+        "note": "Either imageSrc or videoSrc should be provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Feature preview image",
+        "note": "Falls back to feature title if not provided"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Feature video",
+        "note": "Falls back to feature title if not provided"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ id: string, title: string, tags: string[], imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, onFeatureClick?: () => void }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "ariaLabel?": "string (default: 'Features section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "itemClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "cardClassName?": "string",
+    "cardTitleClassName?": "string",
+    "tagsContainerClassName?": "string",
+    "tagClassName?": "string",
+    "arrowClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentyThree features={[{ id: '1', title: 'Discover the essential features of our app', tags: ['Features', 'Jan 29, 2025'], imageSrc: '/feature1.jpg' }, { id: '2', title: 'How to organize your tasks effectively', tags: ['Guides', 'Feb 03, 2025'], imageSrc: '/feature2.jpg' }]} animationType=\"slide-up\" title=\"Our Features\" description=\"Stay updated with the latest trends and insights\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for visual-focused feature listings",
+    "Include 1-4 tags per feature",
+    "Use high-quality square images",
+    "Best for feature showcases with clean separation between imagery and content"
+  ],
+  "dont": [
+    "Do not use without tags",
+    "Do not use for text-heavy features"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

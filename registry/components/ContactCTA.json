@@ -1,0 +1,70 @@
+{
+  "name": "ContactCTA",
+  "description": "Centered contact CTA section with tag, title, description, and action buttons in a card container with background support.",
+  "details": "Use for call-to-action contact sections with full textbox support. Features a centered card layout with tag (optional icon), title, description, and buttons. Supports multiple background variants through HeroBackgrounds. Best for conversion-focused contact sections at the end of pages.",
+  "constraints": {
+    "textRules": {
+      "tag": {
+        "required": true,
+        "example": "Get in Touch",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "title": {
+        "required": true,
+        "example": "Ready to Build Your Next Project?",
+        "minChars": 5,
+        "maxChars": 100
+      },
+      "description": {
+        "required": true,
+        "example": "Let's work together to create something amazing. Our team is ready to help you bring your vision to life.",
+        "minChars": 10,
+        "maxChars": 300
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "required": true,
+      "note": "At least one button is required. Supports up to 2 buttons with gap-4 spacing."
+    }
+  },
+  "propsSchema": {
+    "tag": "string (required)",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "title": "string (required)",
+    "description": "string (required)",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}> (required)",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "ContactCTABackgroundProps = { variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string - Card content wrapper styling",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<ContactCTA tag=\"Get in Touch\" tagIcon={Mail} title=\"Ready to Build Your Next Project?\" description=\"Let's work together to create something amazing.\" buttons={[{ text: 'Contact Us', href: '/contact' }, { text: 'View Portfolio', href: '/portfolio' }]} background={{ variant: 'plain' }} useInvertedBackground={false} />",
+  "do": [
+    "Use for call-to-action contact sections",
+    "Place at the end of pages for conversion",
+    "Use with appropriate background variant",
+    "Requires at least one button"
+  ],
+  "dont": [
+    "Do not use without buttons",
+    "Do not use for general content sections"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

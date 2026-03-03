@@ -1,0 +1,31 @@
+{
+  "name": "ContactFaq",
+  "propsSchema": {
+    "faqs": "Array<{ id: string, title: string, content: string }>",
+    "ctaTitle": "string",
+    "ctaDescription": "string",
+    "ctaButton": "{text: string, onClick?: () => void, href?: string}",
+    "ctaIcon": "LucideIcon",
+    "useInvertedBackground": "boolean",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect on panels)",
+    "accordionAnimationType?": "'smooth' | 'instant' (default: 'smooth')",
+    "showCard?": "boolean (default: true - controls accordion card styling)",
+    "ariaLabel?": "string (default: 'Contact and FAQ section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "ctaPanelClassName?": "string",
+    "ctaIconClassName?": "string",
+    "ctaTitleClassName?": "string",
+    "ctaDescriptionClassName?": "string",
+    "ctaButtonClassName?": "string",
+    "ctaButtonTextClassName?": "string",
+    "faqsPanelClassName?": "string",
+    "faqsContainerClassName?": "string",
+    "accordionClassName?": "string",
+    "accordionTitleClassName?": "string",
+    "accordionIconContainerClassName?": "string",
+    "accordionIconClassName?": "string",
+    "accordionContentClassName?": "string",
+    "separatorClassName?": "string"
+  }
+}

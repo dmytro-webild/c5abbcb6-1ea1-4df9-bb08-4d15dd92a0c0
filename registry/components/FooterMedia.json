@@ -1,0 +1,98 @@
+{
+  "name": "FooterMedia",
+  "description": "Footer with full-width media (image/video) above classic navigation layout.",
+  "details": "Use for visually impactful footers with media. Features full-width image or video at top with mask-fade-top-long effect (fades from top), followed by standard footer layout: logoText as h2 heading, multi-column navigation, copyright, and privacy policy. Media is required (either imageSrc or videoSrc). Same navigation structure as FooterBase.",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": false,
+        "default": "Webild",
+        "example": "Company Name",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "copyrightText": {
+        "required": false,
+        "default": "© 2025 | Webild",
+        "example": "© 2025 Company Name",
+        "minChars": 5,
+        "maxChars": 50
+      },
+      "columnTitle": {
+        "required": true,
+        "example": "Product",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "itemLabel": {
+        "required": true,
+        "example": "Features",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "note": "Either imageSrc or videoSrc is required (discriminated union)",
+      "imageSrc": {
+        "required": "conditional - required if no videoSrc",
+        "example": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920"
+      },
+      "videoSrc": {
+        "required": "conditional - required if no imageSrc",
+        "example": "/videos/footer-background.mp4"
+      }
+    },
+    "structureRules": {
+      "columns": {
+        "required": true,
+        "minColumns": 1,
+        "maxColumns": 3,
+        "note": "Each column must have title and items array"
+      },
+      "items": {
+        "required": true,
+        "minItems": 1,
+        "structure": {
+          "label": "string - Link text (required)",
+          "href": "string - Link destination (optional)",
+          "onClick": "() => void - Additional click handler (optional)"
+        }
+      }
+    }
+  },
+  "propsSchema": {
+    "imageSrc": "string (required if no videoSrc)",
+    "imageAlt?": "string (default: '')",
+    "videoSrc": "string (required if no imageSrc)",
+    "videoAriaLabel?": "string (default: 'Footer video')",
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns (required)",
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string",
+    "logoTextClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  },
+  "usageExample": "<FooterMedia imageSrc=\"https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920\" columns={[{ title: 'Product', items: [{ label: 'Features', href: 'features' }, { label: 'Pricing', href: 'pricing' }] }]} copyrightText=\"© 2025 | Company\" />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires columns[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

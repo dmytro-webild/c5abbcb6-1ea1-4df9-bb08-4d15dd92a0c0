@@ -1,0 +1,15 @@
+{
+  "name": "ButtonBounceEffect",
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "scrollToSection?": "boolean",
+    "className?": "string",
+    "bgClassName?": "string",
+    "textClassName?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  }
+}

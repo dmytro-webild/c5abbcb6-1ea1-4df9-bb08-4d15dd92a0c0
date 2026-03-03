@@ -1,0 +1,25 @@
+{
+  "name": "RadialGradientBackground",
+  "description": "Customizable radial gradient background with theme color integration, optional padding inset, rounded bottom corners, and top fade mask.",
+  "details": "Use for modern, premium backgrounds with radial gradient effects. Features customizable gradient size, position, center color, and edge color. Wrapper with padding (md:px-5 md:pb-5 on desktop, none on mobile) creates inset effect. Inner div has rounded bottom corners (rounded-b-theme-capped). Linear gradient mask fades top (0-15% transparent, 55-100% opaque) creating soft top edge. Automatically uses theme colors by default (--background for center, --color-background-accent for edge). Gradient starts at 40% center color and transitions to 100% edge color. Default size 130% 130% at position 50% 15% creates top-center spotlight. Perfect for hero sections, landing pages, or any area needing depth and visual interest with refined edges.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string",
+    "centerColor?": "string (default: 'var(--background)')",
+    "edgeColor?": "string (default: 'var(--color-background-accent)')",
+    "size?": "string (default: '130% 130%')",
+    "position?": "string (default: '50% 15%')"
+  },
+  "usageExample": "<RadialGradientBackground centerColor=\"var(--background)\" edgeColor=\"var(--color-background-accent)\" size=\"130% 130%\" position=\"50% 15%\" />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "MetricCardFourteen",
+  "propsSchema": {
+    "title": "string",
+    "tag": "string",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "metricsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "metrics": "Array<{ id: string, value: string, description: string }>",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "tagClassName?": "string",
+    "metricsContainerClassName?": "string",
+    "metricClassName?": "string",
+    "valueClassName?": "string",
+    "descriptionClassName?": "string"
+  }
+}

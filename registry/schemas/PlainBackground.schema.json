@@ -1,0 +1,6 @@
+{
+  "name": "PlainBackground",
+  "propsSchema": {
+    "className?": "string"
+  }
+}

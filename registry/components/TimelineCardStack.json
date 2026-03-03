@@ -1,0 +1,77 @@
+{
+  "name": "TimelineCardStack",
+  "description": "Vertical sticky scroll timeline component where cards stack on top of each other and fade out as you scroll.",
+  "details": "Use for storytelling, process flows, or sequential content that benefits from sticky scroll animation. Cards use sticky positioning and stack vertically. As you scroll, each card fades out (opacity 0) when scrolled past, except the last card which remains visible. Uses GSAP ScrollTrigger for smooth scroll-linked opacity animations. Cards have fixed heights: 140vw on mobile, 75vh on desktop. Sticky positioning: top-[25vw] on mobile, top-[12.5vh] on desktop. Works best with 3-6 cards for optimal scroll experience. Children are card content that gets wrapped in sticky card styling.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Journey",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Discover how we've evolved over the years",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Story",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "itemRules": {
+      "minItems": 3,
+      "maxItems": 6,
+      "recommendedItems": "3-6",
+      "note": "Works best with 3-6 card content children for optimal scroll experience. Each child is wrapped in sticky card styling with GSAP fade animation."
+    }
+  },
+  "propsSchema": {
+    "children": "React.ReactNode",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground?": "boolean",
+    "ariaLabel?": "string (default: 'Timeline section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<TimelineCardStack title=\"Our Journey\" description=\"Discover how we've evolved\" textboxLayout=\"default\"><div className=\"card p-6\"><h3>2020</h3><p>Founded</p></div><div className=\"card p-6\"><h3>2022</h3><p>Expanded</p></div></TimelineCardStack>",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use non-sequential content",
+    "Do not use single item",
+    "Do not use less than 3 items",
+    "Do not use more than 6 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

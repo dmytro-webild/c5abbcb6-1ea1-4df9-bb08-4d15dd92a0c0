@@ -1,0 +1,79 @@
+{
+  "name": "HeroBillboardDashboard",
+  "description": "Full-width hero section with centered text content and an interactive Dashboard component below instead of a static image/video.",
+  "details": "Based on HeroBillboard layout — centered TextBox with title, description, tag, and buttons on top, with a full Dashboard component below. The Dashboard includes icon sidebar, search bar, avatar, action buttons, 3 stat cards with animated number cycling (values rotate every 3s via TextNumberCount), a BentoLineChart, and a vertically auto-scrolling list. On mobile, stat cards become a carousel with arrow navigation. Desktop stat cards have staggered GSAP scroll entrance. All Dashboard props are passed via a single 'dashboard' object prop.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Real-Time On-Chain Intelligence",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "description": {
+        "required": true,
+        "example": "Monitor protocol revenue, trading volume, and wallet activity.",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Live Analytics",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', href: 'https://example.com' }",
+        "{ text: 'View Docs', href: 'docs' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "dashboard": "{ title: string, stats: [DashboardStat, DashboardStat, DashboardStat], logoIcon: LucideIcon, sidebarItems: DashboardSidebarItem[], buttons: ButtonConfig[], listItems: DashboardListItem[], imageSrc: string, searchPlaceholder?: string, chartTitle?: string, chartData?: ChartDataItem[], listTitle?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, className?: string, containerClassName?: string, sidebarClassName?: string, statClassName?: string, chartClassName?: string, listClassName?: string } (required - all Dashboard props passed as a single object)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "dashboardClassName?": "string"
+  },
+  "usageExample": "<HeroBillboardDashboard\n  background={{ variant: 'radial-gradient' }}\n  tag=\"Live Analytics\"\n  tagIcon={Sparkles}\n  title=\"Real-Time On-Chain Intelligence\"\n  description=\"Monitor protocol revenue, trading volume, and wallet activity.\"\n  buttons={[{ text: 'Get Started', href: '#' }, { text: 'View Docs', href: '#' }]}\n  dashboard={{\n    title: \"On-Chain Metrics Hub\",\n    logoIcon: Hexagon,\n    imageSrc: \"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face\",\n    buttons: [{ text: \"Dashboard\", href: \"#\" }, { text: \"Export CSV\", href: \"#\" }],\n    sidebarItems: [{ icon: House, active: true }, { icon: MessageSquareText }, { icon: Settings }],\n    stats: [\n      { title: \"Revenue\", values: [178425, 245890, 312750], valuePrefix: \"$\", description: \"Protocol fees.\" },\n      { title: \"Volume\", values: [7.84, 12.5, 9.32], valuePrefix: \"$\", valueSuffix: \"M\", description: \"Transaction flow.\" },\n      { title: \"Wallets\", values: [11240, 15680, 13450], description: \"Active wallets.\" },\n    ],\n    chartTitle: \"Staking Rewards\",\n    chartData: [{ value: 50 }, { value: 30 }, { value: 70 }, { value: 40 }, { value: 90 }],\n    listTitle: \"Treasury Transfers\",\n    listItems: [\n      { icon: CircleDollarSign, title: \"$12,000 USDC\", status: \"Confirmed\" },\n      { icon: ArrowLeftRight, title: \"Swap: 5 ETH\", status: \"Executed\" },\n      { icon: Send, title: \"Transfer: 2,500 DAI\", status: \"Confirmed\" },\n    ],\n  }}\n/>",
+  "do": [
+    "Use for SaaS landing pages",
+    "Use for analytics/dashboard product showcases",
+    "Use for data visualization platforms",
+    "Requires dashboard prop with all nested properties"
+  ],
+  "dont": [
+    "Do not use without dashboard data",
+    "Do not use for simple hero sections without interactive elements"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "RotatedRaysBackground",
+  "description": "Atmospheric light rays emanating from a rotated origin point with blur and radial gradient effects, with optional grid overlay.",
+  "details": "Use for dramatic, atmospheric backgrounds with light ray effects. Features 8 rays with varying widths (15-40px), opacities, rotations, and scales emanating from a single origin point. The container is rotated -38deg with 16px blur and masked with radial gradient for natural falloff. Includes 3 light sources for additional depth. Uses theme color via var(--color-primary-cta) for both rays and light sources. When animated=true, rays pulse between opacity 0 and their target opacity with staggered timing. When showGrid=true, displays a medium grid overlay (10vw spacing) that fades from top center. Perfect for hero sections, landing pages, or any area needing dramatic lighting effects.",
+  "constraints": {},
+  "propsSchema": {
+    "animated": "boolean - Required. When true, rays animate with pulsing opacity. When false, rays display static opacity.",
+    "showGrid": "boolean - Required. When true, displays a grid overlay fading from top center. When false, no grid is shown.",
+    "className?": "string",
+    "containerClassName?": "string"
+  },
+  "usageExample": "<RotatedRaysBackground animated={true} showGrid={false} />",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [
+    "Do not use multiple items",
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

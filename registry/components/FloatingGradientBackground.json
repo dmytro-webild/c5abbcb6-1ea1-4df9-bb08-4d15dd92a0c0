@@ -1,0 +1,20 @@
+{
+  "name": "FloatingGradientBackground",
+  "description": "Five animated gradient circles with CSS animations and vertical gradient mask.",
+  "details": "Use for dynamic, engaging backgrounds with subtle motion. Features 5 circles with different animations (moveVertical, moveInCircle, moveHorizontal) using primary-cta and accent colors. Includes 40px blur and linear gradient mask (transparent → visible 20-80% → transparent). Circles have varying opacities (0.1-0.2) and use hard-light blend mode.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string"
+  },
+  "usageExample": "<FloatingGradientBackground />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

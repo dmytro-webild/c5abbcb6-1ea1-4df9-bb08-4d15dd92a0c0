@@ -1,0 +1,19 @@
+{
+  "name": "FooterSimple",
+  "propsSchema": {
+    "columns": "Array<{ title: string, items: Array<{ label: string, href?: string, onClick?: () => void }> }>",
+    "bottomLeftText": "string",
+    "bottomRightText": "string",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "dividerClassName?": "string",
+    "bottomContainerClassName?": "string",
+    "bottomLeftTextClassName?": "string",
+    "bottomRightTextClassName?": "string"
+  }
+}

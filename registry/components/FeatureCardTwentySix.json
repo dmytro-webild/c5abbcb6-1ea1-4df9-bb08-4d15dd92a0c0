@@ -1,0 +1,91 @@
+{
+  "name": "FeatureCardTwentySix",
+  "description": "Full-bleed media carousel feature cards with bottom text overlay and arrow navigation.",
+  "details": "Use for showcasing features or courses with strong visual media. Each card has full-bleed image/video with a frosted glass gradient overlay at the bottom containing title, description, and an icon button. Uses ArrowCarousel layout with centered alignment, looping, prev/next arrow controls, and mask-fade-x edges. Active item is full opacity and scale, inactive items are reduced.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Featured Courses",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Handpicked by our team to help you start strong",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Popular",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "featureRules": {
+      "minItems": 4,
+      "maxItems": 12,
+      "recommendedItems": "6",
+      "structure": {
+        "title": "string - Card title displayed over media (required)",
+        "description": "string - Card description displayed over media (required)",
+        "imageSrc": "string - Path to background image (optional if videoSrc provided)",
+        "videoSrc": "string - Path to background video (optional if imageSrc provided)",
+        "imageAlt": "string - Alt text for background image",
+        "videoAriaLabel": "string - Aria label for background video",
+        "buttonIcon": "LucideIcon - Icon inside the card action button (required)",
+        "buttonHref": "string - Navigation target for button (optional)",
+        "buttonOnClick": "() => void - Click handler for button (optional)"
+      }
+    }
+  },
+  "propsSchema": {
+    "features": "Array<{ title: string, description: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string, buttonIcon: LucideIcon, buttonHref?: string, buttonOnClick?: () => void }>",
+    "title": "string (required)",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string (required)",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean (required)",
+    "ariaLabel?": "string (default: 'Feature section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "cardButtonClassName?": "string"
+  },
+  "usageExample": "<FeatureCardTwentySix features={[{ title: 'UX Design Fundamentals', description: 'Learn user-centered design from scratch', imageSrc: '/course1.jpg', imageAlt: 'UX Design course', buttonIcon: ArrowRight, buttonHref: '#courses' }]} title=\"Featured Courses\" description=\"Handpicked by our team\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for showcasing features or courses with strong visual media",
+    "Best for 4-12 items (6 recommended)",
+    "Use high-quality images or videos for full-bleed display",
+    "Each card requires a buttonIcon for the action button"
+  ],
+  "dont": [
+    "Do not use without media for each feature",
+    "Do not use without buttonIcon",
+    "Do not use for text-heavy content"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

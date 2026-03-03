@@ -1,0 +1,37 @@
+{
+  "name": "ButtonHoverBubble",
+  "description": "CTA button with expanding bubble animation where an arrow icon slides out and the text expands on hover.",
+  "details": "Use for CTAs where a playful expansion effect adds emphasis. On hover (desktop only), a circular arrow icon expands from the left while the text container slides into view. The initial state shows just the arrow on the right which transforms into the full button. Mobile shows static full button. Uses bgClassName for text container (primary-button for primary, secondary-button for secondary) and iconClassName for arrow icons (automatically set via buttonUtils.ts).",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Contact Us",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "bgClassName?": "string - Applied to the text container (automatically set in sections)",
+    "textClassName?": "string - Applied to the text span",
+    "iconClassName?": "string - Applied to both arrow icon containers (automatically set in sections)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonHoverBubble text=\"Contact Us\" href=\"contact\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

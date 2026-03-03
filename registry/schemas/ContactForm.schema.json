@@ -1,0 +1,25 @@
+{
+  "name": "ContactForm",
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "tag": "string",
+    "tagIcon?": "LucideIcon",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "termsText?": "string (default: 'By clicking Sign Up you're confirming that you agree with our Terms and Conditions.')",
+    "onSubmit?": "(email: string) => void",
+    "useInvertedBackground": "boolean",
+    "centered?": "boolean (default: false)",
+    "className?": "string",
+    "tagClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "termsClassName?": "string"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "HeroBillboardScroll",
+  "description": "Full-screen hero section with centered text, configurable background, and media card that animates with 3D perspective transforms on scroll (desktop only).",
+  "details": "Use for modern, interactive landing pages showcasing products, dashboards, or applications with scroll-triggered effects. Features required background variant (choose from animated grids, gradient effects, or 'plain' for no background), centered TextBox, and animated media card. On desktop, the media card animates from rotated (20deg X-axis) and scaled (1.05) to flat and normal scale as user scrolls down. Mobile displays a static 3D-rotated card without animation to avoid performance issues. Background variants include preset options for zero-config usage. Requires ReactLenis for smooth scroll tracking.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Scroll Animations",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Experience smooth, performant animations as you scroll through your content",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Unleash the Power",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "imageSrc": {
+        "required": false,
+        "example": "/dashboard.jpg",
+        "note": "Image to display in the animated card. Supports external URLs with unoptimized prop"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/demo.mp4",
+        "note": "Video to display in the animated card. Takes precedence over imageSrc if both provided"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Dashboard preview",
+        "note": "Empty string marks image as decorative (aria-hidden)"
+      },
+      "animationBehavior": {
+        "desktop": {
+          "rotateX": "Animates from 20deg to 0deg based on scroll progress",
+          "scale": "Animates from 1.05 to 1 based on scroll progress",
+          "height": "h-[75svh] (75% of viewport height)",
+          "note": "Uses Framer Motion's useScroll and useTransform for smooth scroll-linked animations"
+        },
+        "mobile": {
+          "rotateX": "Static 20deg rotation (no animation)",
+          "scale": "No scale animation",
+          "height": "h-[50svh] (50% of viewport height)",
+          "note": "Separate static div implementation to prevent performance issues and hydration errors"
+        },
+        "perspective": "1000px applied to container for 3D effect"
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'Get Started', onClick: () => console.log('Get Started clicked') }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Hero video')",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "cardWrapperClassName?": "string",
+    "cardInnerClassName?": "string",
+    "imageClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"hover-bubble\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\">\n  <HeroBillboardScroll \n    background={{ variant: 'canvas-reveal' }}\n    title=\"Scroll Animations\" \n    description=\"Experience smooth, performant animations as you scroll through your content\" \n    tag=\"Unleash the Power\" \n    imageSrc=\"/dashboard.jpg\" \n    imageAlt=\"Dashboard preview\"\n    buttons={[{ text: 'Get Started', onClick: () => console.log('Get Started clicked') }, { text: 'Learn More', href: 'about' }]} \n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

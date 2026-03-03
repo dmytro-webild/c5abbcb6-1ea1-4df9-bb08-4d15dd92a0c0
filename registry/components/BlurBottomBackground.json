@@ -1,0 +1,20 @@
+{
+  "name": "BlurBottomBackground",
+  "description": "Backdrop blur effect positioned at the bottom of the page with linear gradient mask.",
+  "details": "Use for clean, minimal backgrounds with a subtle blur effect at the bottom of the page. Features fixed positioning with backdrop-blur-sm effect at the bottom using linear gradient mask (to bottom, transparent to black 60%). The blur is h-50 in height, fixed at bottom-left (left-0 bottom-0). Creates a frosted glass effect rising from the bottom of the page. Useful for creating depth and visual interest on pages with bottom-aligned content or CTAs without adding background color.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string"
+  },
+  "usageExample": "<BlurBottomBackground />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

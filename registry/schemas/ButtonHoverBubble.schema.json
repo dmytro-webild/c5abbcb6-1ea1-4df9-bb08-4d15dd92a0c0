@@ -1,0 +1,16 @@
+{
+  "name": "ButtonHoverBubble",
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "scrollToSection?": "boolean",
+    "className?": "string",
+    "bgClassName?": "string - Applied to the text container (automatically set in sections)",
+    "textClassName?": "string - Applied to the text span",
+    "iconClassName?": "string - Applied to both arrow icon containers (automatically set in sections)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  }
+}

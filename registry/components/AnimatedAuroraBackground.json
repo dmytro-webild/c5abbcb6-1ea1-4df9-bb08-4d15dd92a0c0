@@ -1,0 +1,22 @@
+{
+  "name": "AnimatedAuroraBackground",
+  "description": "Aurora borealis effect with animated repeating gradients and mix-blend-difference.",
+  "details": "Use for premium, vibrant backgrounds with flowing aurora animation. Features repeating linear gradients with theme colors (primary-cta, accent, secondary-cta) that animate across the screen. Uses background color for base gradient with 10px blur filter. Optional radial gradient mask (default: true) creates elliptical spotlight effect from top-right. Uses mix-blend-difference blend mode and after pseudo-element for layered animation. Requires aurora keyframes animation in globals.css. Set invertColors to true for light backgrounds, false for dark backgrounds.",
+  "constraints": {},
+  "propsSchema": {
+    "className?": "string",
+    "showRadialGradient?": "boolean (default: true)",
+    "invertColors": "boolean (REQUIRED - true for light backgrounds, false for dark backgrounds)"
+  },
+  "usageExample": "<AnimatedAuroraBackground invertColors={true} showRadialGradient={true} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "MetricSplitMediaAbout",
+  "description": "Split-layout about section with text, metrics cards, and media in a 2-column grid.",
+  "details": "Use for case study or results-focused about sections. Left column displays tag, title, description, and up to 2 metric cards. Right column displays image or video. Metrics show large value and title. Supports inverted background mode for visual contrast.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "We help automate what matters most",
+        "minChars": 10,
+        "maxChars": 100
+      },
+      "description": {
+        "required": true,
+        "example": "Hamilton, a growing e-commerce business, was overwhelmed by repetitive tasks. We built custom automation that integrated with their tools.",
+        "minChars": 20,
+        "maxChars": 500
+      },
+      "tag": {
+        "required": false,
+        "example": "Case study",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "minMetrics": 1,
+      "maxMetrics": 2,
+      "structure": {
+        "value": "string - Large metric value (required, e.g., '50+', '40%', '10x')",
+        "title": "string - Metric label/title (required, e.g., 'Hours saved every month')"
+      },
+      "note": "Provide 1-2 metrics for optimal layout. Grid displays 1 metric as single column, 2 metrics as 2 columns on desktop."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "metrics": "Array<{ value: string, title: string }>",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string",
+    "videoAriaLabel?": "string (default: 'About section video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "metricsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'About section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "gridClassName?": "string",
+    "leftColumnClassName?": "string",
+    "rightColumnClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "metricsContainerClassName?": "string",
+    "metricCardClassName?": "string",
+    "metricValueClassName?": "string",
+    "metricTitleClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\nimport { Sparkles } from 'lucide-react';\n\n<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" cardStyle=\"solid\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <MetricSplitMediaAbout\n    tag=\"Case study\"\n    tagIcon={Sparkles}\n    title=\"We help automate what matters most\"\n    description=\"Hamilton, a growing e-commerce business, was overwhelmed by repetitive order processing. We built custom automation that integrated seamlessly with their existing tools.\"\n    metrics={[{ value: '50+', title: 'Hours saved every month' }, { value: '40%', title: 'Reduction in manual work' }]}\n    imageSrc=\"/placeholders/placeholder.jpg\"\n    imageAlt=\"Case study image\"\n    useInvertedBackground={false}\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for about pages",
+    "Use for company information",
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

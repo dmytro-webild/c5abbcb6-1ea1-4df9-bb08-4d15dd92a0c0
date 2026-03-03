@@ -1,0 +1,31 @@
+{
+  "name": "TimelineHorizontalCardStack",
+  "propsSchema": {
+    "children": "React.ReactNode",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "mediaItems?": "Array<{ imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "useInvertedBackground?": "boolean",
+    "ariaLabel?": "string (default: 'Timeline section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "cardClassName?": "string",
+    "progressBarClassName?": "string",
+    "mediaContainerClassName?": "string",
+    "mediaClassName?": "string"
+  }
+}

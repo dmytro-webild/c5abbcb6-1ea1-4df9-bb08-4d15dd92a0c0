@@ -1,0 +1,228 @@
+@layer components {}
+
+@layer utilities {
+
+  /* Card, primary-button, and secondary-button styles are now dynamically injected via ThemeProvider */
+
+  /* .card {
+    @apply backdrop-blur-sm bg-gradient-to-br from-card/80 to-card/40 shadow-sm border border-card;
+  }
+
+  .primary-button {
+    @apply bg-gradient-to-b from-primary-cta/83 to-primary-cta;
+    box-shadow:
+      color-mix(in srgb, var(--color-background) 25%, transparent) 0px 1px 1px 0px inset,
+      color-mix(in srgb, var(--color-primary-cta) 15%, transparent) 3px 3px 3px 0px;
+  }
+
+  .secondary-button {
+    @apply backdrop-blur-sm bg-gradient-to-br from-secondary-cta/80 to-secondary-cta shadow-sm border border-secondary-cta;
+  } */
+
+  .tag-card {
+    @apply backdrop-blur-sm bg-gradient-to-br from-card/80 to-card/40 shadow-sm border border-card;
+  }
+
+  .inset-glow-border {
+    @apply relative;
+  }
+
+  .inset-glow-border::before {
+    content: "";
+    @apply absolute pointer-events-none inset-0 p-[1px];
+    border-radius: inherit;
+    background: linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--color-primary-cta) 20%, var(--color-background)) 0%,
+      color-mix(in srgb, var(--color-primary-cta) 40%, var(--color-background)) 27%,
+      color-mix(in srgb, var(--color-primary-cta) 60%, var(--color-foreground)) 62%,
+      color-mix(in srgb, var(--color-primary-cta) 80%, var(--color-foreground)) 100%
+    );
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent calc((100vw - var(--width-content-width)) / 4), black calc((100vw - var(--width-content-width)) / 2 + 5vw), black calc(100% - (100vw - var(--width-content-width)) / 2 - 5vw), transparent calc(100% - (100vw - var(--width-content-width)) / 4), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent calc((100vw - var(--width-content-width)) / 4), black calc((100vw - var(--width-content-width)) / 2 + 5vw), black calc(100% - (100vw - var(--width-content-width)) / 2 - 5vw), transparent calc(100% - (100vw - var(--width-content-width)) / 4), transparent 100%);
+  }
+
+  .mask-padding-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black var(--width-x-padding-mask-fade), black calc(100% - var(--width-x-padding-mask-fade)), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black var(--width-x-padding-mask-fade), black calc(100% - var(--width-x-padding-mask-fade)), transparent 100%);
+  }
+
+  .mask-fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+  }
+
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black var(--vw-1_5),
+        black calc(100% - var(--vw-1_5)),
+        transparent 100%);
+  }
+
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black var(--vw-1_5),
+        black calc(100% - var(--vw-1_5)),
+        transparent 100%);
+  }
+
+  .mask-fade-y-medium {
+    mask-image: linear-gradient(to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%);
+  }
+
+  .mask-fade-bottom-large {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 75%, transparent 100%);
+  }
+
+  .mask-fade-bottom-long {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 5%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 5%, transparent 100%);
+  }
+
+  .mask-fade-top-long {
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 5%, transparent 100%);
+    mask-image: linear-gradient(to top, black 0%, black 5%, transparent 100%);
+  }
+
+  .mask-fade-xy {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+
+  /* ANIMATION */
+
+  .animation-container {
+    animation:
+      fadeInOpacity 0.8s ease-in-out forwards,
+      fadeInTranslate 0.6s forwards;
+  }
+
+  .animation-container-fade {
+    animation: fadeInOpacity 0.8s ease-in-out forwards;
+  }
+
+  @keyframes fadeInOpacity {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInTranslate {
+    from {
+      transform: translateY(0.75vh);
+    }
+
+    to {
+      transform: translateY(0vh);
+    }
+  }
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 10s linear infinite;
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical 40s linear infinite;
+  }
+
+  @keyframes marquee-vertical-reverse {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-marquee-vertical-reverse {
+    animation: marquee-vertical-reverse 40s linear infinite;
+  }
+
+  @keyframes orbit {
+    from {
+      transform: rotate(var(--initial-position, 0deg)) translateX(var(--translate-position, 120px)) rotate(calc(-1 * var(--initial-position, 0deg)));
+    }
+    to {
+      transform: rotate(calc(var(--initial-position, 0deg) + 360deg)) translateX(var(--translate-position, 120px)) rotate(calc(-1 * (var(--initial-position, 0deg) + 360deg)));
+    }
+  }
+
+  @keyframes map-dot-pulse {
+    0%, 100% {
+      transform: scale(0.4);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 1;
+    }
+  }
+
+}

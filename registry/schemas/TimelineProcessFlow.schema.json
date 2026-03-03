@@ -1,0 +1,32 @@
+{
+  "name": "TimelineProcessFlow",
+  "propsSchema": {
+    "items": "Array<{ id: string, content: React.ReactNode, media: React.ReactNode, reverse: boolean }> - Timeline items with content and media",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "useInvertedBackground?": "boolean",
+    "ariaLabel?": "string (default: 'Timeline process flow section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "itemClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "numberClassName?": "string",
+    "contentWrapperClassName?": "string",
+    "gapClassName?": "string"
+  }
+}

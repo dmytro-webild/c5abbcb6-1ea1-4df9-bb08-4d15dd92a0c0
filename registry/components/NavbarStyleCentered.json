@@ -1,0 +1,73 @@
+{
+  "name": "NavbarStyleCentered",
+  "description": "Centered dropdown navigation with animated expand/collapse and staggered link reveals.",
+  "details": "Use for compact, elegant navigation that stays out of the way until needed. Features a centered floating card with hamburger toggle, grid-based expand animation for the dropdown, staggered slide-up animations for links with arrow icons, animated separators, and a full-width CTA button at the bottom. Supports Lenis smooth scrolling.",
+  "constraints": {
+    "minLinks": 3,
+    "maxLinks": 6,
+    "preferredCount": 5,
+    "brandRules": {
+      "required": false,
+      "minChars": 2,
+      "maxChars": 20,
+      "example": "Webild",
+      "fallbackBehavior": "Shows brandName text"
+    },
+    "buttonRules": {
+      "text": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "Get Started"
+      },
+      "href": {
+        "required": false,
+        "format": "url | section-id",
+        "example": "contact"
+      },
+      "onClick": {
+        "required": false,
+        "note": "Optional click handler"
+      }
+    },
+    "linkRules": {
+      "name": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "About"
+      },
+      "id": {
+        "required": true,
+        "format": "section-id | url",
+        "examples": [
+          "about",
+          "services",
+          "https://github.com",
+          "www.example.com"
+        ],
+        "behavior": "Internal IDs scroll to section, URLs open in new tab"
+      }
+    }
+  },
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "button": "{text: string, onClick?: () => void, href?: string}",
+    "brandName?": "string (default: 'Webild')",
+    "className?": "string (default: '')"
+  },
+  "usageExample": "<NavbarStyleCentered navItems={[{name: 'Home', id: 'home'}, {name: 'About', id: 'about'}, {name: 'Services', id: 'services'}, {name: 'Blog', id: 'blog'}, {name: 'Contact', id: 'contact'}]} button={{text: 'Get Started', href: 'contact'}} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires navItems[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

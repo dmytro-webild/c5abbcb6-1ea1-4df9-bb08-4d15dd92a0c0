@@ -1,0 +1,43 @@
+{
+  "name": "EmailSignupForm",
+  "description": "Compact email signup form with inline input and submit button in card container.",
+  "details": "Use for newsletter signups, waitlists, or email collection. Features inline layout with email input on left and submit button on right, all wrapped in a card with rounded-theme borders and 1-unit padding. Input is flex-1 to fill available space. Button uses ThemeProvider's defaultButtonVariant. Returns email string on submit.",
+  "constraints": {
+    "textRules": {
+      "inputPlaceholder": {
+        "required": false,
+        "default": "Enter your email",
+        "example": "Your email address",
+        "minChars": 5,
+        "maxChars": 50
+      },
+      "buttonText": {
+        "required": false,
+        "default": "Sign Up",
+        "example": "Subscribe",
+        "minChars": 2,
+        "maxChars": 15
+      }
+    }
+  },
+  "propsSchema": {
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "onSubmit?": "(email: string) => void",
+    "className?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  },
+  "usageExample": "<EmailSignupForm inputPlaceholder=\"Your email\" buttonText=\"Subscribe\" onSubmit={(email) => console.log(email)} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "name": "FeatureCardSixteen",
+  "description": "Comparison section with negative and positive cards showing contrasting features.",
+  "details": "Use for before/after comparisons, pros vs cons, or contrasting two approaches. Layout: TextBox Header → Two side-by-side cards (negative with X icons at 50% opacity, positive with Check icons). Always requires exactly one negative and one positive card. Best for comparison marketing or highlighting advantages over alternatives.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "What makes us stand out",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "See how we compare to traditional approaches",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Why us",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "negativeCardRules": {
+      "items": {
+        "required": true,
+        "example": [
+          "Time-consuming processes",
+          "Limited scalability",
+          "Higher costs"
+        ],
+        "minItems": 2,
+        "maxItems": 10,
+        "note": "List of negative aspects displayed with X icons"
+      }
+    },
+    "positiveCardRules": {
+      "items": {
+        "required": true,
+        "example": [
+          "Streamlined workflow",
+          "Scalable solutions",
+          "Better value"
+        ],
+        "minItems": 2,
+        "maxItems": 10,
+        "note": "List of positive aspects displayed with Check icons"
+      }
+    }
+  },
+  "propsSchema": {
+    "negativeCard": "{ items: string[] } (required)",
+    "positiveCard": "{ items: string[] } (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Feature comparison section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "gridClassName?": "string",
+    "cardClassName?": "string",
+    "itemsListClassName?": "string",
+    "itemClassName?": "string",
+    "itemIconClassName?": "string",
+    "itemTextClassName?": "string"
+  },
+  "usageExample": "<FeatureCardSixteen negativeCard={{ items: ['Time-consuming processes', 'Limited scalability'] }} positiveCard={{ items: ['Streamlined workflow', 'Scalable solutions'] }} animationType=\"slide-up\" title=\"What makes us stand out\" description=\"See how we compare\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

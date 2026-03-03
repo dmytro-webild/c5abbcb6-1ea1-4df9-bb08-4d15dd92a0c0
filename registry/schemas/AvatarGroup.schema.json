@@ -1,0 +1,13 @@
+{
+  "name": "AvatarGroup",
+  "propsSchema": {
+    "avatars": "Array<{ src: string, alt: string }>",
+    "text?": "string",
+    "maxVisible?": "number (default: 5)",
+    "animationType?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "className?": "string",
+    "avatarClassName?": "string",
+    "textClassName?": "string",
+    "ariaLabel?": "string (default: 'User avatars')"
+  }
+}

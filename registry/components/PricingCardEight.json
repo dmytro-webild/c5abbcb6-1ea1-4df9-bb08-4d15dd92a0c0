@@ -1,0 +1,108 @@
+{
+  "name": "PricingCardEight",
+  "description": "Pricing card with nested card layout featuring badge, price, buttons in secondary-button container, and feature list below.",
+  "details": "Use for pricing with prominent CTA buttons and clear visual hierarchy. Layout: Outer card container with inner secondary-button section containing Badge → Price → Subtitle → Buttons (max 2, full-width), followed by feature list outside the inner container. The nested card design creates visual depth and draws attention to the pricing and action area. Uses CardStack with uniform-all-items-equal grid. Perfect for subscription tiers or service packages.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Choose Your Plan",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Select the perfect plan for your needs",
+        "minChars": 10,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Pricing",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "planRules": {
+      "minPlans": 1,
+      "maxPlans": 6,
+      "structure": {
+        "id": "string - Unique identifier (required)",
+        "badge": "string - Badge text, e.g., 'Most Popular' (required)",
+        "badgeIcon": "LucideIcon - Optional icon for badge",
+        "price": "string - Price display, e.g., '$29/mo' (required)",
+        "subtitle": "string - Subtitle below price, e.g., 'Perfect for small teams' (required)",
+        "buttons": "Array<{text: string, onClick?: () => void, href?: string}> - Action buttons, max 2 (required)",
+        "features": "string[] - List of features included (required)"
+      },
+      "note": "Each plan displays in a nested card layout with secondary-button styling for the top section."
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Buttons render full-width inside secondary-button container. Button variant controlled by ThemeProvider."
+    }
+  },
+  "propsSchema": {
+    "plans": "Array<{ id: string, badge: string, badgeIcon?: LucideIcon, price: string, subtitle: string, buttons: Array<{text: string, onClick?: () => void, href?: string}>, features: string[] }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Pricing section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "badgeClassName?": "string",
+    "priceClassName?": "string",
+    "subtitleClassName?": "string",
+    "planButtonContainerClassName?": "string",
+    "planButtonClassName?": "string",
+    "featuresClassName?": "string",
+    "featureItemClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<PricingCardEight plans={[{ id: '1', badge: 'Most Popular', price: '$29/mo', subtitle: 'Perfect for small teams', buttons: [{ text: 'Get Started', href: '/signup' }], features: ['Up to 10 team members', '100GB storage', 'Priority support'] }]} animationType=\"slide-up\" title=\"Choose Your Plan\" description=\"Select the perfect plan for your needs\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Requires plans[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

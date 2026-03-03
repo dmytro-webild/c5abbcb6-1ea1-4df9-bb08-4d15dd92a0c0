@@ -1,0 +1,114 @@
+{
+  "name": "MetricCardOne",
+  "description": "Metric card with large gradient value text, title, description, and icon badge.",
+  "details": "Use for displaying key metrics, statistics, or KPIs with visual impact. Layout: Large Gradient Value (9xl, overlapping) → Title (4xl, overlaps value with negative margin) → Description (base text, centered) → Icon Badge (bottom-left corner, primary-button styling). Value text uses gradient effect with CSS variables for theme consistency. All fields are required for visual consistency. Best for stats sections, achievement displays, or data visualization. Automatically switches between grid (1-4 items) and carousel (5+ items). Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Impact",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Key metrics that showcase our growth and success",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Statistics",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "value": {
+        "required": true,
+        "example": "100",
+        "minChars": 1,
+        "maxChars": 5,
+        "type": "number",
+        "note": "Must be a number (max 5 digits). Large metric value displayed with gradient effect."
+      },
+      "title": {
+        "required": true,
+        "example": "million",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Metric label displayed below value with negative margin overlap"
+      },
+      "description": {
+        "required": true,
+        "example": "Active users worldwide",
+        "minChars": 5,
+        "maxChars": 150,
+        "note": "Supporting description text displayed below title"
+      },
+      "icon": {
+        "required": true,
+        "example": "TrendingUp",
+        "note": "Lucide icon displayed in bottom-left corner with primary-button styling"
+      }
+    }
+  },
+  "propsSchema": {
+    "metrics": "Array<{ id: string, value: string, title: string, description: string, icon: LucideIcon }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "gridVariant": "'uniform-all-items-equal' | 'bento-grid' | 'bento-grid-inverted' (required)",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d'",
+    "uniformGridCustomHeightClasses?": "string",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "valueClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "iconContainerClassName?": "string",
+    "iconClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<MetricCardOne metrics={[{ id: '1', value: '100', title: 'million', description: 'Active users worldwide', icon: TrendingUp }, { id: '2', value: '700', title: 'thousand', description: 'Projects completed successfully', icon: Users }]} title=\"Our Impact\" description=\"See how we're making a difference\" gridVariant=\"uniform-all-items-equal\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

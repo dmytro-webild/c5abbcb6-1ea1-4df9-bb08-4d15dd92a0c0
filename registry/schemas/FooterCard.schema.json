@@ -1,0 +1,19 @@
+{
+  "name": "FooterCard",
+  "propsSchema": {
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "socialLinks?": "Array<{ icon: LucideIcon, href: string, ariaLabel: string }> - Social media links",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "logoLineHeight?": "number (default: 1.1)",
+    "logoClassName?": "string",
+    "dividerClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "socialContainerClassName?": "string",
+    "socialIconClassName?": "string"
+  }
+}

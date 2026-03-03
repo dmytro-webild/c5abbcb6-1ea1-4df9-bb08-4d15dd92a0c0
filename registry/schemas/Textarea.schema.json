@@ -1,0 +1,13 @@
+{
+  "name": "Textarea",
+  "propsSchema": {
+    "value": "string",
+    "onChange": "(value: string) => void",
+    "placeholder?": "string",
+    "rows?": "number (default: 5)",
+    "required?": "boolean (default: false)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "className?": "string"
+  }
+}

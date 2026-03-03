@@ -1,0 +1,20 @@
+{
+  "name": "FooterBase",
+  "propsSchema": {
+    "columns": "Array<{ title: string, items: Array<{ label: string, href: string }> }> - Footer navigation columns",
+    "logoText?": "string (default: 'Webild')",
+    "copyrightText?": "string (default: '© 2025 | Webild')",
+    "onPrivacyClick?": "() => void",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "logoTextClassName?": "string",
+    "columnsClassName?": "string",
+    "columnClassName?": "string",
+    "columnTitleClassName?": "string",
+    "columnItemClassName?": "string",
+    "copyrightContainerClassName?": "string",
+    "copyrightTextClassName?": "string",
+    "privacyButtonClassName?": "string"
+  }
+}

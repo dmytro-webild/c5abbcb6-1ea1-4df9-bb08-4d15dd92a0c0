@@ -1,0 +1,132 @@
+{
+  "name": "PricingCardFive",
+  "description": "Vertical stack pricing cards with split layout showing plan details and feature checklist.",
+  "details": "Use for showcasing pricing plans with detailed feature lists. Uses CardList with variant system for card or border layouts. Layout: Optional TextBox Header → Vertical Stack of Pricing Cards. Each card has horizontal split (md breakpoint): Left side (50%): Tag, Price with period, Description, and CTA Button. Right side (50%): Features title and checklist with checkmark icons. Card variant: Items wrapped in cards with full padding (p-6 md:p-15) and mobile divider line. Border variant: Items separated by accent divider lines with bottom padding (pb-6 md:pb-10), no mobile divider. Text colors conditional on variant: border uses useInvertedBackground directly, card uses shouldUseLightText. Best for service-based pricing, retainer plans, or subscription tiers where feature lists are important.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Simple, Transparent Pricing",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Choose the plan that fits your needs",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Pricing",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "planRules": {
+      "id": {
+        "required": true,
+        "example": "monthly-retainer",
+        "minChars": 1,
+        "maxChars": 30
+      },
+      "tag": {
+        "required": true,
+        "example": "Monthly Retainer Plan",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "price": {
+        "required": true,
+        "example": "$5,000",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "period": {
+        "required": true,
+        "example": "/m",
+        "minChars": 1,
+        "maxChars": 10
+      },
+      "description": {
+        "required": true,
+        "example": "Scale design, no-code builds & copy quicker than recruiting in-house.",
+        "minChars": 10,
+        "maxChars": 200
+      },
+      "button": {
+        "required": true,
+        "note": "ButtonConfig with text and href or onClick"
+      },
+      "featuresTitle": {
+        "required": true,
+        "example": "What's Included:",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "features": {
+        "required": true,
+        "example": [
+          "Unlimited design requests",
+          "48-hour turnaround"
+        ],
+        "note": "Array of feature strings displayed as checklist"
+      }
+    }
+  },
+  "propsSchema": {
+    "plans": "Array<{ id: string, tag: string, tagIcon?: LucideIcon, price: string, period: string, description: string, button: {text: string, onClick?: () => void, href?: string}, featuresTitle: string, features: string[] }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Pricing section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "cardContentClassName?": "string",
+    "planTagClassName?": "string",
+    "planPriceClassName?": "string",
+    "planPeriodClassName?": "string",
+    "planDescriptionClassName?": "string",
+    "planButtonClassName?": "string",
+    "planButtonTextClassName?": "string",
+    "featuresTitleClassName?": "string",
+    "featuresListClassName?": "string",
+    "featureItemClassName?": "string",
+    "featureIconClassName?": "string",
+    "featureTextClassName?": "string"
+  },
+  "usageExample": "<PricingCardFive plans={[{ id: 'monthly', tag: 'Monthly Retainer Plan', price: '$5,000', period: '/m', description: 'Scale design quicker than recruiting in-house.', button: { text: 'Schedule a call', href: '#contact' }, featuresTitle: \"What's Included:\", features: ['Unlimited design requests', '48-hour turnaround', 'Dedicated project manager'] }]} animationType=\"slide-up\" title=\"Simple Pricing\" description=\"Choose the plan that fits your needs\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Requires plans[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

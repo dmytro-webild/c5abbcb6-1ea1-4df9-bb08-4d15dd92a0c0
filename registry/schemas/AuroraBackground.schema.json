@@ -1,0 +1,6 @@
+{
+  "name": "AuroraBackground",
+  "propsSchema": {
+    "className?": "string"
+  }
+}

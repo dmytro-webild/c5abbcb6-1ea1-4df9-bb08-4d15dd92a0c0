@@ -1,0 +1,109 @@
+{
+  "name": "HeroSplitDualMedia",
+  "description": "Split-layout hero section with configurable background, text content with rating on one side, and dual image/video grid on the other.",
+  "details": "Use for coaching, consulting, or service-focused landing pages. Features full viewport height (h-svh on mobile, h-screen on desktop) with responsive split layout. Left side contains TextBox with tag, title, description, buttons, and a rating section with star icons. Right side displays two media items in a 2-column grid layout. Rating section shows star icons with descriptive text below a divider line.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Transform your business with proven strategies",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "I help entrepreneurs and executives unlock their full potential and build thriving businesses.",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": true,
+        "example": "Business Coach",
+        "minChars": 2,
+        "maxChars": 30
+      },
+      "ratingText": {
+        "required": true,
+        "example": "Rated by loving Clients",
+        "minChars": 2,
+        "maxChars": 50
+      }
+    },
+    "mediaRules": {
+      "mediaItems": {
+        "required": true,
+        "note": "Array of exactly 2 media items. Each can have imageSrc or videoSrc.",
+        "structure": {
+          "imageSrc": "string - Path to image (optional if videoSrc provided)",
+          "videoSrc": "string - Path to video (optional if imageSrc provided)",
+          "imageAlt": "string - Alt text for image",
+          "videoAriaLabel": "string - Aria label for video"
+        },
+        "example": "[{ imageSrc: '/image1.jpg', imageAlt: 'Coaching session' }, { imageSrc: '/image2.jpg', imageAlt: 'Business growth' }]"
+      }
+    },
+    "ratingRules": {
+      "rating": {
+        "required": true,
+        "note": "Number of stars to display (1-5)",
+        "example": 5
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant."
+    }
+  },
+  "propsSchema": {
+    "title": "string (required)",
+    "description": "string (required)",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'glowing-orb' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag": "string (required)",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "mediaItems": "[MediaItem, MediaItem] - Array of exactly 2 media items with imageSrc/videoSrc",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "rating": "number (required) - Number of stars to display",
+    "ratingText": "string (required) - Text displayed next to rating stars",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaItemClassName?": "string",
+    "imageClassName?": "string",
+    "ratingClassName?": "string",
+    "ratingTextClassName?": "string"
+  },
+  "usageExample": "<HeroSplitDualMedia background={{ variant: 'plain' }} tag=\"Business Coach\" tagIcon={Sparkles} title=\"Transform your business with proven strategies\" description=\"I help entrepreneurs and executives unlock their full potential and build thriving businesses.\" mediaItems={[{ imageSrc: '/image1.jpg', imageAlt: 'Coaching' }, { imageSrc: '/image2.jpg', imageAlt: 'Growth' }]} rating={5} ratingText=\"Rated by loving Clients\" buttons={[{ text: 'Book a Call', href: '#' }]} />",
+  "do": [
+    "Use for coaching, consulting, or service-focused landing pages",
+    "Include exactly 2 media items",
+    "Include star rating for social proof",
+    "Full viewport height with split layout"
+  ],
+  "dont": [
+    "Do not use without 2 media items",
+    "Do not use without rating",
+    "Do not use for product showcases"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

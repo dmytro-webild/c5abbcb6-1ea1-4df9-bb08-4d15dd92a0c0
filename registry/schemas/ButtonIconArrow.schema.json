@@ -1,0 +1,15 @@
+{
+  "name": "ButtonIconArrow",
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "scrollToSection?": "boolean",
+    "className?": "string",
+    "textClassName?": "string",
+    "iconClassName?": "string",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  }
+}

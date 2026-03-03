@@ -1,0 +1,90 @@
+{
+  "name": "HeroBillboardGallery",
+  "description": "Full-width hero section with centered text, configurable background, and 3-5 overlapping rotated images in gallery layout.",
+  "details": "Use for visually rich landing pages showcasing multiple images. Features centered title and description with TextBox animations, required background variant (choose from animated grids, gradient effects, or 'plain' for no background), optional tag with icon, up to 2 CTA buttons. Gallery shows 3-5 overlapping images with rotation effects. Mobile displays AutoCarousel, desktop shows overlapping rotated images. Full viewport height with vertical centering on desktop. Background variants include preset options for zero-config usage.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Explore Our Collection",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "description": {
+        "required": true,
+        "example": "Discover amazing products and experiences",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "Featured",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "mediaRules": {
+      "mediaItems": {
+        "required": true,
+        "example": "[{ imageSrc: '/img1.jpg', imageAlt: 'Gallery 1' }, { imageSrc: '/img2.jpg', imageAlt: 'Gallery 2' }, { imageSrc: '/img3.jpg', imageAlt: 'Gallery 3' }]",
+        "note": "Array of 3-5 MediaItem objects. Each item can have imageSrc, videoSrc, imageAlt, videoAriaLabel. Supports 3-5 images maximum."
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional). External URLs (https://, http://, www.) open in new tab. Internal values (e.g., 'about', 'contact') scroll to #about, #contact sections",
+        "onClick": "() => void - Additional click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props like className, textClassName (optional)"
+      },
+      "examples": [
+        "{ text: 'View Gallery', href: 'https://example.com' }",
+        "{ text: 'Learn More', href: 'about' }"
+      ],
+      "note": "Button variant is controlled by ThemeProvider's defaultButtonVariant. Border radius is controlled by ThemeProvider's borderRadius (options: 'sharp', 'rounded', 'soft', 'pill'). All sections should be wrapped in a single ThemeProvider at the app/page level to maintain consistent styling across the entire site."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "mediaItems": "Array<{ imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }> - Each item requires either imageSrc or videoSrc",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\">\n  <HeroBillboardGallery \n    background={{ variant: 'radial-gradient' }}\n    title=\"Explore Our Collection\" \n    description=\"Discover amazing products and experiences\" \n    tag=\"Featured\" \n    mediaItems={[\n      { imageSrc: '/img1.jpg', imageAlt: 'Gallery 1' },\n      { imageSrc: '/img2.jpg', imageAlt: 'Gallery 2' },\n      { imageSrc: '/img3.jpg', imageAlt: 'Gallery 3' },\n      { imageSrc: '/img4.jpg', imageAlt: 'Gallery 4' },\n      { imageSrc: '/img5.jpg', imageAlt: 'Gallery 5' }\n    ]}\n    buttons={[{ text: 'View Gallery', href: 'https://example.com' }, { text: 'Learn More', href: 'about' }]} \n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for portfolios",
+    "Use for image galleries",
+    "Requires buttons?[]",
+    "Requires mediaItems[]"
+  ],
+  "dont": [
+    "Do not use less than 3 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

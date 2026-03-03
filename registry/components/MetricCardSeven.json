@@ -1,0 +1,110 @@
+{
+  "name": "MetricCardSeven",
+  "description": "Metric card with large accent value, title, and feature list with checkmarks.",
+  "details": "Use for metrics with supporting bullet points. Layout: Large Value (9xl accent, h3) → Title (2xl) → Accent border divider → Feature List (PricingFeatureList with checkmarks). Value and title at top, feature list at bottom with border separator. Best for metrics that need additional context or supporting details. Automatically switches between grid (1-4 items) and carousel (5+ items). Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Impact",
+        "minChars": 2,
+        "maxChars": 35
+      },
+      "description": {
+        "required": true,
+        "example": "Key metrics that showcase our growth",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Stats",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "value": {
+        "required": true,
+        "example": "15+",
+        "minChars": 1,
+        "maxChars": 10,
+        "note": "Large metric value displayed at top of card in accent color"
+      },
+      "title": {
+        "required": true,
+        "example": "Years in business consulting",
+        "minChars": 5,
+        "maxChars": 60,
+        "note": "Metric description displayed below value"
+      },
+      "items": {
+        "required": true,
+        "example": "['8+ industries served', '5+ countries reached']",
+        "minItems": 1,
+        "maxItems": 5,
+        "note": "Array of supporting bullet points displayed with checkmarks"
+      }
+    }
+  },
+  "propsSchema": {
+    "metrics": "Array<{ id: string, value: string, title: string, items: string[] }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d'",
+    "uniformGridCustomHeightClasses?": "string",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "valueClassName?": "string - For styling the large metric value",
+    "metricTitleClassName?": "string - For styling the metric title text",
+    "featuresClassName?": "string - For styling the PricingFeatureList container",
+    "featureItemClassName?": "string - For styling individual feature items",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<MetricCardSeven metrics={[{ id: '1', value: '15+', title: 'Years in business consulting', items: ['8+ industries served', '5+ countries reached'] }, { id: '2', value: '500+', title: 'Projects completed', items: ['98% client satisfaction', 'Award-winning designs'] }]} title=\"Our Impact\" description=\"Key metrics that showcase our growth\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

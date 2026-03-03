@@ -1,0 +1,36 @@
+{
+  "name": "Input",
+  "description": "Styled text input field with secondary-button styling and rounded-theme borders.",
+  "details": "Use for text, email, password, and other input types in forms. Features secondary-button background styling, placeholder text with 75% opacity, and focus states. Includes disabled state with reduced opacity and cursor styling. Supports all standard HTML input types.",
+  "constraints": {
+    "textRules": {
+      "placeholder": {
+        "required": false,
+        "example": "Enter your name",
+        "minChars": 2,
+        "maxChars": 50
+      }
+    }
+  },
+  "propsSchema": {
+    "value": "string (required)",
+    "onChange": "(value: string) => void (required)",
+    "type?": "string (default: 'text')",
+    "placeholder?": "string",
+    "required?": "boolean (default: false)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "className?": "string"
+  },
+  "usageExample": "<Input value={name} onChange={(value) => setName(value)} type=\"text\" placeholder=\"Name\" required />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

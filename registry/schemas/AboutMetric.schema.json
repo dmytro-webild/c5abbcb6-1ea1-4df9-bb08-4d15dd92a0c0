@@ -1,0 +1,18 @@
+{
+  "name": "AboutMetric",
+  "propsSchema": {
+    "title": "string",
+    "metrics": "Array<{ icon: LucideIcon, label: string, value: string }>",
+    "metricsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'About metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "titleClassName?": "string",
+    "metricsContainerClassName?": "string",
+    "metricCardClassName?": "string",
+    "metricIconClassName?": "string",
+    "metricLabelClassName?": "string",
+    "metricValueClassName?": "string"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "BlurBottomBackground",
+  "propsSchema": {
+    "className?": "string"
+  }
+}

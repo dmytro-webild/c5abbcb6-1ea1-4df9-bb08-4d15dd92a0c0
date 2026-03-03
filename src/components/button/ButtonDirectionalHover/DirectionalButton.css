@@ -1,0 +1,37 @@
+.directional-button-circle-wrap {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.directional-button-circle {
+  pointer-events: none;
+  border-radius: 50%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.7s cubic-bezier(0.625, 0.05, 0, 1);
+  transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+}
+
+.directional-button-circle::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.directional-button:hover .directional-button-circle {
+  transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+@media (max-width: 768px) {
+  .directional-button:hover .directional-button-circle {
+    transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "RadialGradientBackground",
+  "propsSchema": {
+    "className?": "string",
+    "centerColor?": "string (default: 'var(--background)')",
+    "edgeColor?": "string (default: 'var(--color-background-accent)')",
+    "size?": "string (default: '130% 130%')",
+    "position?": "string (default: '50% 15%')"
+  }
+}

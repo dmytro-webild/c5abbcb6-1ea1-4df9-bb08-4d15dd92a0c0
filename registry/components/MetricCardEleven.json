@@ -1,0 +1,115 @@
+{
+  "name": "MetricCardEleven",
+  "description": "Metrics section with paired text and media cards. Each metric displays a value card alongside an image/video card in a 2-column layout.",
+  "details": "Use for showcasing metrics with visual content. Each metric creates two side-by-side cards: a text card (large value at top, title with accent divider and description at bottom) and a media card (image or video). Layout: 1 item or odd last item spans full width with aspect-video on desktop. 2+ items show 2-column grid on desktop. On mobile, even items (2nd, 4th, etc.) alternate order with media on left. Uses CardStackTextBox for header section. Supports GSAP scroll-triggered animations.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Our Impact",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "See the results we've delivered for our clients",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Results",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "metricRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "value": {
+        "required": true,
+        "example": "10M+",
+        "minChars": 1,
+        "maxChars": 15,
+        "note": "Large metric value displayed prominently at top of text card"
+      },
+      "title": {
+        "required": true,
+        "example": "Organic Views",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Metric title displayed at bottom of text card, truncates"
+      },
+      "description": {
+        "required": true,
+        "example": "Growth through smart content strategy",
+        "minChars": 5,
+        "maxChars": 100,
+        "note": "Metric description below accent divider, truncates to single line"
+      },
+      "media": {
+        "required": true,
+        "note": "Either imageSrc or videoSrc must be provided for each metric"
+      }
+    },
+    "itemRules": {
+      "minItems": 1,
+      "maxItems": 6,
+      "recommendedItems": "2-4"
+    }
+  },
+  "propsSchema": {
+    "metrics": "Array<{ id: string, value: string, title: string, description: string, imageSrc?: string, imageAlt?: string, videoSrc?: string, videoAriaLabel?: string }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image'",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Metrics section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string",
+    "textBoxTitleImageClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "gridClassName?": "string",
+    "cardClassName?": "string",
+    "valueClassName?": "string",
+    "cardTitleClassName?": "string",
+    "cardDescriptionClassName?": "string",
+    "mediaCardClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "<MetricCardEleven metrics={[{ id: '1', value: '10M+', title: 'Organic Views', description: 'Growth through smart content strategy', imageSrc: '/hero/hero-1.webp', imageAlt: 'Content creator working' }, { id: '2', value: '500K+', title: 'New Followers', description: 'Engaged community members gained', imageSrc: '/hero/hero-2.webp', imageAlt: 'Social media engagement' }]} title=\"Our Impact\" description=\"See the results we've delivered for our clients\" textboxLayout=\"default\" useInvertedBackground={false} animationType=\"slide-up\" />",
+  "do": [
+    "Use for statistics displays",
+    "Use for achievement showcases",
+    "Requires metrics[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use more than 4 items",
+    "Do not use more than 6 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

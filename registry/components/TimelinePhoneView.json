@@ -1,0 +1,87 @@
+{
+  "name": "TimelinePhoneView",
+  "description": "Scroll-animated timeline displaying content with dual phone mockups using GSAP animations.",
+  "details": "Use for mobile app features, product walkthroughs, or step-by-step processes with phone/video mockups. Desktop: Dynamic height section (100vh per item) with sticky phone frames animating from offscreen (-200%/200%, rotation -45°/45°) to positioned state (rotation -10°/10°). Two frames per item side-by-side. Content scrolls while frames stay sticky. Mobile: Stacked sections with scroll-triggered entrance animations (frames slide from -150%/150%, rotation -25°/25° to center). Uses GSAP ScrollTrigger with matchMedia for responsive behavior. Each item requires trigger class for scroll animations, content (ReactNode), and media for two frames (image or video). Frames use card styling with rounded-theme-capped. Integrates CardStackTextBox for section header.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "App Features",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Explore our powerful mobile experience",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Mobile",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "itemRules": {
+      "minItems": 2,
+      "maxItems": 4,
+      "recommendedItems": "2-4",
+      "note": "Each item needs: trigger (string class e.g., 'trigger-1'), content (ReactNode), imageOne/videoOne (string path), imageTwo/videoTwo (string path), plus optional imageAltOne, imageAltTwo, videoAriaLabelOne, videoAriaLabelTwo. Desktop height = items.length * 100vh. Frames have card styling with p-1 padding."
+    }
+  },
+  "propsSchema": {
+    "items": "Array<{ trigger: string, content: React.ReactNode, imageOne?: string, videoOne?: string, imageAltOne?: string, videoAriaLabelOne?: string, imageTwo?: string, videoTwo?: string, imageAltTwo?: string, videoAriaLabelTwo?: string }> - Timeline items with triggers and dual phone media (required)",
+    "showTextBox?": "boolean (default: true - controls whether CardStackTextBox renders)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "ariaLabel?": "string (default: 'Timeline phone view section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "desktopContainerClassName?": "string",
+    "mobileContainerClassName?": "string",
+    "desktopContentClassName?": "string",
+    "desktopWrapperClassName?": "string",
+    "mobileWrapperClassName?": "string",
+    "phoneFrameClassName?": "string",
+    "mobilePhoneFrameClassName?": "string"
+  },
+  "usageExample": "<TimelinePhoneView title=\"App Features\" description=\"Explore our mobile experience\" textboxLayout=\"default\" items={[{ trigger: 'trigger-1', content: <><h2>Feature One</h2><p>Description</p></>, imageOne: '/phone1.jpg', imageTwo: '/phone2.jpg' }]} />",
+  "do": [
+    "Use for process flows",
+    "Use for roadmaps",
+    "Use for step-by-step explanation",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires items[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [
+    "Do not use non-sequential content",
+    "Do not use single item",
+    "Do not use less than 2 items",
+    "Do not use more than 4 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

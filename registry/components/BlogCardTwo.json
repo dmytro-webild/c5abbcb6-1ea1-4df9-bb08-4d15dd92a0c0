@@ -1,0 +1,88 @@
+{
+  "name": "BlogCardTwo",
+  "description": "Blog section with card grid/carousel layout featuring image, optional author avatar, author/date, title, excerpt, and category badge(s).",
+  "details": "Use for displaying blog posts with category categorization. Uses CardStack for adaptive layout (grid for 1-4 items, carousel for 5+). Card structure: Image with overlay arrow button → Optional Author Avatar + Author & Date → Title → Excerpt → Category badge(s). Image has zoom effect on hover. Category supports single string or array for multiple badges displayed as primary-button badges at bottom. Author avatar is optional. Optional header with title, description, tag, and buttons via CardStack. Best for blog pages with category filtering.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Latest Articles",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Insights and updates from our team",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Blog",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "blogRules": {
+      "blogs": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{\"id\": \"1\", \"category\": [\"Design\", \"Research\"], \"title\": \"UX review presentations\", \"excerpt\": \"How to create compelling presentations\", \"imageSrc\": \"/blog-1.jpg\", \"authorName\": \"Olivia Rhye\", \"authorAvatar\": \"/avatar.jpg\", \"date\": \"20 Jan 2025\"}]",
+        "note": "Array of blog items. Each item requires id, category (string or string[]), title, excerpt, imageSrc, authorName, and date. authorAvatar is optional."
+      }
+    }
+  },
+  "propsSchema": {
+    "blogs": "Array<{ id: string, category: string | string[], title: string, excerpt: string, imageSrc: string, imageAlt?: string, authorName: string, authorAvatar: string, date: string, onBlogClick?: () => void }> - Blog card items",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required - controls GSAP scroll animations with stagger effect)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Blog section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "imageWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "authorAvatarClassName?": "string",
+    "authorDateClassName?": "string",
+    "cardTitleClassName?": "string",
+    "excerptClassName?": "string",
+    "categoryClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<BlogCardTwo blogs={[{id: '1', category: ['Design', 'Research'], title: 'UX review presentations', excerpt: 'How to create compelling presentations that wow your audience', imageSrc: '/blog-1.jpg', authorName: 'Olivia Rhye', authorAvatar: '/avatar.jpg', date: '20 Jan 2025', onBlogClick: () => console.log('clicked')}]} title=\"Latest Articles\" description=\"Stay updated with our latest insights\" textboxLayout=\"default\" useInvertedBackground={false} animationType=\"slide-up\" carouselMode=\"buttons\" />",
+  "do": [
+    "Use for blog listings",
+    "Use for article grids",
+    "Requires blogs[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

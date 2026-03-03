@@ -1,0 +1,16 @@
+{
+  "name": "ButtonExpandHover",
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "scrollToSection?": "boolean",
+    "className?": "string",
+    "textClassName?": "string - Applied to the text span (automatically includes base and hover colors in sections)",
+    "iconClassName?": "string - Applied to the arrow icon container (automatically set in sections)",
+    "iconBgClassName?": "string - Applied to the expanding background (automatically set in sections)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  }
+}

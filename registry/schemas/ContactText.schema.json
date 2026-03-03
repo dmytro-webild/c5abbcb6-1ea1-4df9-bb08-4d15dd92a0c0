@@ -1,0 +1,16 @@
+{
+  "name": "ContactText",
+  "propsSchema": {
+    "text": "string",
+    "animationType?": "'entrance-slide' | 'reveal-blur' | 'background-highlight' (default: 'entrance-slide')",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string - Card wrapper styling",
+    "textClassName?": "string - TextAnimation heading styling",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

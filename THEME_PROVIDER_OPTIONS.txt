@@ -1,0 +1,117 @@
+================================================================================
+                        THEME PROVIDER OPTIONS
+================================================================================
+
+PROPS (All Required except showBlurBottom)
+-------------------------------------------
+
+1. defaultButtonVariant
+   • "hover-magnetic"
+   • "hover-bubble"
+   • "expand-hover"
+   • "elastic-effect"
+   • "bounce-effect"
+   • "icon-arrow"
+   • "shift-hover"
+   • "text-stagger"
+   • "text-shift"
+   • "directional-hover"
+
+2. defaultTextAnimation
+   • "entrance-slide"
+   • "reveal-blur"
+   • "background-highlight"
+
+3. borderRadius
+   • "rounded"
+   • "soft"
+   • "pill"
+
+4. contentWidth
+   • "small"
+   • "smallMedium"
+   • "compact"
+   • "mediumSmall"
+   • "medium"
+   • "mediumLarge"
+
+5. sizing
+   • "medium"
+   • "mediumLarge"
+   • "largeSmall"
+   • "large"
+   • "mediumSizeLargeTitles"
+   • "mediumLargeSizeLargeTitles"
+   • "largeSmallSizeLargeTitles"
+   • "largeSizeMediumTitles"
+   • "mediumLargeSizeMediumTitles"
+   • "largeSmallSizeMediumTitles"
+
+6. background
+   • "none"
+   • "circleGradient"
+   • "aurora"
+   • "floatingGradient"
+   • "noise"
+   • "noiseDiagonalGradient"
+   • "fluid"
+   • "blurBottom"
+   • "grid"
+
+7. cardStyle
+   • "solid"
+   • "outline"
+   • "gradient-mesh"
+   • "gradient-radial"
+   • "inset"
+   • "glass-elevated"
+   • "glass-depth"
+   • "gradient-bordered"
+   • "layered-gradient"
+   • "soft-shadow"
+   • "subtle-shadow"
+
+8. primaryButtonStyle
+   • "gradient"
+   • "shadow"
+   • "flat"
+   • "radial-glow"
+   • "diagonal-gradient"
+   • "double-inset"
+   • "primary-glow"
+
+9. secondaryButtonStyle
+   • "glass"
+   • "solid"
+   • "layered"
+   • "radial-glow"
+
+10. headingFontWeight
+    • "light"
+    • "normal"
+    • "medium"
+    • "semibold"
+    • "bold"
+    • "extrabold"
+
+================================================================================
+
+EXAMPLE USAGE:
+
+<ThemeProvider
+  defaultButtonVariant="text-stagger"
+  defaultTextAnimation="entrance-slide"
+  borderRadius="pill"
+  contentWidth="medium"
+  sizing="medium"
+  background="aurora"
+  cardStyle="glass-elevated"
+  primaryButtonStyle="gradient"
+  secondaryButtonStyle="glass"
+  headingFontWeight="medium"
+  showBlurBottom={false}
+>
+  {children}
+</ThemeProvider>
+
+================================================================================

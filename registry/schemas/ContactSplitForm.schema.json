@@ -1,0 +1,29 @@
+{
+  "name": "ContactSplitForm",
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "inputs": "Array<{ name: string, type: string, placeholder: string, required?: boolean, className?: string }> - Form input fields (min 2 required)",
+    "textarea?": "{ name: string, placeholder: string, rows?: number, required?: boolean, className?: string } - Optional textarea field",
+    "useInvertedBackground": "boolean",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Contact section video')",
+    "mediaPosition?": "'left' | 'right' (default: 'right')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttonText?": "string (default: 'Submit')",
+    "onSubmit?": "(data: Record<string, string>) => void",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string",
+    "formCardClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  }
+}

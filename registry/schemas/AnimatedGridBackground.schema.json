@@ -1,0 +1,9 @@
+{
+  "name": "AnimatedGridBackground",
+  "propsSchema": {
+    "squareSize?": "number (default: 100)",
+    "numSquares?": "number (default: 50)",
+    "maxOpacity?": "number (default: 0.15)",
+    "className?": "string"
+  }
+}

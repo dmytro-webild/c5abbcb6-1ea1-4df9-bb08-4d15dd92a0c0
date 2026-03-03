@@ -1,0 +1,139 @@
+{
+  "name": "PricingCardNine",
+  "description": "Pricing cards with image, price tag, title, feature checklist, and CTA button.",
+  "details": "Use for showcasing pricing plans with visual imagery. Uses CardList with variant system for card or border layouts. Layout: Optional TextBox Header → Vertical Stack of Pricing Cards. Each card has horizontal split (md breakpoint): Left side (50%): Plan image with rounded corners. Right side (50%): Price/period tag, Plan title, Feature checklist with checkmark icons, CTA Button. Card variant: Items wrapped in cards with padding (p-4 md:p-6). Border variant: Items separated by accent divider lines with no bottom padding. Text colors conditional on variant using shouldUseLightText. Best for service-based pricing, coaching plans, or subscription tiers where imagery helps convey value.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Coaching Plans",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Choose the plan that fits your goals",
+        "minChars": 5,
+        "maxChars": 300
+      },
+      "tag": {
+        "required": false,
+        "example": "Pricing",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "planRules": {
+      "id": {
+        "required": true,
+        "example": "basic",
+        "minChars": 1,
+        "maxChars": 30
+      },
+      "title": {
+        "required": true,
+        "example": "Basic",
+        "minChars": 2,
+        "maxChars": 40
+      },
+      "price": {
+        "required": true,
+        "example": "$59",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "period": {
+        "required": true,
+        "example": "/month",
+        "minChars": 1,
+        "maxChars": 10
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/images/coaching-basic.jpg",
+        "note": "Image for the plan card"
+      },
+      "videoSrc": {
+        "required": false,
+        "example": "/videos/coaching-basic.mp4",
+        "note": "Video for the plan card (alternative to imageSrc)"
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Basic plan preview",
+        "note": "Alt text for image (defaults to plan title if not provided)"
+      },
+      "videoAriaLabel": {
+        "required": false,
+        "example": "Basic plan video",
+        "note": "Aria label for video (defaults to plan title if not provided)"
+      },
+      "button": {
+        "required": true,
+        "note": "ButtonConfig with text and href or onClick"
+      },
+      "features": {
+        "required": true,
+        "example": [
+          "Free initial consultation",
+          "Weekly checking"
+        ],
+        "note": "Array of feature strings displayed as checklist"
+      }
+    }
+  },
+  "propsSchema": {
+    "plans": "Array<{ id: string, title: string, price: string, period: string, features: string[], button: {text: string, onClick?: () => void, href?: string}, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }>",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' (required)",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required)",
+    "useInvertedBackground": "boolean",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Pricing section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "cardContentClassName?": "string",
+    "planImageWrapperClassName?": "string",
+    "planImageClassName?": "string",
+    "planTitleClassName?": "string",
+    "planPriceClassName?": "string",
+    "planButtonClassName?": "string",
+    "planButtonTextClassName?": "string",
+    "featuresListClassName?": "string",
+    "featureItemClassName?": "string",
+    "featureIconClassName?": "string",
+    "featureTextClassName?": "string"
+  },
+  "usageExample": "<PricingCardNine plans={[{ id: 'basic', title: 'Basic', price: '$59', period: '/month', imageSrc: '/images/plan-basic.jpg', button: { text: 'Get in touch', href: '#contact' }, features: ['Free initial consultation', '1x per 2 weeks training plan update', 'Weekly checking'] }]} animationType=\"slide-up\" title=\"Coaching Plans\" description=\"Choose the plan that fits your goals\" textboxLayout=\"default\" useInvertedBackground={false} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for pricing pages",
+    "Use for subscription tiers",
+    "Requires plans[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,40 @@
+/* Overlay - active state */
+[data-navigation-status="active"] .centered-nav__overlay {
+  opacity: 0.15;
+  visibility: visible;
+}
+
+/* Content expand - grid animation */
+.centered-nav__content {
+  grid-template-rows: 0fr;
+}
+
+[data-navigation-status="active"] .centered-nav__content {
+  grid-template-rows: 1fr;
+}
+
+/* Inner container - height hack for grid animation */
+.centered-nav__inner {
+  height: 10000%;
+}
+
+/* Link content slide up animation */
+.centered-nav__link-content {
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0, 1);
+  transform: translateY(150%);
+  transition-delay: inherit;
+}
+
+[data-navigation-status="active"] .centered-nav__link-content {
+  transform: translateY(0);
+}
+
+/* Separator width animation */
+.centered-nav__separator {
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.65, 0, 0, 1);
+}
+
+[data-navigation-status="active"] .centered-nav__separator {
+  width: 100%;
+}

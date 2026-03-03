@@ -1,0 +1,68 @@
+{
+  "name": "ContactSplitForm",
+  "description": "Split layout contact form with animated title and description, dynamic input fields, optional textarea, submit button, and media content.",
+  "details": "Use for full contact forms with visual context. Features split layout with form (animated title and description, dynamic input fields array with minimum 2 required, optional textarea, submit button) on one side and image or video media on the other. All form inputs use secondary-button styling with rounded-theme borders. Media can be positioned left or right. On mobile, media displays with natural aspect ratio; on desktop, uses absolute positioning to match form height. Returns Record<string, string> with all field values on submit. Ideal for contact pages that combine detailed forms with visual storytelling.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Medium length heading goes here",
+        "minChars": 4,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "minChars": 20,
+        "maxChars": 200
+      },
+      "buttonText": {
+        "required": false,
+        "default": "Submit",
+        "example": "Send Message",
+        "minChars": 2,
+        "maxChars": 15
+      }
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "inputs": "Array<{ name: string, type: string, placeholder: string, required?: boolean, className?: string }> - Form input fields (min 2 required)",
+    "textarea?": "{ name: string, placeholder: string, rows?: number, required?: boolean, className?: string } - Optional textarea field",
+    "useInvertedBackground": "boolean",
+    "imageSrc?": "string",
+    "videoSrc?": "string",
+    "imageAlt?": "string (default: '')",
+    "videoAriaLabel?": "string (default: 'Contact section video')",
+    "mediaAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "mediaPosition?": "'left' | 'right' (default: 'right')",
+    "buttonText?": "string (default: 'Submit')",
+    "onSubmit?": "(data: Record<string, string>) => void",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string",
+    "formCardClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "mediaClassName?": "string"
+  },
+  "usageExample": "// Wrap in ThemeProvider\n<ThemeProvider defaultButtonVariant=\"text-stagger\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"rounded\" background=\"aurora\" cardStyle=\"glass-elevated\" primaryButtonStyle=\"gradient\" secondaryButtonStyle=\"glass\">\n  <ContactSplitForm title=\"Get in touch\" description=\"We'd love to hear from you. Send us a message.\" inputs={[{ name: 'name', type: 'text', placeholder: 'Name', required: true }, { name: 'email', type: 'email', placeholder: 'Email', required: true }]} textarea={{ name: 'message', placeholder: 'Type your message...', rows: 5, required: true }} useInvertedBackground={false} imageSrc=\"/placeholders/placeholder-16-9.svg\" onSubmit={(data) => console.log(data)} />\n</ThemeProvider>",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for contact pages",
+    "Use for lead generation",
+    "Requires inputs[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

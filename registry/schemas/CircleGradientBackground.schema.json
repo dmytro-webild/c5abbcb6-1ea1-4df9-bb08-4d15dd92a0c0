@@ -1,0 +1,7 @@
+{
+  "name": "CircleGradientBackground",
+  "propsSchema": {
+    "diagonal?": "'primary' | 'secondary' (default: 'primary')",
+    "className?": "string"
+  }
+}

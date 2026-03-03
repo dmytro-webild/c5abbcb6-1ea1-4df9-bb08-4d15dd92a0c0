@@ -1,0 +1,43 @@
+{
+  "name": "FooterLogoReveal",
+  "description": "Minimalist footer with logo that reveals on scroll using fixed positioning and clip-path.",
+  "details": "Use for minimal, logo-only footers with scroll reveal effect. Footer stays fixed at bottom and reveals as user scrolls down the page using clip-path animation. Contains only FooterLogo component (supports image or SVG text logo) centered with card styling. Uses ResizeObserver to dynamically track footer height for proper reveal effect. Best for clean, modern designs where footer should not distract from content. Uses semantic section and footer tags with contentinfo role.",
+  "constraints": {
+    "textRules": {
+      "logoText": {
+        "required": false,
+        "example": "Webild",
+        "minChars": 2,
+        "maxChars": 30,
+        "note": "Text used for SVG logo"
+      }
+    },
+    "logoRules": {
+      "note": "Uses logoText for SVG text logo via FooterLogo component."
+    },
+    "revealEffectRules": {
+      "note": "Component uses fixed positioning and clip-path for scroll reveal effect. Requires page content above footer to trigger scroll. ResizeObserver dynamically updates footer height for responsive reveal."
+    }
+  },
+  "propsSchema": {
+    "logoText?": "string (default: 'Webild')",
+    "leftLink": "{ text: string, onClick?: () => void, href?: string } (required)",
+    "rightLink": "{ text: string, onClick?: () => void, href?: string } (required)",
+    "ariaLabel?": "string (default: 'Site footer')",
+    "className?": "string",
+    "wrapperClassName?": "string",
+    "containerClassName?": "string",
+    "logoClassName?": "string",
+    "linkClassName?": "string"
+  },
+  "usageExample": "<FooterLogoReveal logoText=\"Webild\" leftLink={{ text: 'Privacy Policy', href: '/privacy' }} rightLink={{ text: 'Terms of Service', href: '/terms' }} />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

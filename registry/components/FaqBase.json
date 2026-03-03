@@ -1,0 +1,93 @@
+{
+  "name": "FaqBase",
+  "description": "FAQ section with accordion items and optional header.",
+  "details": "Use for displaying frequently asked questions in an expandable accordion format. Layout: Optional TextBox Header → Accordion List. Supports two animation types: 'smooth' (height transition) and 'instant' (immediate show/hide). Only one accordion item can be open at a time. Each FAQ requires a unique id, title (question), and content (answer). Content supports HTML for rich formatting. Optional header with title, description, tag, and buttons via CardStackTextBox. Best for FAQ pages, help sections, or any Q&A content.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Frequently Asked Questions",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Find answers to common questions about our products and services",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Help",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "faqRules": {
+      "faqs": {
+        "required": true,
+        "minItems": 1,
+        "example": "[{\"id\": \"1\", \"title\": \"What is your return policy?\", \"content\": \"We offer a 30-day money-back guarantee.\"}]",
+        "note": "Array of FAQ items. Each item requires unique id, title (question), and content (answer with HTML support)."
+      },
+      "animationType": {
+        "required": false,
+        "default": "smooth",
+        "options": [
+          "smooth",
+          "instant"
+        ],
+        "note": "Animation type for accordion open/close. 'smooth' uses height transition, 'instant' shows/hides immediately."
+      }
+    }
+  },
+  "propsSchema": {
+    "faqs": "Array<{ id: string, title: string, content: string }> - FAQ items",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "faqsAnimation": "'none' | 'opacity' | 'slide-up' | 'blur-reveal' (required)",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "animationType?": "'smooth' | 'instant' (default: 'smooth')",
+    "showCard?": "boolean (default: true)",
+    "ariaLabel?": "string (default: 'FAQ section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "titleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "titleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string",
+    "faqsContainerClassName?": "string",
+    "accordionClassName?": "string",
+    "accordionTitleClassName?": "string",
+    "accordionIconContainerClassName?": "string",
+    "accordionIconClassName?": "string",
+    "accordionContentClassName?": "string",
+    "separatorClassName?": "string"
+  },
+  "usageExample": "<FaqBase faqs={[{id: '1', title: 'What is your return policy?', content: 'We offer a 30-day money-back guarantee on all our products.'}, {id: '2', title: 'How long does shipping take?', content: 'Standard shipping typically takes 5-7 business days.'}]} title=\"Frequently Asked Questions\" description=\"Find answers to common questions\" textboxLayout=\"default\" useInvertedBackground={false} faqsAnimation=\"slide-up\" />",
+  "do": [
+    "Use for help pages",
+    "Use for support sections",
+    "Requires faqs[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "HeroCarouselLogo",
+  "propsSchema": {
+    "logoText": "string",
+    "description": "string",
+    "buttons": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "slides": "Array<{ imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }> - Carousel slide items",
+    "autoplayDelay?": "number (default: 3000)",
+    "showDimOverlay?": "boolean (default: false)",
+    "logoLineHeight?": "number (default: 1.1)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentContainerClassName?": "string",
+    "descriptionClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "logoContainerClassName?": "string",
+    "logoClassName?": "string",
+    "mediaWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "blurClassName?": "string",
+    "dimOverlayClassName?": "string",
+    "progressBarClassName?": "string"
+  }
+}

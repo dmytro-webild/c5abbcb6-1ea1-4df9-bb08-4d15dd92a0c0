@@ -1,0 +1,87 @@
+{
+  "name": "ContactCenter",
+  "description": "Centered contact section with tag, animated title and description, email signup form, and terms text.",
+  "details": "Use for newsletter signups, contact forms, or email capture. Features centered layout with tag (with optional icon), animated title and description using ThemeProvider's defaultTextAnimation, EmailSignupForm component, and customizable terms text. Content is placed in a card container with rounded-theme-capped styling. Ideal for prominently placed contact/signup sections with strong visual emphasis.",
+  "constraints": {
+    "textRules": {
+      "tag": {
+        "required": true,
+        "example": "Newsletter",
+        "minChars": 2,
+        "maxChars": 20
+      },
+      "title": {
+        "required": true,
+        "example": "Medium length heading goes here",
+        "minChars": 4,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "minChars": 20,
+        "maxChars": 200
+      },
+      "inputPlaceholder": {
+        "required": false,
+        "default": "Enter your email",
+        "example": "Your email address",
+        "minChars": 5,
+        "maxChars": 30
+      },
+      "buttonText": {
+        "required": false,
+        "default": "Sign Up",
+        "example": "Subscribe",
+        "minChars": 2,
+        "maxChars": 15
+      },
+      "termsText": {
+        "required": false,
+        "default": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions.",
+        "example": "We respect your privacy. Unsubscribe at any time.",
+        "minChars": 10,
+        "maxChars": 150
+      }
+    }
+  },
+  "propsSchema": {
+    "tag": "string",
+    "title": "string",
+    "description": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "useInvertedBackground": "boolean",
+    "inputPlaceholder?": "string (default: 'Enter your email')",
+    "buttonText?": "string (default: 'Sign Up')",
+    "termsText?": "string (default: 'By clicking Sign Up you're confirming that you agree with our Terms and Conditions.')",
+    "onSubmit?": "(email: string) => void",
+    "ariaLabel?": "string (default: 'Contact section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "contentClassName?": "string",
+    "tagClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "formWrapperClassName?": "string",
+    "formClassName?": "string",
+    "inputClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "termsClassName?": "string"
+  },
+  "usageExample": "<ContactCenter tag=\"Newsletter\" title=\"Stay updated with our latest news\" description=\"Subscribe to our newsletter for weekly updates and exclusive content.\" background={{ variant: 'rotated-rays-animated-grid' }} useInvertedBackground={false} onSubmit={(email) => console.log(email)} />",
+  "do": [
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for contact pages",
+    "Use for lead generation"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

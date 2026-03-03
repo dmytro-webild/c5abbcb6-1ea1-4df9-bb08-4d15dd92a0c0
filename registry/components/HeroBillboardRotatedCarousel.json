@@ -1,0 +1,93 @@
+{
+  "name": "HeroBillboardRotatedCarousel",
+  "description": "Hero section with centered text content and angled/rotated carousel below. Features auto-playing carousel with scaled and rotated side cards.",
+  "details": "Use for product showcases, portfolios, or visual-heavy landing pages. Features centered title, description, optional tag with icon, and action buttons via TextBox component. Below is an AngledCarousel showing rotated preview cards on sides (88% scale, 2deg rotation) with center card at full scale. Carousel auto-advances every 4 seconds. Side cards have backdrop blur overlay. Requires minimum 6 carousel items to avoid duplicate key warnings (carousel shows 5 positions: -2, -1, 0, 1, 2). Uses full viewport height with custom spacing.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Transform Your Workflow",
+        "minChars": 2,
+        "maxChars": 60
+      },
+      "description": {
+        "required": true,
+        "example": "Experience the power of seamless collaboration and productivity tools designed for modern teams",
+        "minChars": 5,
+        "maxChars": 200
+      },
+      "tag": {
+        "required": false,
+        "example": "New Release",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "buttonRules": {
+      "maxButtons": 2,
+      "structure": {
+        "text": "string - Button label (required)",
+        "href": "string - Link destination (optional)",
+        "onClick": "() => void - Click handler (optional)",
+        "props": "Partial<ButtonPropsForVariant> - Additional button props (optional)"
+      },
+      "note": "Button variant controlled by ThemeProvider's defaultButtonVariant. All sections should be wrapped in a single ThemeProvider at the app/page level."
+    },
+    "carouselItemRules": {
+      "required": true,
+      "minItems": 6,
+      "structure": {
+        "id": "string - Unique identifier (required)",
+        "imageSrc": "string - Image URL (optional)",
+        "videoSrc": "string - Video URL (optional, takes precedence over imageSrc)",
+        "imageAlt": "string - Alt text for image (optional)",
+        "videoAriaLabel": "string - ARIA label for video (optional)"
+      },
+      "note": "Minimum 6 items required to prevent duplicate keys. Carousel displays 5 positions simultaneously (-2, -1, 0, 1, 2). Each item should have either imageSrc or videoSrc. Uses MediaContent component for rendering."
+    }
+  },
+  "propsSchema": {
+    "title": "string",
+    "description": "string",
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "carouselItems": "Array<{ id: string, imageSrc?: string, videoSrc?: string, imageAlt?: string, videoAriaLabel?: string }> - Carousel items (minimum 6 items)",
+    "autoPlay?": "boolean (default: true)",
+    "autoPlayInterval?": "number (default: 4000)",
+    "ariaLabel?": "string (default: 'Hero section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textBoxClassName?": "string",
+    "titleClassName?": "string",
+    "descriptionClassName?": "string",
+    "tagClassName?": "string",
+    "buttonContainerClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string",
+    "carouselClassName?": "string"
+  },
+  "usageExample": "<ThemeProvider defaultButtonVariant=\"hover-bubble\" defaultTextAnimation=\"entrance-slide\" borderRadius=\"pill\">\n  <HeroBillboardRotatedCarousel \n    title=\"Transform Your Workflow\" \n    description=\"Experience seamless collaboration and productivity\" \n    background={{ variant: \"glowing-orb\" }}\n    tag=\"New Release\" \n    tagIcon={Sparkles}\n    buttons={[{ text: 'Get Started' }, { text: 'Learn More' }]}\n    carouselItems={[\n      { id: '1', imageSrc: '/image1.jpg', imageAlt: 'Product 1' },\n      { id: '2', imageSrc: '/image2.jpg', imageAlt: 'Product 2' },\n      { id: '3', imageSrc: '/image3.jpg', imageAlt: 'Product 3' },\n      { id: '4', imageSrc: '/image4.jpg', imageAlt: 'Product 4' },\n      { id: '5', imageSrc: '/image5.jpg', imageAlt: 'Product 5' },\n      { id: '6', imageSrc: '/image6.jpg', imageAlt: 'Product 6' }\n    ]}\n    autoPlay={true}\n    autoPlayInterval={4000}\n  />\n</ThemeProvider>",
+  "do": [
+    "Use for landing pages",
+    "Use for feature showcases",
+    "Use for capability displays",
+    "Use for portfolios",
+    "Use for image galleries",
+    "Use for product catalogs",
+    "Use for e-commerce",
+    "Requires buttons?[]",
+    "Requires carouselItems[]"
+  ],
+  "dont": [
+    "Do not use less than 6 items"
+  ],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

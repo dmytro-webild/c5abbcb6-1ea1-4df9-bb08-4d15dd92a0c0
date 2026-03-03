@@ -1,0 +1,27 @@
+{
+  "name": "HeroPersonalLinks",
+  "propsSchema": {
+    "background": "{ variant: 'plain' | 'animated-grid' | 'canvas-reveal' | 'cell-wave' | 'downward-rays-animated' | 'downward-rays-animated-grid' | 'downward-rays-static' | 'downward-rays-static-grid' | 'gradient-bars' | 'radial-gradient' | 'rotated-rays-animated' | 'rotated-rays-animated-grid' | 'rotated-rays-static' | 'rotated-rays-static-grid' | 'sparkles-gradient' }",
+    "title": "string",
+    "titleSegments?": "TitleSegment[] - For inline images in title",
+    "socialLinks?": "SocialLink[] - Array with icon, label, href",
+    "linkCards": "LinkCard[] (required) - Array with icon/media, title, description, button",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "ariaLabel?": "string (default: 'Personal links section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "textboxClassName?": "string",
+    "titleClassName?": "string",
+    "titleImageWrapperClassName?": "string",
+    "titleImageClassName?": "string",
+    "socialLinksClassName?": "string",
+    "socialLinkClassName?": "string",
+    "linkCardsClassName?": "string",
+    "linkCardClassName?": "string",
+    "linkCardIconClassName?": "string",
+    "linkCardTitleClassName?": "string",
+    "linkCardDescriptionClassName?": "string",
+    "buttonClassName?": "string",
+    "buttonTextClassName?": "string"
+  }
+}

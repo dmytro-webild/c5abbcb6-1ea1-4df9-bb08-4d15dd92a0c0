@@ -1,0 +1,37 @@
+{
+  "name": "ButtonExpandHover",
+  "description": "CTA button with expanding background animation from right to left on hover, with a fixed arrow icon.",
+  "details": "Use for CTAs where a smooth expanding effect adds visual interest. On hover (desktop only), the background expands from right to left across the button while the text transitions color. The arrow icon remains fixed on the right side throughout the animation. Mobile shows static button. Uses className for base button styling (primary-button or secondary-button), with iconClassName for arrow icon color and iconBgClassName for expanding background (automatically set via buttonUtils.ts).",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Get Started",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "textClassName?": "string - Applied to the text span (automatically includes base and hover colors in sections)",
+    "iconClassName?": "string - Applied to the arrow icon container (automatically set in sections)",
+    "iconBgClassName?": "string - Applied to the expanding background (automatically set in sections)",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonExpandHover text=\"Get Started\" href=\"contact\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

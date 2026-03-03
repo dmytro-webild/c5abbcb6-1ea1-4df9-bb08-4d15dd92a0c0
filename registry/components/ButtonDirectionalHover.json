@@ -1,0 +1,37 @@
+{
+  "name": "ButtonDirectionalHover",
+  "description": "CTA button with a circle that expands from the mouse entry point on hover.",
+  "details": "Use for CTAs where directional awareness adds visual interest. On hover, a circle expands from where the cursor entered the button, creating a fluid reveal effect. The circleClassName controls the expanding circle color (bg-accent for primary, bg-accent/10 for secondary).",
+  "constraints": {
+    "textRules": {
+      "text": {
+        "required": true,
+        "example": "Get Started",
+        "minChars": 2,
+        "maxChars": 25
+      }
+    }
+  },
+  "propsSchema": {
+    "text": "string",
+    "onClick?": "() => void",
+    "href?": "string - External URLs open in new tab, internal values scroll to section",
+    "className?": "string",
+    "bgClassName?": "string",
+    "textClassName?": "string",
+    "circleClassName?": "string - Controls the expanding circle color",
+    "disabled?": "boolean (default: false)",
+    "ariaLabel?": "string",
+    "type?": "'button' | 'submit' | 'reset' (default: 'button')"
+  },
+  "usageExample": "<ButtonDirectionalHover text=\"Get Started\" href=\"contact\" />",
+  "do": [
+    "Use for general use"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

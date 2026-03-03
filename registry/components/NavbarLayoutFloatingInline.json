@@ -1,0 +1,74 @@
+{
+  "name": "NavbarLayoutFloatingInline",
+  "description": "Floating inline navbar with centered links, left-aligned logo, right-aligned CTA button, and optional load animation.",
+  "details": "Use for desktop-focused layouts where navigation is always visible. The navbar floats with rounded edges, logo sits on the left, links are inline in the center, and an optional CTA button appears on the right. When animateOnLoad is enabled, the navbar slides down from top, expands to full width, and nav links fade in with staggered timing.",
+  "constraints": {
+    "minLinks": 3,
+    "maxLinks": 6,
+    "preferredCount": 4,
+    "brandRules": {
+      "required": false,
+      "minChars": 2,
+      "maxChars": 20,
+      "example": "Webild",
+      "fallbackBehavior": "Shows brandName text"
+    },
+    "buttonRules": {
+      "text": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 24,
+        "example": "Get Started"
+      },
+      "href": {
+        "required": false,
+        "format": "url | section-id",
+        "example": "https://webild.io"
+      },
+      "onClick": {
+        "required": false,
+        "note": "Optional click handler"
+      }
+    },
+    "linkRules": {
+      "name": {
+        "required": true,
+        "minChars": 2,
+        "maxChars": 15,
+        "example": "About"
+      },
+      "id": {
+        "required": true,
+        "format": "section-id | url",
+        "examples": [
+          "about",
+          "services",
+          "https://github.com",
+          "www.example.com"
+        ],
+        "behavior": "Internal IDs scroll to section, URLs open in new tab"
+      }
+    }
+  },
+  "propsSchema": {
+    "navItems": "Array<{name: string, id: string}>",
+    "brandName?": "string (default: 'Webild')",
+    "button": "{text: string, onClick?: () => void, href?: string}",
+    "animateOnLoad?": "boolean (default: true)",
+    "className?": "string (default: '')",
+    "navItemClassName?": "string (default: '')",
+    "buttonClassName?": "string (default: '')",
+    "buttonTextClassName?": "string (default: '')"
+  },
+  "usageExample": "<NavbarLayoutFloatingInline />",
+  "do": [
+    "Use for general use",
+    "Requires navItems[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}

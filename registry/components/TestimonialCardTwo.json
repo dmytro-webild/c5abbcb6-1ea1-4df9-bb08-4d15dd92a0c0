@@ -1,0 +1,123 @@
+{
+  "name": "TestimonialCardTwo",
+  "description": "Testimonial card with circular image or icon, name, role, and testimonial text.",
+  "details": "Use for displaying customer testimonials in a clean, card-based layout. Layout: Circular Image/Icon → Name + Role → Testimonial Text. If imageSrc is provided, displays circular profile image; otherwise shows icon (defaults to Quote if not specified). Icon/image container uses primary-button styling with rounded-theme. All text stacked vertically with consistent spacing. All core fields required for visual consistency. Best for testimonial grids, review sections, or customer feedback displays. Automatically switches between grid (1-4 items) and carousel (5+ items). Optional header with title, description, tag, and buttons.",
+  "constraints": {
+    "textRules": {
+      "title": {
+        "required": true,
+        "example": "Customer Reviews",
+        "minChars": 2,
+        "maxChars": 50
+      },
+      "description": {
+        "required": true,
+        "example": "See what our customers have to say",
+        "minChars": 5,
+        "maxChars": 250
+      },
+      "tag": {
+        "required": false,
+        "example": "Reviews",
+        "minChars": 2,
+        "maxChars": 30
+      }
+    },
+    "testimonialRules": {
+      "id": {
+        "required": true,
+        "example": "1",
+        "minChars": 1,
+        "maxChars": 20
+      },
+      "name": {
+        "required": true,
+        "example": "Sarah Mitchell",
+        "minChars": 2,
+        "maxChars": 50,
+        "note": "Customer name"
+      },
+      "role": {
+        "required": true,
+        "example": "Director of Operations",
+        "minChars": 2,
+        "maxChars": 80,
+        "note": "Customer role/position"
+      },
+      "testimonial": {
+        "required": true,
+        "example": "The attention to detail and commitment to excellence was outstanding throughout the entire project.",
+        "minChars": 10,
+        "maxChars": 500,
+        "note": "Testimonial text content"
+      },
+      "imageSrc": {
+        "required": false,
+        "example": "/testimonials/sarah.jpg",
+        "note": "Optional image path for customer photo. If not provided, icon will be displayed instead."
+      },
+      "imageAlt": {
+        "required": false,
+        "example": "Portrait of Sarah Mitchell",
+        "note": "Alt text for image (defaults to customer name if not provided)"
+      },
+      "icon": {
+        "required": false,
+        "example": "Package",
+        "note": "Optional Lucide icon to display when no image is provided. Defaults to Quote icon."
+      }
+    }
+  },
+  "propsSchema": {
+    "testimonials": "Array<{ id: string, name: string, role: string, testimonial: string, imageSrc?: string, imageAlt?: string, icon?: LucideIcon }>",
+    "carouselMode?": "'auto' | 'buttons' (default: 'buttons')",
+    "uniformGridCustomHeightClasses?": "string (default: 'min-h-none')",
+    "animationType": "'none' | 'opacity' | 'slide-up' | 'scale-rotate' | 'blur-reveal' | 'depth-3d'",
+    "title": "string",
+    "titleSegments?": "Array<{ type: 'text', content: string } | { type: 'image', src: string, alt?: string }> - For inline images in title",
+    "description": "string",
+    "tag?": "string",
+    "tagIcon?": "LucideIcon",
+    "tagAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "buttons?": "Array<{text: string, onClick?: () => void, href?: string}>",
+    "buttonAnimation?": "'none' | 'opacity' | 'slide-up' | 'blur-reveal'",
+    "textboxLayout": "'default' | 'split' | 'split-actions' | 'split-description' | 'inline-image' (required - 'inline-image' uses titleSegments for rich text with images)",
+    "useInvertedBackground": "boolean",
+    "ariaLabel?": "string (default: 'Testimonials section')",
+    "className?": "string",
+    "containerClassName?": "string",
+    "cardClassName?": "string",
+    "textBoxTitleClassName?": "string",
+    "textBoxTitleImageWrapperClassName?": "string - For styling image wrapper in inline-image layout",
+    "textBoxTitleImageClassName?": "string - For styling images in inline-image layout",
+    "textBoxDescriptionClassName?": "string",
+    "imageWrapperClassName?": "string",
+    "imageClassName?": "string",
+    "iconClassName?": "string",
+    "nameClassName?": "string",
+    "roleClassName?": "string",
+    "testimonialClassName?": "string",
+    "gridClassName?": "string",
+    "carouselClassName?": "string",
+    "controlsClassName?": "string",
+    "textBoxClassName?": "string",
+    "textBoxTagClassName?": "string",
+    "textBoxButtonContainerClassName?": "string",
+    "textBoxButtonClassName?": "string",
+    "textBoxButtonTextClassName?": "string"
+  },
+  "usageExample": "<TestimonialCardTwo testimonials={[{ id: '1', name: 'Sarah Mitchell', role: 'Director of Operations', testimonial: 'The attention to detail and commitment to excellence was outstanding.', icon: Package }]} title=\"Customer Reviews\" textboxLayout=\"default\" animationType=\"slide-up\" useInvertedBackground={false} />",
+  "do": [
+    "Use for social proof",
+    "Use for customer reviews",
+    "Requires testimonials[]",
+    "Requires titleSegments?[]",
+    "Requires buttons?[]"
+  ],
+  "dont": [],
+  "editRules": {
+    "textOnly": true,
+    "layoutLocked": true,
+    "styleLocked": true
+  }
+}
