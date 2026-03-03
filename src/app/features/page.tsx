@@ -49,7 +49,7 @@ export default function FeaturesPage() {
               description:
                 "Seamlessly connect with popular learning management systems and virtual classroom platforms. Enable educators to deliver engaging hybrid and remote learning experiences with integrated assessment and communication tools.",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/rear-view-young-college-student-paying-attention-listening-her-online-teacher-laptop-home_662251-2487.jpg",
+                "http://img.b2bpic.net/free-photo/rear-view-young-college-student-paying-attention-listening-her-online-teacher-laptop-home_662251-2487.jpg?_wi=1",
             },
             {
               id: 2,
@@ -57,7 +57,7 @@ export default function FeaturesPage() {
               description:
                 "Create, deploy, and analyze comprehensive assessments that provide meaningful insights into student progress. Support multiple question types, adaptive testing, and detailed analytics to inform instructional decisions.",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",
+                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg?_wi=3",
             },
             {
               id: 3,
@@ -65,7 +65,7 @@ export default function FeaturesPage() {
               description:
                 "Manage institutional finances with precision. Track budgets, automate invoicing, monitor accounts payable and receivable, and generate comprehensive financial reports.",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/empty-modern-office-business-entrepreneur-with-laptop_482257-91248.jpg",
+                "http://img.b2bpic.net/free-photo/empty-modern-office-business-entrepreneur-with-laptop_482257-91248.jpg?_wi=1",
             },
           ]}
           textboxLayout="default"
@@ -82,7 +82,7 @@ export default function FeaturesPage() {
               name: "Digital Classroom Integration",
               price: "From $2,499/year",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/rear-view-young-college-student-paying-attention-listening-her-online-teacher-laptop-home_662251-2487.jpg",
+                "http://img.b2bpic.net/free-photo/rear-view-young-college-student-paying-attention-listening-her-online-teacher-laptop-home_662251-2487.jpg?_wi=2",
               imageAlt: "Digital classroom interface",
               initialQuantity: 1,
             },
@@ -91,7 +91,7 @@ export default function FeaturesPage() {
               name: "Advanced Assessment Tools",
               price: "From $1,999/year",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",
+                "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg?_wi=4",
               imageAlt: "Assessment dashboard",
               initialQuantity: 1,
             },
@@ -100,7 +100,7 @@ export default function FeaturesPage() {
               name: "Financial Management Module",
               price: "From $3,299/year",
               imageSrc:
-                "http://img.b2bpic.net/free-photo/empty-modern-office-business-entrepreneur-with-laptop_482257-91248.jpg",
+                "http://img.b2bpic.net/free-photo/empty-modern-office-business-entrepreneur-with-laptop_482257-91248.jpg?_wi=2",
               imageAlt: "Financial management tools",
               initialQuantity: 1,
             },
@@ -133,7 +133,7 @@ export default function FeaturesPage() {
           tagAnimation="slide-up"
           background={{ variant: "radial-gradient" }}
           useInvertedBackground={false}
-          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg"
+          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg?_wi=2"
           imageAlt="Professional consultation"
           mediaAnimation="slide-up"
           mediaPosition="right"
