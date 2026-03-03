@@ -44,7 +44,7 @@ export default function ContactPage() {
           tagAnimation="slide-up"
           background={{ variant: "radial-gradient" }}
           useInvertedBackground={false}
-          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg"
+          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg?_wi=3"
           imageAlt="Professional consultation"
           mediaAnimation="slide-up"
           mediaPosition="right"
