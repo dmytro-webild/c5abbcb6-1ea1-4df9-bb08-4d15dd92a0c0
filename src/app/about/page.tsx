@@ -42,7 +42,7 @@ export default function AboutPage() {
           description="Scholaris was founded on a simple belief: every educational institution deserves access to world-class management technology. Over a decade of dedicated innovation has positioned us as the trusted partner for schools seeking excellence, efficiency, and meaningful impact."
           tag="About Scholaris"
           buttons={[{ text: "Explore Our Story", href: "#" }]}
-          imageSrc="http://img.b2bpic.net/free-photo/schoolgirl-with-notebook-her-hands-sunset-background-school-goes-school_169016-59085.jpg?_wi=2"
+          imageSrc="http://img.b2bpic.net/free-photo/schoolgirl-with-notebook-her-hands-sunset-background-school-goes-school_169016-59085.jpg"
           imageAlt="Modern school building educational campus students learning school environment"
           useInvertedBackground={false}
         />
@@ -55,29 +55,14 @@ export default function AboutPage() {
           tag="Our Impact"
           metrics={[
             {
-              id: "1",
-              value: "5,000+",
-              title: "Active Schools",
-              description: "Institutions trusting Scholaris globally",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/high-angle-globe-with-academic-cap-laptop_23-2148756555.jpg?_wi=2",
-            },
+              id: "1",              value: "5,000+",              title: "Active Schools",              description: "Institutions trusting Scholaris globally",              imageSrc:
+                "http://img.b2bpic.net/free-photo/high-angle-globe-with-academic-cap-laptop_23-2148756555.jpg"},
             {
-              id: "2",
-              value: "2.5M+",
-              title: "Student Profiles",
-              description: "Managed and monitored daily",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/diversity-students-graduation-success-celebration-concept_53876-26400.jpg?_wi=2",
-            },
+              id: "2",              value: "2.5M+",              title: "Student Profiles",              description: "Managed and monitored daily",              imageSrc:
+                "http://img.b2bpic.net/free-photo/diversity-students-graduation-success-celebration-concept_53876-26400.jpg"},
             {
-              id: "3",
-              value: "94%",
-              title: "Administrative Time Saved",
-              description: "Average reduction in paperwork",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/time-minute-alarm-duration-hour-schedule-concept_53876-132557.jpg?_wi=2",
-            },
+              id: "3",              value: "94%",              title: "Administrative Time Saved",              description: "Average reduction in paperwork",              imageSrc:
+                "http://img.b2bpic.net/free-photo/time-minute-alarm-duration-hour-schedule-concept_53876-132557.jpg"},
           ]}
           animationType="slide-up"
           textboxLayout="default"
@@ -89,29 +74,17 @@ export default function AboutPage() {
         <TestimonialCardTwelve
           testimonials={[
             {
-              id: "1",
-              name: "Dr. Elizabeth Morrison",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/portrait-confident-senior-businessman-office_1262-2396.jpg?_wi=2",
-            },
+              id: "1",              name: "Dr. Elizabeth Morrison",              imageSrc:
+                "http://img.b2bpic.net/free-photo/portrait-confident-senior-businessman-office_1262-2396.jpg"},
             {
-              id: "2",
-              name: "James Chen",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/multi-ethnic-group-three-businesspeople-meeting-modern-o_1139-971.jpg?_wi=2",
-            },
+              id: "2",              name: "James Chen",              imageSrc:
+                "http://img.b2bpic.net/free-photo/multi-ethnic-group-three-businesspeople-meeting-modern-o_1139-971.jpg"},
             {
-              id: "3",
-              name: "Sarah Williams",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/medium-shot-smiley-woman-library_23-2149204753.jpg?_wi=2",
-            },
+              id: "3",              name: "Sarah Williams",              imageSrc:
+                "http://img.b2bpic.net/free-photo/medium-shot-smiley-woman-library_23-2149204753.jpg"},
             {
-              id: "4",
-              name: "Michael Rodriguez",
-              imageSrc:
-                "http://img.b2bpic.net/free-photo/cheerful-female-professional-with-tablet-meeting-table-with-satisfied-customers_74855-8866.jpg?_wi=2",
-            },
+              id: "4",              name: "Michael Rodriguez",              imageSrc:
+                "http://img.b2bpic.net/free-photo/cheerful-female-professional-with-tablet-meeting-table-with-satisfied-customers_74855-8866.jpg"},
           ]}
           cardTitle="Trusted by educators and administrators who share our vision of educational transformation"
           cardTag="Educational Leaders"
@@ -125,8 +98,7 @@ export default function AboutPage() {
         <FooterBaseReveal
           columns={[
             {
-              title: "Product",
-              items: [
+              title: "Product",              items: [
                 { label: "Features", href: "/features" },
                 { label: "Pricing", href: "/pricing" },
                 { label: "Security", href: "#" },
@@ -134,8 +106,7 @@ export default function AboutPage() {
               ],
             },
             {
-              title: "Company",
-              items: [
+              title: "Company",              items: [
                 { label: "About Us", href: "/about" },
                 { label: "Blog", href: "#" },
                 { label: "Careers", href: "#" },
@@ -143,8 +114,7 @@ export default function AboutPage() {
               ],
             },
             {
-              title: "Resources",
-              items: [
+              title: "Resources",              items: [
                 { label: "Support", href: "#" },
                 { label: "Community", href: "#" },
                 { label: "Contact", href: "/contact" },

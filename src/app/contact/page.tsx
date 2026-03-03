@@ -44,7 +44,7 @@ export default function ContactPage() {
           tagAnimation="slide-up"
           background={{ variant: "radial-gradient" }}
           useInvertedBackground={false}
-          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg?_wi=3"
+          imageSrc="http://img.b2bpic.net/free-photo/business-meeting-office_1268-21517.jpg"
           imageAlt="Professional consultation"
           mediaAnimation="slide-up"
           mediaPosition="right"
@@ -58,41 +58,23 @@ export default function ContactPage() {
         <FaqBase
           faqs={[
             {
-              id: "1",
-              title: "How long does implementation typically take?",
-              content:
-                "Our implementation timeline varies based on school size and complexity. Most institutions go live within 4-8 weeks. This includes data migration, staff training, and comprehensive system setup. Our dedicated implementation team works closely with your IT department to ensure smooth transition.",
-            },
+              id: "1",              title: "How long does implementation typically take?",              content:
+                "Our implementation timeline varies based on school size and complexity. Most institutions go live within 4-8 weeks. This includes data migration, staff training, and comprehensive system setup. Our dedicated implementation team works closely with your IT department to ensure smooth transition."},
             {
-              id: "2",
-              title: "What security measures protect student data?",
-              content:
-                "We employ enterprise-grade security including end-to-end encryption, role-based access controls, regular penetration testing, and GDPR/FERPA compliance. All data is backed up hourly with redundant systems. We're SOC 2 Type II certified and maintain the highest industry security standards.",
-            },
+              id: "2",              title: "What security measures protect student data?",              content:
+                "We employ enterprise-grade security including end-to-end encryption, role-based access controls, regular penetration testing, and GDPR/FERPA compliance. All data is backed up hourly with redundant systems. We're SOC 2 Type II certified and maintain the highest industry security standards."},
             {
-              id: "3",
-              title: "Can Scholaris integrate with existing systems?",
-              content:
-                "Yes. Scholaris integrates seamlessly with popular education platforms including Google Classroom, Microsoft Teams, learning management systems, and accounting software. Our API documentation supports custom integrations. Our technical team can work with your vendors.",
-            },
+              id: "3",              title: "Can Scholaris integrate with existing systems?",              content:
+                "Yes. Scholaris integrates seamlessly with popular education platforms including Google Classroom, Microsoft Teams, learning management systems, and accounting software. Our API documentation supports custom integrations. Our technical team can work with your vendors."},
             {
-              id: "4",
-              title: "What kind of training and support is provided?",
-              content:
-                "Every institution receives comprehensive onboarding training for administrators, teachers, parents, and staff. We provide ongoing webinars, documentation, video tutorials, and dedicated support channels. Premium plans include quarterly professional development sessions.",
-            },
+              id: "4",              title: "What kind of training and support is provided?",              content:
+                "Every institution receives comprehensive onboarding training for administrators, teachers, parents, and staff. We provide ongoing webinars, documentation, video tutorials, and dedicated support channels. Premium plans include quarterly professional development sessions."},
             {
-              id: "5",
-              title: "Is there a mobile app for parents and students?",
-              content:
-                "Yes. Our mobile app (iOS and Android) allows parents to monitor grades, attendance, and communications in real-time. Students access assignments, grades, and schedules. The app mirrors dashboard functionality for convenient on-the-go access.",
-            },
+              id: "5",              title: "Is there a mobile app for parents and students?",              content:
+                "Yes. Our mobile app (iOS and Android) allows parents to monitor grades, attendance, and communications in real-time. Students access assignments, grades, and schedules. The app mirrors dashboard functionality for convenient on-the-go access."},
             {
-              id: "6",
-              title: "What happens if we outgrow our current plan?",
-              content:
-                "Scaling is seamless. You can upgrade your plan anytime without migration costs or downtime. Simply notify your account manager of your growing needs, and we'll adjust your subscription and capacity accordingly.",
-            },
+              id: "6",              title: "What happens if we outgrow our current plan?",              content:
+                "Scaling is seamless. You can upgrade your plan anytime without migration costs or downtime. Simply notify your account manager of your growing needs, and we'll adjust your subscription and capacity accordingly."},
           ]}
           title="Frequently Asked Questions"
           description="Find comprehensive answers to common questions about Scholaris and how we can support your institution's success."
@@ -107,8 +89,7 @@ export default function ContactPage() {
         <FooterBaseReveal
           columns={[
             {
-              title: "Product",
-              items: [
+              title: "Product",              items: [
                 { label: "Features", href: "/features" },
                 { label: "Pricing", href: "/pricing" },
                 { label: "Security", href: "#" },
@@ -116,8 +97,7 @@ export default function ContactPage() {
               ],
             },
             {
-              title: "Company",
-              items: [
+              title: "Company",              items: [
                 { label: "About Us", href: "/about" },
                 { label: "Blog", href: "#" },
                 { label: "Careers", href: "#" },
@@ -125,8 +105,7 @@ export default function ContactPage() {
               ],
             },
             {
-              title: "Resources",
-              items: [
+              title: "Resources",              items: [
                 { label: "Support", href: "#" },
                 { label: "Community", href: "#" },
                 { label: "Contact", href: "/contact" },

@@ -5,36 +5,21 @@ import { ServiceWrapper } from "@/components/ServiceWrapper";
 import Tag from "@/tag/Tag";
 
 const sourceSans3 = Source_Sans_3({
-  variable: "--font-source-sans-3",
-  subsets: ["latin"],
+  variable: "--font-source-sans-3",  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Scholaris - Premium School Management System",
-  description: "Transform your institution with Scholaris, the luxury school management platform. Streamline operations, enhance student outcomes, and empower educators with intelligent solutions trusted by 5,000+ schools worldwide.",
-  keywords: "school management system, education platform, student management, teacher portal, parent engagement, school software, institutional management",
-  metadataBase: new URL("https://scholaris.edu"),
+  title: "Scholaris - Premium School Management System",  description: "Transform your institution with Scholaris, the luxury school management platform. Streamline operations, enhance student outcomes, and empower educators with intelligent solutions trusted by 5,000+ schools worldwide.",  keywords: "school management system, education platform, student management, teacher portal, parent engagement, school software, institutional management",  metadataBase: new URL("https://scholaris.edu"),
   alternates: {
-    canonical: "https://scholaris.edu",
-  },
+    canonical: "https://scholaris.edu"},
   openGraph: {
-    title: "Scholaris - Premium School Management System",
-    description: "The luxury school management platform trusted by leading institutions globally. Transform how your school operates and students thrive.",
-    url: "https://scholaris.edu",
-    siteName: "Scholaris",
-    type: "website",
-    images: [
+    title: "Scholaris - Premium School Management System",    description: "The luxury school management platform trusted by leading institutions globally. Transform how your school operates and students thrive.",    url: "https://scholaris.edu",    siteName: "Scholaris",    type: "website",    images: [
       {
-        url: "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",
-        alt: "Scholaris Platform Dashboard",
-      },
+        url: "http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg",        alt: "Scholaris Platform Dashboard"},
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Scholaris - Premium School Management Platform",
-    description: "Elevate your institution with intelligent, luxury school management technology.",
-    images: ["http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg"],
+    card: "summary_large_image",    title: "Scholaris - Premium School Management Platform",    description: "Elevate your institution with intelligent, luxury school management technology.",    images: ["http://img.b2bpic.net/free-photo/classroom-class-study-academic-schedule_53876-133781.jpg"],
   },
   robots: {
     index: true,
